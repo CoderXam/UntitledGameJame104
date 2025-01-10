@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var MaxHealth = 10
-@export var PlayerHealth = 10
+@export var max_health = 10
+@export var player_health = 10
 
-var Inventory = []
+var inventory = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func add_to_inventory(item) -> void:
-	Inventory.append(item)
+	inventory.append(item)
