@@ -1,4 +1,5 @@
 extends Node2D
+@export var MaxHealth = 10
 @export var PlayerHealth = 10
 
 # Called when the node enters the scene tree for the first time.
