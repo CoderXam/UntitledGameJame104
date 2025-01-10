@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bpu4lchlwnrfm"]
+
+[node name="MapScene" type="Node2D"]
