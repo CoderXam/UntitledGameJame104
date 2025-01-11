@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var max_health = 10
 @export var player_health = 10
