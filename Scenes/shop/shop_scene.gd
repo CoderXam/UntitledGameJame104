@@ -1,15 +1,16 @@
 extends Node2D
 
-var shop_inv = {"Fire": "Launch a scorching fireball attack",
- 				"Magma" : "Turn the ground to molten rock",
-			 	"Water" : "Blast foes back and deal damage with a pressurized beam of water",
-				"Shield" : "Block incoming attacks with an arcane ward",
-			 	"Orb" : "Pierce through enemies with a spectral orb", 
-				"Lifesteal" : "Sap away the lifeforce of enemies for yourself", 
-				"Root" : "Fix enemies in place with grasping roots", 
-				"Lightning" : "Shock and stun enemies with a bolt of lightning", 
-				"Amplify" : "Amplify other runes", 
-				"Thorn" : "Riddle your enemies with thorny needles"}
+#0 pos in array = description, 1 = price, 2 = probability of showing up
+var shop_inv = {"Fire": ["Launch a scorching fireball attack", 5, 10],
+ 				"Magma" : ["Turn the ground to molten rock", 5, 10],
+			 	"Water" : ["Blast foes back and deal damage with a pressurized beam of water", 5, 10],
+				"Shield" : ["Block incoming attacks with an arcane ward", 5, 10],
+			 	"Orb" : ["Pierce through enemies with a spectral orb", 5, 10],
+				"Lifesteal" : ["Sap away the lifeforce of enemies for yourself", 5, 10], 
+				"Root" : ["Fix enemies in place with grasping roots", 5, 10],
+				"Lightning" : ["Shock and stun enemies with a bolt of lightning", 5, 10], 
+				"Amplify" : ["Amplify other runes", 5, 10], 
+				"Thorn" : ["Riddle your enemies with thorny needles", 5, 10]}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print(shop_inv["Fire"])
