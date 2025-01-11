@@ -74,3 +74,5 @@ position = Vector2(1048, 120)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
+[connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
+[connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]

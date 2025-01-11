@@ -3,6 +3,7 @@ extends Node2D
 @export var rounds = 10
 
 signal roundEnd(roundsLeft: int)
+signal roundStart()
 
 
 
@@ -21,7 +22,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		_on_round_end()
-		#print("round end")
+		Global.resetPos(18)
+		_on_round_start()
 	
 	pass
 
@@ -38,5 +40,7 @@ func _on_round_end():
 	rounds -= 1
 	roundEnd.emit(rounds)
 	$roundCounter.text = "Rounds Left: %d" % rounds
-	
 	#print("test end scene")
+
+func _on_round_start():
+	roundStart.emit()

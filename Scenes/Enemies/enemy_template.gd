@@ -52,6 +52,9 @@ func move():
 func move_false():
 	#print("tween end")
 	moving = false
+	
+	if arrPos == 7:
+		currentState = CharacterState.STUCK
 
 
 
@@ -69,6 +72,12 @@ func _on_combat_scene_round_end(rounds):
 	#logic to check if next space is free
 	print(arrPos, " check: ", arrPos- 1, Global.charPositions[arrPos - 1 ] )
 	if Global.charPositions[arrPos - 1 ] == CharacterState.MOVING:
-		move()
+		if currentState == CharacterState.MOVING:
+			move()
+	
 	#print("done moving")
 	
+
+
+func _on_combat_scene_round_start():
+	Global.charPositions[arrPos] = currentState
