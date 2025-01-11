@@ -13,7 +13,7 @@ var shop_inv = {"Fire": ["Launch a scorching fireball attack", 5, 10],
 				"Thorn" : ["Riddle your enemies with thorny needles", 5, 10]}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(shop_inv["Fire"])
+	print(shop_inv["Fire"][1])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
