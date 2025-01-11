@@ -12,7 +12,7 @@ func _ready():
 	
 	Global.resetPos(18)
 
-	var PlayerHealth = $PlayerData.get("PlayerHealth")
+	#var PlayerHealth = $PlayerData.get("PlayerHealth")
 	#print(PlayerHealth)
 	$roundCounter.text = "Rounds Left: %d" % rounds
 

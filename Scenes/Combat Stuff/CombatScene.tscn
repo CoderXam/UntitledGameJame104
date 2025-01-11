@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=6 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
-[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/player_data.tscn" id="2_71k72"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
 
@@ -12,12 +11,6 @@
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
 rounds = 15
-
-[node name="PlayerData" parent="." instance=ExtResource("2_71k72")]
-visible = false
-z_index = 10
-position = Vector2(200, 112)
-script = null
 
 [node name="Layout" type="Node2D" parent="."]
 z_index = -1

@@ -1,10 +1,8 @@
 extends Node2D
 
 @export var health = 10
-enum CharacterState {
-	MOVING = 0,
-	STUCK = 1
-}
+
+var CharacterState = Global.CharacterState
 
 var currentState = CharacterState.MOVING
 
@@ -16,13 +14,12 @@ var arrPos
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var CombatScene = get_node("../")
-	#print(CombatScene.get_signal_list())
 	#print("loaded")
-	
+
 	#sets position of character in array thingy
 	position. y = 120
 	arrPos = floor(position.x / 64)
-	print(arrPos)
+	#print(arrPos)
 	position.x = arrPos * 64
 	
 	pass # Replace with function body.

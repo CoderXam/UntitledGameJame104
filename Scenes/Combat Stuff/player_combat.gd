@@ -1,12 +1,11 @@
 extends Node2D
 
 @export var health = 10
-enum CharacterState {
-	MOVING = 0,
-	STUCK = 1
-}
 
-var currentState = CharacterState.STUCK
+
+var CharacterState = Global.CharacterState
+
+var currentState = CharacterState.PLAYER
 
 const tileSize = Global.tileSize
 var moving = false
@@ -23,7 +22,7 @@ func _ready():
 	#sets position of character in array thingy
 	position. y = 176
 	arrPos = floor(position.x / 64)
-	print(arrPos)
+	#print(arrPos)
 	position.x = arrPos * 64
 	
 	$AnimatedSprite2D.play("default")
@@ -45,7 +44,7 @@ IF NOT SURE HOW/WHAT TO DO FOR THIS, ASK JACOB
 SORRY THIS IS INCONVENIENT, BUT I COULDN'T GET IT TO WORK ANY OTHER WAY
 """
 func _on_combat_scene_round_end(roundsLeft):
-	pass # Replace with function body.
+	pass
 
 
 func _on_combat_scene_round_start():
