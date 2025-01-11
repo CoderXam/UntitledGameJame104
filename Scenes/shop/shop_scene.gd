@@ -19,3 +19,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_rune1_pressed() -> void:
+	# check if enough currency
+	# if no -> error message "not enough currency"
+	# if yes -> add to inventory
+	print("purchased rune1")
