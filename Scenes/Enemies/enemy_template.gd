@@ -59,8 +59,8 @@ func move_false():
 
 
 """
-FOR THIS TO WORK, YOU MUST MANUALLY CONNECT THE roundEnd SIGNAL TO EACH INSTANCE
-OF THE MONSTERS CREATED IN THE SCENE
+FOR THIS TO WORK, YOU MUST MANUALLY CONNECT THE roundEnd and roundStart SIGNAL 
+TO EACH INSTANCE OF THE MONSTERS CREATED IN THE SCENE
 
 IF NOT SURE HOW/WHAT TO DO FOR THIS, ASK JACOB
 SORRY THIS IS INCONVENIENT, BUT I COULDN'T GET IT TO WORK ANY OTHER WAY
@@ -69,15 +69,17 @@ func _on_combat_scene_round_end(rounds):
 	#print("enenmy round end")
 	#print(rounds)
 	
-	#logic to check if next space is free
 	print(arrPos, " check: ", arrPos- 1, Global.charPositions[arrPos - 1 ] )
+	#logic to check if next space is free
 	if Global.charPositions[arrPos - 1 ] == CharacterState.MOVING:
+		#check if enemy is eligible to move or not
 		if currentState == CharacterState.MOVING:
 			move()
 	
 	#print("done moving")
 	
 
-
 func _on_combat_scene_round_start():
+	#sets the state of this instance into the global position array
+	#allows other enemies to see whether they'll be allowed to move here or not
 	Global.charPositions[arrPos] = currentState
