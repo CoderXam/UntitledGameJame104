@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/combat_scene.gd" id="1_e5fj7"]
-[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/PlayerData.tscn" id="2_avs3q"]
+[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/player_data.tscn" id="2_avs3q"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Enemies/enemy_template.tscn" id="3_bljur"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
@@ -20,8 +20,8 @@ position = Vector2(200, 112)
 z_index = -1
 
 [node name="Background" type="MeshInstance2D" parent="Layout"]
-position = Vector2(575.75, 323.75)
-scale = Vector2(1152.5, 648.5)
+position = Vector2(576, 324)
+scale = Vector2(1152, 648)
 mesh = SubResource("QuadMesh_2kj1x")
 
 [node name="Node2D" type="Node2D" parent="Layout"]
@@ -57,8 +57,20 @@ position = Vector2(120, 48)
 scale = Vector2(151, 46.1309)
 mesh = SubResource("QuadMesh_7j0hp")
 
+[node name="roundCounter" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 5
+offset_left = 480.0
+offset_top = 40.0
+offset_right = 599.0
+offset_bottom = 63.0
+text = "Rounds Left: xx"
+
 [node name="EnemyTemplate" parent="." instance=ExtResource("3_bljur")]
-position = Vector2(920, 104)
+position = Vector2(840, 96)
 
 [node name="EnemyTemplate2" parent="." instance=ExtResource("3_bljur")]
-position = Vector2(824, 104)
+position = Vector2(1048, 120)
+
+[connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
+[connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]

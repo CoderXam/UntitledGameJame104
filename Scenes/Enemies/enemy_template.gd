@@ -1,22 +1,40 @@
 extends Node2D
 
 @export var health = 10
+enum CharacterState {
+	MOVING = 0,
+	STUCK = 1
+}
+
+var currentState = CharacterState.MOVING
+
 const tileSize = Global.tileSize
 var moving = false
 var direction = Vector2(-1,0)
-
+var arrPos  
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var CombatScene = get_node("../")
+	#print(CombatScene.get_signal_list())
 	#print("loaded")
+	
+	position. y = 120
+	arrPos = floor(position.x / 64)
+	print(arrPos)
+	position.x = arrPos * 64
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		move()
+	#if Input.is_action_just_pressed("ui_accept"):
+		#move()
+		
 	pass
+
+
 
 
 
@@ -26,8 +44,31 @@ func move():
 		var tweenMove = create_tween()
 		#print("tween begin")
 		tweenMove.tween_property(self, "position", position + tileSize * direction, 0.1)
+		arrPos += direction.x
+		#print(arrPos)
+		
 		tweenMove.tween_callback(move_false)
 
 func move_false():
 	#print("tween end")
 	moving = false
+
+
+
+"""
+FOR THIS TO WORK, YOU MUST MANUALLY CONNECT THE roundEnd SIGNAL TO EACH INSTANCE
+OF THE MONSTERS CREATED IN THE SCENE
+
+IF NOT SURE HOW/WHAT TO DO FOR THIS, ASK JACOB
+SORRY THIS IS INCONVENIENT, BUT I COULDN'T GET IT TO WORK ANY OTHER WAY
+"""
+func _on_combat_scene_round_end(rounds):
+	#print("enenmy round end")
+	#print(rounds)
+	
+	#logic to check if next space is free
+	print(arrPos, " check: ", arrPos- 1, Global.charPositions[arrPos - 1 ] )
+	if Global.charPositions[arrPos - 1 ] == CharacterState.MOVING:
+		move()
+	#print("done moving")
+	

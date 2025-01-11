@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw3a6j7d7ocns"]
+[gd_scene load_steps=5 format=3 uid="uid://cw3a6j7d7ocns"]
 
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy_template.gd" id="1_5tkq2"]
+[ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_xlqm5"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qlsev"]
 
@@ -9,11 +10,11 @@ size = Vector2(48, 112)
 
 [node name="EnemyTemplate" type="Node2D"]
 script = ExtResource("1_5tkq2")
-health = null
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+visible = false
 modulate = Color(1, 0.0823529, 1, 1)
 position = Vector2(24, 56)
 scale = Vector2(48, 112)
@@ -22,3 +23,8 @@ mesh = SubResource("QuadMesh_qlsev")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(24, 56)
 shape = SubResource("RectangleShape2D_177gs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24, 56)
+scale = Vector2(3, 7)
+texture = ExtResource("2_xlqm5")
