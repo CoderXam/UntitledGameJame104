@@ -71,7 +71,7 @@ func _on_combat_scene_round_end(rounds):
 	#print("enenmy round end")
 	#print(rounds)
 	
-	print(arrPos, " check: ", arrPos- 1, Global.charPositions[arrPos - 1 ] )
+	#print(arrPos, " check: ", arrPos- 1, Global.charPositions[arrPos - 1 ] )
 	#logic to check if next space is free
 	if Global.charPositions[arrPos - 1 ] == CharacterState.MOVING:
 		#check if enemy is eligible to move or not
