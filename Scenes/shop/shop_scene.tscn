@@ -1,38 +1,160 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=4 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
+[ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
+[ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
 
 [node name="ShopScene" type="Node2D"]
 script = ExtResource("1_2nlhh")
 
-[node name="rune1" type="Button" parent="."]
+[node name="rune1" type="TextureRect" parent="."]
+offset_left = 324.0
+offset_top = 228.0
+offset_right = 364.0
+offset_bottom = 268.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune1"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = 100.0
-offset_right = 400.0
-offset_bottom = 160.0
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Rune 1
-(Buy)"
+toggle_mode = true
+text = "buy"
 
-[node name="Button2" type="Button" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 63.0
+offset_right = 93.0
+offset_bottom = 202.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+
+[node name="rune2" type="TextureRect" parent="."]
+offset_left = 471.0
+offset_top = 228.0
+offset_right = 511.0
+offset_bottom = 268.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune2"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 400.0
-offset_top = 100.0
-offset_right = 500.0
-offset_bottom = 160.0
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Rune 2
-(Buy)"
+toggle_mode = true
+text = "buy"
 
-[connection signal="pressed" from="rune1" to="." method="_on_rune1_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 63.0
+offset_right = 93.0
+offset_bottom = 202.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+
+[node name="rune3" type="TextureRect" parent="."]
+offset_left = 623.0
+offset_top = 229.0
+offset_right = 663.0
+offset_bottom = 269.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "buy"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 63.0
+offset_right = 93.0
+offset_bottom = 202.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+
+[node name="rune4" type="TextureRect" parent="."]
+offset_left = 792.0
+offset_top = 226.0
+offset_right = 832.0
+offset_bottom = 266.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "buy"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 63.0
+offset_right = 93.0
+offset_bottom = 202.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 545.0
+offset_top = 17.0
+offset_right = 645.0
+offset_bottom = 57.0
+text = "SHOP"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 632.0
+offset_top = 87.0
+offset_right = 850.0
+offset_bottom = 127.0
+text = "WELCOME TO MY SHOP"
+
+[node name="TestPlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(561, 139)
+scale = Vector2(13.5, 7.4375)
+texture = ExtResource("3_6yepq")
+
+[connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
+[connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
+[connection signal="pressed" from="rune3/buy" to="." method="_on_rune_3_pressed"]
+[connection signal="pressed" from="rune4/buy" to="." method="_on_rune_4_pressed"]
