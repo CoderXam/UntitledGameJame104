@@ -53,14 +53,16 @@ func move_false():
 	#print("tween end")
 	moving = false
 	
-	if arrPos == 7:
-		currentState = CharacterState.STUCK
+	#"just for testing to stop one of the enemies"
+	#if arrPos == 7:
+		#currentState = CharacterState.STUCK
 
 
 
 """
 FOR THIS TO WORK, YOU MUST MANUALLY CONNECT THE roundEnd and roundStart SIGNAL 
-TO EACH INSTANCE OF THE MONSTERS CREATED IN THE SCENE
+TO EACH INSTANCE OF THE MONSTERS CREATED IN THE SCENE. THERE SHOULD BE A LITTLE GREEN ARROW
+ON THE LEFT OF THE FUNCTION DECLARATION WHEN VIEWING THE SCRIPT FROM THE DESIRED SCENE
 
 IF NOT SURE HOW/WHAT TO DO FOR THIS, ASK JACOB
 SORRY THIS IS INCONVENIENT, BUT I COULDN'T GET IT TO WORK ANY OTHER WAY
@@ -75,6 +77,11 @@ func _on_combat_scene_round_end(rounds):
 		#check if enemy is eligible to move or not
 		if currentState == CharacterState.MOVING:
 			move()
+	else:
+		#basically, if this instance is unable to move forward, it puts in the global position
+		#array that it is stuck, just for right now, without changing it's currentState
+		#not sure how well this will hold up tbh, but it works for now --jacob
+		Global.charPositions[arrPos] = CharacterState.STUCK
 	
 	#print("done moving")
 	

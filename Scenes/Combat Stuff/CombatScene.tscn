@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=7 format=3 uid="uid://w86h5rnen7fg"]
 
-[ext_resource type="Script" path="res://Scenes/combat_scene.gd" id="1_e5fj7"]
-[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/player_data.tscn" id="2_avs3q"]
-[ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Enemies/enemy_template.tscn" id="3_bljur"]
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
+[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/player_data.tscn" id="2_71k72"]
+[ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7j0hp"]
 
 [node name="CombatScene" type="Node2D"]
-script = ExtResource("1_e5fj7")
+script = ExtResource("1_77n8x")
+rounds = 15
 
-[node name="PlayerData" parent="." instance=ExtResource("2_avs3q")]
+[node name="PlayerData" parent="." instance=ExtResource("2_71k72")]
 visible = false
 z_index = 10
 position = Vector2(200, 112)
@@ -66,13 +68,18 @@ offset_right = 599.0
 offset_bottom = 63.0
 text = "Rounds Left: xx"
 
-[node name="EnemyTemplate" parent="." instance=ExtResource("3_bljur")]
+[node name="EnemyTemplate" parent="." instance=ExtResource("3_8yaja")]
 position = Vector2(840, 96)
 
-[node name="EnemyTemplate2" parent="." instance=ExtResource("3_bljur")]
+[node name="EnemyTemplate2" parent="." instance=ExtResource("3_8yaja")]
 position = Vector2(1048, 120)
+
+[node name="PlayerCombat" parent="." instance=ExtResource("4_crla7")]
+position = Vector2(160, 104)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
+[connection signal="roundEnd" from="." to="PlayerCombat" method="_on_combat_scene_round_end"]
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
+[connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
