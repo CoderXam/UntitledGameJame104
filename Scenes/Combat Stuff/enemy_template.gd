@@ -19,6 +19,7 @@ func _ready():
 	#print(CombatScene.get_signal_list())
 	#print("loaded")
 	
+	#sets position of character in array thingy
 	position. y = 120
 	arrPos = floor(position.x / 64)
 	print(arrPos)

@@ -19,10 +19,14 @@ func _ready():
 	#print(CombatScene.get_signal_list())
 	#print("loaded")
 	
-	position. y = 120
+	
+	#sets position of character in array thingy
+	position. y = 176
 	arrPos = floor(position.x / 64)
 	print(arrPos)
 	position.x = arrPos * 64
+	
+	$AnimatedSprite2D.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
