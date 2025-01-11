@@ -1,3 +1,64 @@
-[gd_scene format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=6 format=3 uid="uid://w86h5rnen7fg"]
+
+[ext_resource type="Script" path="res://Scenes/combat_scene.gd" id="1_e5fj7"]
+[ext_resource type="PackedScene" uid="uid://bpuk5bjcroqd4" path="res://Scenes/PlayerData.tscn" id="2_avs3q"]
+[ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Enemies/enemy_template.tscn" id="3_bljur"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7j0hp"]
 
 [node name="CombatScene" type="Node2D"]
+script = ExtResource("1_e5fj7")
+
+[node name="PlayerData" parent="." instance=ExtResource("2_avs3q")]
+visible = false
+z_index = 10
+position = Vector2(200, 112)
+
+[node name="Layout" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Background" type="MeshInstance2D" parent="Layout"]
+position = Vector2(575.75, 323.75)
+scale = Vector2(1152.5, 648.5)
+mesh = SubResource("QuadMesh_2kj1x")
+
+[node name="Node2D" type="Node2D" parent="Layout"]
+
+[node name="Inventory" type="MeshInstance2D" parent="Layout/Node2D"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+position = Vector2(141.234, 433.047)
+scale = Vector2(213.531, 354.094)
+mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="CastingArea" type="MeshInstance2D" parent="Layout/Node2D"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+position = Vector2(1010.77, 433.047)
+scale = Vector2(213.531, 354.094)
+mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="OtherStuff" type="MeshInstance2D" parent="Layout/Node2D"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+position = Vector2(576, 433.047)
+scale = Vector2(593.766, 354.094)
+mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="CombatDisplay" type="MeshInstance2D" parent="Layout/Node2D"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+position = Vector2(576, 128)
+scale = Vector2(1080, 216.523)
+mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="HealthBar" type="MeshInstance2D" parent="Layout/Node2D"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+self_modulate = Color(0.288518, 0.288518, 0.288518, 1)
+position = Vector2(120, 48)
+scale = Vector2(151, 46.1309)
+mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="EnemyTemplate" parent="." instance=ExtResource("3_bljur")]
+position = Vector2(920, 104)
+
+[node name="EnemyTemplate2" parent="." instance=ExtResource("3_bljur")]
+position = Vector2(824, 104)
