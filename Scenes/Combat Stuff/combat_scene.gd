@@ -1,14 +1,19 @@
 extends Node2D
 
-@export var rounds = 10
+@export var maxRounds = 10
+
 
 signal roundEnd(roundsLeft: int)
 signal roundStart()
 
+@onready var rounds = maxRounds
+@onready var healthBar = $ProgressBar
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	healthBar.value = 100
 	
 	Global.resetPos(18)
 
@@ -43,7 +48,9 @@ func _on_round_end():
 	if rounds == 0:
 		return
 	
+	
 	rounds -= 1
+	healthBar.value -= 100/(maxRounds-1)
 	roundEnd.emit(rounds)
 	$roundCounter.text = "Rounds Left: %d" % rounds
 	#print("test end scene")

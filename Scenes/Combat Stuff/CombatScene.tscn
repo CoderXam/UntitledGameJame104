@@ -10,7 +10,7 @@
 
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
-rounds = 15
+maxRounds = 15
 
 [node name="Layout" type="Node2D" parent="."]
 z_index = -1
@@ -47,6 +47,7 @@ scale = Vector2(1080, 216.523)
 mesh = SubResource("QuadMesh_7j0hp")
 
 [node name="HealthBar" type="MeshInstance2D" parent="Layout/Node2D"]
+visible = false
 modulate = Color(0.568973, 0.568973, 0.568973, 1)
 self_modulate = Color(0.288518, 0.288518, 0.288518, 1)
 position = Vector2(120, 48)
@@ -70,6 +71,15 @@ position = Vector2(1048, 120)
 
 [node name="PlayerCombat" parent="." instance=ExtResource("4_crla7")]
 position = Vector2(264, 176)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 232.0
+offset_bottom = 51.0
+value = 76.0
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
