@@ -80,6 +80,7 @@ scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
 
 [node name="name" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 42.0
 offset_right = 117.0
@@ -119,6 +120,7 @@ scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
 
 [node name="name" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 42.0
 offset_right = 133.0
@@ -158,6 +160,7 @@ scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
 
 [node name="name" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 42.0
 offset_right = 167.0

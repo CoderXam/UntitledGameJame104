@@ -13,6 +13,7 @@ var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10]
 				"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
 # Called when the node enters the scene tree for the first time.
 
+var pool = [shop_inv["Fire"],shop_inv["Magma"],shop_inv["Water"],shop_inv["Shield"],shop_inv["Orb"],shop_inv["Lifesteal"],shop_inv["Root"],shop_inv["Lightning"],shop_inv["Amplify"],shop_inv["Thorn"],]
 var available = []
 var randnum = 0
 var names = []
@@ -21,30 +22,16 @@ var desc = []
 func _ready() -> void:
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
-	for i in 4:
+	
+	for i in 4: # Generate rune for each slot in the shop
 		randnum = randi_range(1,100)
-		if randnum > 0 and randnum < 11:
-			available.append(shop_inv["Fire"])
-		elif randnum > 10 and randnum < 21:
-			available.append(shop_inv["Magma"])
-		elif randnum > 20 and randnum < 31:
-			available.append(shop_inv["Water"])
-		elif randnum > 30 and randnum < 41:
-			available.append(shop_inv["Shield"])
-		elif randnum > 40 and randnum < 51:
-			available.append(shop_inv["Orb"])
-		elif randnum > 50 and randnum < 61:
-			available.append(shop_inv["Lifesteal"])
-		elif randnum > 60 and randnum < 71:
-			available.append(shop_inv["Root"])
-		elif randnum > 70 and randnum < 81:
-			available.append(shop_inv["Lightning"])
-		elif randnum > 80 and randnum < 91:
-			available.append(shop_inv["Amplify"])
-		elif randnum > 90 and randnum < 101:
-			available.append(shop_inv["Thorn"])
-		else:
-			print("how") # In case I missed a number 1-100
+		for j in 10:
+			# If random number is between 1-10, choose the 1st spell
+			# If randum number is between 2-20 choose the 2nd spell
+			# etc. (This only works since probabilities are equally distributed)
+			if randnum > j*10 and randnum < (j+1)*10+1:
+				available.append(pool[j])
+		
 		print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i][0]
 		desc[i].text = available[i][1]
