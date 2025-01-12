@@ -200,24 +200,24 @@ offset_bottom = 215.0
 scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Shopkeeper" type="Sprite2D" parent="."]
+position = Vector2(561, 139)
+scale = Vector2(13.5, 7.4375)
+texture = ExtResource("3_6yepq")
+
+[node name="Shop" type="RichTextLabel" parent="."]
 offset_left = 545.0
 offset_top = 17.0
 offset_right = 645.0
 offset_bottom = 57.0
 text = "SHOP"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="Welcome" type="RichTextLabel" parent="."]
 offset_left = 632.0
 offset_top = 87.0
 offset_right = 850.0
 offset_bottom = 127.0
 text = "WELCOME TO MY SHOP"
-
-[node name="TestPlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(561, 139)
-scale = Vector2(13.5, 7.4375)
-texture = ExtResource("3_6yepq")
 
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
