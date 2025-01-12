@@ -35,7 +35,7 @@ func _ready() -> void:
 			if randnum > j*10 and randnum < (j+1)*10+1:
 				available.append(pool[j])
 		
-		print(str(i+1)+". "+available[i][0])
+		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i][0]
 		desc[i].text = available[i][1]
 		stock[i].text = str(available[i][4]) +" in stock"
@@ -44,7 +44,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Balance.text = "You have " + str(PlayerData1.currency) + " moneys"
-	
+	$Inventory.text = str(PlayerData1.inventory)
 
 func _on_rune_1_pressed() -> void:
 	var rune = available[0]
@@ -78,7 +78,6 @@ func _on_rune_2_pressed() -> void:
 	else:
 		print("not enough money or out of stock")
 
-
 func _on_rune_3_pressed() -> void:
 	var rune = available[2]
 	if PlayerData1.currency >= rune[2] and rune[4] > 0:
@@ -94,7 +93,6 @@ func _on_rune_3_pressed() -> void:
 		print(PlayerData1.inventory)
 	else:
 		print("not enough money or out of stock")
-
 
 func _on_rune_4_pressed() -> void:
 	var rune = available[3]

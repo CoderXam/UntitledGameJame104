@@ -205,6 +205,14 @@ position = Vector2(561, 139)
 scale = Vector2(13.5, 7.4375)
 texture = ExtResource("3_6yepq")
 
+[node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
+offset_left = 5.48149
+offset_top = -5.2437
+offset_right = 273.481
+offset_bottom = 34.7563
+scale = Vector2(0.1, 0.1)
+text = "WELCOME TO MY SHOP"
+
 [node name="Shop" type="RichTextLabel" parent="."]
 offset_left = 545.0
 offset_top = 17.0
@@ -212,19 +220,22 @@ offset_right = 645.0
 offset_bottom = 57.0
 text = "SHOP"
 
-[node name="Welcome" type="RichTextLabel" parent="."]
-offset_left = 632.0
-offset_top = 87.0
-offset_right = 850.0
-offset_bottom = 127.0
-text = "WELCOME TO MY SHOP"
-
 [node name="Balance" type="RichTextLabel" parent="."]
 offset_left = 682.5
 offset_top = 142.5
 offset_right = 897.5
 offset_bottom = 182.5
 text = "You have 1 morbillion $$$"
+
+[node name="Inventory" type="RichTextLabel" parent="."]
+offset_left = 852.0
+offset_top = 213.0
+offset_right = 1140.0
+offset_bottom = 485.0
+text = "Inventory:
+A thing
+Another thing
+Yet another thing"
 
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
