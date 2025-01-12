@@ -1,5 +1,6 @@
 extends Node2D
-	
+
+'''Old code using dictionary'''
 # positions in array:
 # 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop (out of 100)
 #var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10],
@@ -13,16 +14,17 @@ extends Node2D
 				#"Amplify" : ["Amplify","Amplify other runes", 5, 10], 
 				#"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
 
-var fire := Rune.new("Fireball","Launch a scorching fireball attack",5,10)
-var magma := Rune.new("Magma Stomp","Turn the ground to molten rock",5,10)
-var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water",5,10)
-var shield := Rune.new("Shield","Block incoming attacks with an arcane ward", 5, 10)
-var orb := Rune.new("Orb","Pierce through enemies with a spectral orb", 5, 10)
-var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself", 5, 10)
-var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", 5, 10)
-var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", 5, 10)
-var amplify := Rune.new("Amplify","Amplify other runes", 5, 10)
-var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", 5, 10)
+'''New code using Rune class'''
+var fire := Rune.new("Fireball","Launch a scorching fireball attack")
+var magma := Rune.new("Magma Stomp","Turn the ground to molten rock")
+var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water")
+var shield := Rune.new("Shield","Block incoming attacks with an arcane ward")
+var orb := Rune.new("Orb","Pierce through enemies with a spectral orb")
+var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself")
+var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots")
+var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning")
+var amplify := Rune.new("Amplify","Amplify other runes")
+var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles")
 
 var shop_inv = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns] # List of all runes
 var available = [] # The runes available in the shop

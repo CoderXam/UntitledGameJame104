@@ -5,7 +5,7 @@ var description := "description"
 var price := 1
 var shop_chance := 10
 
-func _init(name:String, rune_description:String, rune_price:int, rune_shop_chance:int):
+func _init(name:String, rune_description:String, rune_price:int=5, rune_shop_chance:int=10):
 	rune_name = name
 	description = rune_description
 	price = rune_price
