@@ -15,8 +15,12 @@ var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10]
 
 var available = []
 var randnum = 0
+var names = []
+var desc = []
 
 func _ready() -> void:
+	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
+	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
 	for i in 4:
 		randnum = randi_range(1,100)
 		if randnum > 0 and randnum < 11:
@@ -40,8 +44,10 @@ func _ready() -> void:
 		elif randnum > 90 and randnum < 101:
 			available.append(shop_inv["Thorn"])
 		else:
-			print("how")
-	print(available)
+			print("how") # In case I missed a number 1-100
+		print(str(i+1)+". "+available[i][0])
+		names[i].text = available[i][0]
+		desc[i].text = available[i][1]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
