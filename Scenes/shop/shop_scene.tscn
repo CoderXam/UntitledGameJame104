@@ -1,0 +1,243 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctl8ju1py7w3o"]
+
+[ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
+[ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
+[ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
+
+[node name="ShopScene" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_2nlhh")
+
+[node name="rune1" type="TextureRect" parent="."]
+offset_left = 324.0
+offset_top = 228.0
+offset_right = 364.0
+offset_bottom = 268.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 209.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 82.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 108.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune2" type="TextureRect" parent="."]
+offset_left = 471.0
+offset_top = 228.0
+offset_right = 511.0
+offset_bottom = 268.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 209.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 42.0
+offset_right = 117.0
+offset_bottom = 82.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 92.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune3" type="TextureRect" parent="."]
+offset_left = 617.0
+offset_top = 227.0
+offset_right = 657.0
+offset_bottom = 267.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 209.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm"
+
+[node name="name" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 42.0
+offset_right = 133.0
+offset_bottom = 82.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 121.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune4" type="TextureRect" parent="."]
+offset_left = 768.0
+offset_top = 232.0
+offset_right = 808.0
+offset_bottom = 272.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 54.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 70.0
+offset_right = 93.0
+offset_bottom = 209.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 42.0
+offset_right = 167.0
+offset_bottom = 82.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 156.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="Shopkeeper" type="Sprite2D" parent="."]
+position = Vector2(561, 139)
+scale = Vector2(13.5, 7.4375)
+texture = ExtResource("3_6yepq")
+
+[node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
+offset_left = 5.48149
+offset_top = -5.2437
+offset_right = 273.481
+offset_bottom = 34.7563
+scale = Vector2(0.1, 0.1)
+text = "WELCOME TO MY SHOP"
+
+[node name="Shop" type="RichTextLabel" parent="."]
+offset_left = 545.0
+offset_top = 17.0
+offset_right = 645.0
+offset_bottom = 57.0
+text = "SHOP"
+
+[node name="Balance" type="RichTextLabel" parent="."]
+offset_left = 682.5
+offset_top = 142.5
+offset_right = 897.5
+offset_bottom = 182.5
+text = "You have 1 morbillion $$$"
+
+[node name="Inventory" type="RichTextLabel" parent="."]
+offset_left = 852.0
+offset_top = 213.0
+offset_right = 1140.0
+offset_bottom = 485.0
+text = "Inventory:
+A thing
+Another thing
+Yet another thing"
+
+[connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
+[connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
+[connection signal="pressed" from="rune3/buy" to="." method="_on_rune_3_pressed"]
+[connection signal="pressed" from="rune4/buy" to="." method="_on_rune_4_pressed"]
