@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bpu4lchlwnrfm"]
+[gd_scene load_steps=2 format=3 uid="uid://bpu4lchlwnrfm"]
+
+[ext_resource type="SpriteFrames" uid="uid://doycuw0ayabq7" path="res://Sprites/ProtagonistSpriteFrames.tres" id="1_3vm60"]
 
 [node name="MapScene" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, 136)
+sprite_frames = ExtResource("1_3vm60")
+animation = &"Rest_Pose"
