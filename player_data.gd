@@ -6,13 +6,11 @@ extends Node
 @export var currency = 21
 
 var inventory: Array = []
-var starting_rune: Rune = Rune.new()
+var starting_rune: Rune = Rune.new("magic thing","a magical thing",0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Hello Player")
-	starting_rune.name = "magic thing"
-	starting_rune.description = "a magical thing"
 	add_to_inventory(starting_rune)
 
 
