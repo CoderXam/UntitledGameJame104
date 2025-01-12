@@ -4,6 +4,7 @@ extends Node
 """
 COMBAT SCENE WORKSPACE
 """
+
 const tileSize = 64
 var charPositions = []
 enum CharacterState {
@@ -12,7 +13,8 @@ enum CharacterState {
 	PLAYER
 }
 
-#Normally x should be 18
-func resetPos(x):
+
+#Normally x should be 9
+func resetPos(x = 9):
 	for i in range(x):
 		charPositions.append(0)

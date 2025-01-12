@@ -12,10 +12,10 @@ signal roundStart()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+
 	healthBar.value = 100
 	
-	Global.resetPos(18)
+	Global.resetPos()
 
 	#var PlayerHealth = $PlayerData.get("PlayerHealth")
 	#print(PlayerHealth)
@@ -31,7 +31,7 @@ func _process(delta):
 		#(at least that's how i think it works, and it's good for now --jacob)
 		_on_round_end()
 		#resets the array that stores where enemies can move to or not
-		Global.resetPos(18)
+		Global.resetPos()
 		#just a signal to let everything know to go add its state to the global position array
 		#(that's all it does for now, might end up doing more later --jacob)
 		_on_round_start()

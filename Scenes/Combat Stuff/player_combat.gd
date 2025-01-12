@@ -20,12 +20,12 @@ func _ready():
 	
 	
 	#sets position of character in array thingy
-	position. y = 176
+	position. y = 64
 	arrPos = floor(position.x / 64)
 	#print(arrPos)
 	position.x = arrPos * 64
 	
-	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D.play("Bob_Idle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

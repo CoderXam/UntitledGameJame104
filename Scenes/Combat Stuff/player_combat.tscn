@@ -28,3 +28,4 @@ position = Vector2(24, 24)
 rotation = 3.14159
 scale = Vector2(-1.49984, -1.49984)
 sprite_frames = ExtResource("3_mm3mp")
+animation = &"Glow_Idle"
