@@ -36,7 +36,7 @@ offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 209.0
 scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune1"]
 layout_mode = 0
@@ -45,6 +45,15 @@ offset_top = 42.0
 offset_right = 114.0
 offset_bottom = 82.0
 text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 108.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
 
 [node name="rune2" type="TextureRect" parent="."]
 offset_left = 471.0
@@ -75,7 +84,7 @@ offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 209.0
 scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune2"]
 layout_mode = 0
@@ -85,11 +94,19 @@ offset_right = 117.0
 offset_bottom = 82.0
 text = "name"
 
+[node name="stock" type="RichTextLabel" parent="rune2"]
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 92.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
 [node name="rune3" type="TextureRect" parent="."]
-offset_left = 623.0
-offset_top = 229.0
-offset_right = 663.0
-offset_bottom = 269.0
+offset_left = 617.0
+offset_top = 227.0
+offset_right = 657.0
+offset_bottom = 267.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune3"]
@@ -114,7 +131,7 @@ offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 209.0
 scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+text = "descrption: lorem ipsum skibidi bap mmmmmm"
 
 [node name="name" type="RichTextLabel" parent="rune3"]
 layout_mode = 0
@@ -124,11 +141,19 @@ offset_right = 133.0
 offset_bottom = 82.0
 text = "name"
 
+[node name="stock" type="RichTextLabel" parent="rune3"]
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 121.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
 [node name="rune4" type="TextureRect" parent="."]
-offset_left = 792.0
-offset_top = 226.0
-offset_right = 832.0
-offset_bottom = 266.0
+offset_left = 768.0
+offset_top = 232.0
+offset_right = 808.0
+offset_bottom = 272.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune4"]
@@ -153,7 +178,7 @@ offset_top = 70.0
 offset_right = 93.0
 offset_bottom = 209.0
 scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm eeeeee aaaaaa"
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune4"]
 layout_mode = 0
@@ -162,6 +187,14 @@ offset_top = 42.0
 offset_right = 167.0
 offset_bottom = 82.0
 text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune4"]
+offset_left = -20.0
+offset_top = 175.0
+offset_right = 156.0
+offset_bottom = 215.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 545.0

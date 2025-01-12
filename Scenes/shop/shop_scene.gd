@@ -18,10 +18,12 @@ var available = []
 var randnum = 0
 var names = []
 var desc = []
+var stock = []
 
 func _ready() -> void:
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
+	stock = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
 	
 	for i in 4: # Generate rune for each slot in the shop
 		randnum = randi_range(1,100)
@@ -35,6 +37,7 @@ func _ready() -> void:
 		print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i][0]
 		desc[i].text = available[i][1]
+		stock[i].text = "1 in stock"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,39 +46,55 @@ func _process(delta: float) -> void:
 	
 
 func _on_rune_1_pressed() -> void:
-	if PlayerData1.currency >= available[0][2]:
-		PlayerData1.currency -= available[0][2]
-		PlayerData1.add_to_inventory(available[0])
-		print("pruchased " + available[0][0])
+	var rune = available[0]
+	if PlayerData1.currency >= rune[2]:
+		PlayerData1.currency -= rune[2]
+		PlayerData1.add_to_inventory(rune)
+		stock[0].text = "out of stock"
+		
+		print("pruchased " + rune[0])
 		print("currency: "+ str(PlayerData1.currency))
+		print(PlayerData1.inventory)
 	else:
 		print("not enough money")
 
 func _on_rune_2_pressed() -> void:
-	if PlayerData1.currency >= available[1][2]:
-		PlayerData1.currency -= available[1][2]
-		PlayerData1.add_to_inventory(available[1])
-		print("pruchased " + available[1][0])
+	var rune = available[1]
+	if PlayerData1.currency >= rune[2]:
+		PlayerData1.currency -= rune[2]
+		PlayerData1.add_to_inventory(rune)
+		stock[0].text = "out of stock"
+		
+		print("pruchased " + rune[0])
 		print("currency: "+ str(PlayerData1.currency))
+		print(PlayerData1.inventory)
 	else:
 		print("not enough money")
 
 
 func _on_rune_3_pressed() -> void:
-	if PlayerData1.currency >= available[2][2]:
-		PlayerData1.currency -= available[2][2]
-		PlayerData1.add_to_inventory(available[2])
-		print("pruchased " + available[2][0])
+	var rune = available[2]
+	if PlayerData1.currency >= rune[2]:
+		PlayerData1.currency -= rune[2]
+		PlayerData1.add_to_inventory(rune)
+		stock[0].text = "out of stock"
+		
+		print("pruchased " + rune[0])
 		print("currency: "+ str(PlayerData1.currency))
+		print(PlayerData1.inventory)
 	else:
 		print("not enough money")
 
 
 func _on_rune_4_pressed() -> void:
-	if PlayerData1.currency >= available[3][2]:
-		PlayerData1.currency -= available[3][2]
-		PlayerData1.add_to_inventory(available[3])
-		print("pruchased " + available[3][0])
+	var rune = available[3]
+	if PlayerData1.currency >= rune[2]:
+		PlayerData1.currency -= rune[2]
+		PlayerData1.add_to_inventory(rune)
+		stock[0].text = "out of stock"
+		
+		print("pruchased " + rune[0])
 		print("currency: "+ str(PlayerData1.currency))
+		print(PlayerData1.inventory)
 	else:
 		print("not enough money")
