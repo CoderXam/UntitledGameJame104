@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
 
 [node name="ShopScene" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_2nlhh")
 
 [node name="rune1" type="TextureRect" parent="."]
@@ -95,6 +96,7 @@ offset_bottom = 82.0
 text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 175.0
 offset_right = 92.0
@@ -142,6 +144,7 @@ offset_bottom = 82.0
 text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 175.0
 offset_right = 121.0
@@ -189,6 +192,7 @@ offset_bottom = 82.0
 text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
 offset_left = -20.0
 offset_top = 175.0
 offset_right = 156.0
