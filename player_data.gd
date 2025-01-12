@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-@export var currency = 1000
+@export var currency = 20
 
 var inventory: Array = []
 @export var starting_item: Item

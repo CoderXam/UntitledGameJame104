@@ -43,27 +43,39 @@ func _process(delta: float) -> void:
 	
 
 func _on_rune_1_pressed() -> void:
-	PlayerData1.currency -= available[0][2]
-	print("pruchased " + available[0][0])
-	print("currency: "+ str(PlayerData1.currency))
-	pass # Replace with function body.
+	if PlayerData1.currency >= available[0][2]:
+		PlayerData1.currency -= available[0][2]
+		PlayerData1.add_to_inventory(available[0])
+		print("pruchased " + available[0][0])
+		print("currency: "+ str(PlayerData1.currency))
+	else:
+		print("not enough money")
 
 func _on_rune_2_pressed() -> void:
-	PlayerData1.currency -= available[1][2]
-	print("pruchased " + available[1][0])
-	print("currency: "+ str(PlayerData1.currency))
-	pass # Replace with function body.
+	if PlayerData1.currency >= available[1][2]:
+		PlayerData1.currency -= available[1][2]
+		PlayerData1.add_to_inventory(available[1])
+		print("pruchased " + available[1][0])
+		print("currency: "+ str(PlayerData1.currency))
+	else:
+		print("not enough money")
 
 
 func _on_rune_3_pressed() -> void:
-	PlayerData1.currency -= available[2][2]
-	print("pruchased " + available[2][0])
-	print("currency: "+ str(PlayerData1.currency))
-	pass # Replace with function body.
+	if PlayerData1.currency >= available[2][2]:
+		PlayerData1.currency -= available[2][2]
+		PlayerData1.add_to_inventory(available[2])
+		print("pruchased " + available[2][0])
+		print("currency: "+ str(PlayerData1.currency))
+	else:
+		print("not enough money")
 
 
 func _on_rune_4_pressed() -> void:
-	PlayerData1.currency -= available[3][2]
-	print("pruchased " + available[3][0])
-	print("currency: "+ str(PlayerData1.currency))
-	pass # Replace with function body.
+	if PlayerData1.currency >= available[3][2]:
+		PlayerData1.currency -= available[3][2]
+		PlayerData1.add_to_inventory(available[3])
+		print("pruchased " + available[3][0])
+		print("currency: "+ str(PlayerData1.currency))
+	else:
+		print("not enough money")
