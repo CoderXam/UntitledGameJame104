@@ -51,7 +51,7 @@ func _ready() -> void:
 				stock[i] = 2 # Set the number of runes in stock for all runes
 		
 		#print(str(i+1)+". "+available[i][0])
-		names[i].text = available[i].item_name
+		names[i].text = available[i].rune_name
 		desc[i].text = available[i].description
 		stock_text[i].text = str(stock[i]) +" in stock"
 		
@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 func refresh_inventory() -> void:
 	inv_list = "Inventory: \n"
 	for i in PlayerData1.inventory:
-		inv_list += i.item_name+"\n"
+		inv_list += "- " + i.rune_name + "\n"
 	$Inventory.text = inv_list
 	pass
 #-----------------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ func _on_rune_1_pressed() -> void:
 			stock_text[0].text = str(stock[0]) +" in stock"
 		else:
 			stock_text[0].text = "out of stock"
-		print("pruchased " + rune.item_name)
+		print("pruchased " + rune.rune_name)
 	
 	elif stock[0] == 0: # If out of stock
 		# BUY FAILED
@@ -112,7 +112,7 @@ func _on_rune_2_pressed() -> void:
 			stock_text[1].text = str(stock[1]) +" in stock"
 		else:
 			stock_text[1].text = "out of stock"
-		print("pruchased " + rune.item_name)
+		print("pruchased " + rune.rune_name)
 	
 	elif stock[1] == 0: # If out of stock
 		# BUY FAILED
@@ -134,7 +134,7 @@ func _on_rune_3_pressed() -> void:
 			stock_text[2].text = str(stock[2]) +" in stock"
 		else:
 			stock_text[2].text = "out of stock"
-		print("pruchased " + rune.item_name)
+		print("pruchased " + rune.rune_name)
 	
 	elif stock[2] == 0: # If out of stock
 		# BUY FAILED
@@ -156,7 +156,7 @@ func _on_rune_4_pressed() -> void:
 			stock_text[3].text = str(stock[3]) +" in stock"
 		else:
 			stock_text[3].text = "out of stock"
-		print("pruchased " + rune.item_name)
+		print("pruchased " + rune.rune_name)
 	
 	elif stock[3] == 0: # If out of stock
 		# BUY FAILED
