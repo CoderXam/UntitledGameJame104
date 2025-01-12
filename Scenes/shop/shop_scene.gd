@@ -2,6 +2,7 @@ extends Node2D
 	
 # positions in array:
 # 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop
+
 var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10],
  				"Magma" : ["Magma","Turn the ground to molten rock", 5, 10],
 			 	"Water" : ["Water Blast","Blast foes back and deal damage with a pressurized beam of water", 5, 10],
