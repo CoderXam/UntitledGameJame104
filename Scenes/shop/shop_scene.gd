@@ -1,8 +1,7 @@
 extends Node2D
 	
 # positions in array:
-# 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop
-
+# 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop (out of 100)
 var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10],
  				"Magma" : ["Magma","Turn the ground to molten rock", 5, 10],
 			 	"Water" : ["Water Blast","Blast foes back and deal damage with a pressurized beam of water", 5, 10],
@@ -13,30 +12,30 @@ var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10]
 				"Lightning" : ["Lightning Bolt","Shock and stun enemies with a bolt of lightning", 5, 10], 
 				"Amplify" : ["Amplify","Amplify other runes", 5, 10], 
 				"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
-# Called when the node enters the scene tree for the first time.
 
 var pool = [shop_inv["Fire"],shop_inv["Magma"],shop_inv["Water"],shop_inv["Shield"],shop_inv["Orb"],shop_inv["Lifesteal"],shop_inv["Root"],shop_inv["Lightning"],shop_inv["Amplify"],shop_inv["Thorn"],]
-var available = []
+var available = [] # The runes available in the shop
 var randnum = 0
-var names = []
-var desc = []
-var stock_text = []
-var stock = [0,0,0,0]
+var names = [] # Rune name GUI element
+var desc = [] # Rune description GUI element
+var stock_text = [] # Rune stock GUI element
+var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
 
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
 	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
 	
-	for i in 4: # Generate rune for each slot in the shop
+	for i in 4: # Generate the rune for each of the 4 slots in the shop
 		randnum = randi_range(1,100)
-		for j in 10:
-			# If random number is between 1-10, choose the 1st spell
-			# If randum number is between 2-20 choose the 2nd spell
-			# etc. (This only works since probabilities are equally distributed)
+		for j in 10: # Go through the list of runes and choose 1
+			# If random number is between 1-10, choose the 1st spell,
+			# If randum number is between 11-20 choose the 2nd spell, etc.
+			# (This only works since probabilities are equally distributed)
 			if randnum > j*10 and randnum < (j+1)*10+1:
 				available.append(pool[j])
-				stock[i] = 2
+				stock[i] = 2 # Set the number of runes in stock for all runes
 		
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i][0]
@@ -49,24 +48,33 @@ func _process(delta: float) -> void:
 	$Balance.text = "You have " + str(PlayerData1.currency) + " moneys"
 	$Inventory.text = "Inventory: \n"+str(PlayerData1.inventory)
 
+#-----------------------------------------------------------------------------------------------------------
+# BUTTONS
+#-----------------------------------------------------------------------------------------------------------
+# Under here are 4 functions that do the same thing, there is 1 for each rune in the shop
+# I used signals to detect when a button is pressed so I had to make a seperate function for each signal
+# If someone can figure out a better way to did (i.e. to avoid 4 copies of the same function) pls fix it
+# - Max
+
 func _on_rune_1_pressed() -> void:
 	var rune = available[0]
-	if PlayerData1.currency >= rune[2] and stock[0] > 0:
+	if PlayerData1.currency >= rune[2] and stock[0] > 0: # Check if money >= rune price and if in stock
 		# BUY RUNE
 		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune[2]
 		PlayerData1.add_to_inventory(rune)
 		stock[0] -= 1
-		if stock[0] > 0:
+		if stock[0] > 0: # If still in stock
 			stock_text[0].text = str(stock[0]) +" in stock"
 		else:
 			stock_text[0].text = "out of stock"
-		
 		print("pruchased " + rune[0])
+	
+	elif stock[0] == 0: # If out of stock
 		# BUY FAILED
-	elif stock[0] == 0:
 		$Shopkeeper/Welcome.text = "Sorry pal, none left"
-	elif PlayerData1.currency < rune[2]:
+	elif PlayerData1.currency < rune[2]: # If not enough money
+		# BUY FAILED
 		$Shopkeeper/Welcome.text = "Nothing in life is free"
 
 func _on_rune_2_pressed() -> void:
