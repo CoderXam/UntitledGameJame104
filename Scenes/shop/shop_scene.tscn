@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
 
 [node name="ShopScene" type="Node2D"]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_2nlhh")
 
 [node name="rune1" type="TextureRect" parent="."]
-offset_left = 324.0
-offset_top = 228.0
-offset_right = 364.0
-offset_bottom = 268.0
+offset_left = 320.0
+offset_top = 257.0
+offset_right = 360.0
+offset_bottom = 297.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune1"]
@@ -57,10 +57,10 @@ scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune2" type="TextureRect" parent="."]
-offset_left = 471.0
-offset_top = 228.0
-offset_right = 511.0
-offset_bottom = 268.0
+offset_left = 467.0
+offset_top = 257.0
+offset_right = 507.0
+offset_bottom = 297.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune2"]
@@ -105,10 +105,10 @@ scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune3" type="TextureRect" parent="."]
-offset_left = 617.0
-offset_top = 227.0
-offset_right = 657.0
-offset_bottom = 267.0
+offset_left = 613.0
+offset_top = 256.0
+offset_right = 653.0
+offset_bottom = 296.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune3"]
@@ -153,10 +153,10 @@ scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune4" type="TextureRect" parent="."]
-offset_left = 768.0
-offset_top = 232.0
-offset_right = 808.0
-offset_bottom = 272.0
+offset_left = 760.0
+offset_top = 256.0
+offset_right = 800.0
+offset_bottom = 296.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune4"]

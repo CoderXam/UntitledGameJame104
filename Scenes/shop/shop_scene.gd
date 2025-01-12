@@ -46,11 +46,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Balance.text = "You have " + str(PlayerData1.currency) + " moneys"
-	$Inventory.text = str(PlayerData1.inventory)
+	$Inventory.text = "Inventory: \n"+str(PlayerData1.inventory)
 
 func _on_rune_1_pressed() -> void:
 	var rune = available[0]
 	if PlayerData1.currency >= rune[2] and stock[0] > 0:
+		# BUY RUNE
+		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune[2]
 		PlayerData1.add_to_inventory(rune)
 		stock[0] -= 1
@@ -60,13 +62,17 @@ func _on_rune_1_pressed() -> void:
 			stock_text[0].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print(PlayerData1.inventory)
-	else:
-		print("not enough money or out of stock")
+		# BUY FAILED
+	elif stock[0] == 0:
+		$Shopkeeper/Welcome.text = "Sorry pal, none left"
+	elif PlayerData1.currency < rune[2]:
+		$Shopkeeper/Welcome.text = "Nothing in life is free"
 
 func _on_rune_2_pressed() -> void:
 	var rune = available[1]
 	if PlayerData1.currency >= rune[2] and stock[1] > 0:
+		# BUY RUNE
+		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune[2]
 		PlayerData1.add_to_inventory(rune)
 		stock[1] -= 1
@@ -76,13 +82,17 @@ func _on_rune_2_pressed() -> void:
 			stock_text[1].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print(PlayerData1.inventory)
-	else:
-		print("not enough money or out of stock")
+	# BUY FAILED
+	elif stock[1] == 0:
+		$Shopkeeper/Welcome.text = "Sorry pal, none left"
+	elif PlayerData1.currency < rune[2]:
+		$Shopkeeper/Welcome.text = "Nothing in life is free"
 
 func _on_rune_3_pressed() -> void:
 	var rune = available[2]
 	if PlayerData1.currency >= rune[2] and stock[2] > 0:
+		# BUY RUNE
+		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune[2]
 		PlayerData1.add_to_inventory(rune)
 		stock[2] -= 1
@@ -92,13 +102,17 @@ func _on_rune_3_pressed() -> void:
 			stock_text[2].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print(PlayerData1.inventory)
-	else:
-		print("not enough money or out of stock")
+	# BUY FAILED
+	elif stock[2] == 0:
+		$Shopkeeper/Welcome.text = "Sorry pal, none left"
+	elif PlayerData1.currency < rune[2]:
+		$Shopkeeper/Welcome.text = "Nothing in life is free"
 
 func _on_rune_4_pressed() -> void:
 	var rune = available[3]
 	if PlayerData1.currency >= rune[2] and stock[3] > 0:
+		# BUY RUNE
+		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune[2]
 		PlayerData1.add_to_inventory(rune)
 		stock[3] -= 1
@@ -108,6 +122,8 @@ func _on_rune_4_pressed() -> void:
 			stock_text[3].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print(PlayerData1.inventory)
-	else:
-		print("not enough money or out of stock")
+	# BUY FAILED
+	elif stock[3] == 0:
+		$Shopkeeper/Welcome.text = "Sorry pal, none left"
+	elif PlayerData1.currency < rune[2]:
+		$Shopkeeper/Welcome.text = "Nothing in life is free"
