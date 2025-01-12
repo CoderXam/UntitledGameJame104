@@ -75,9 +75,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cibqy")
 }],
-"loop": false,
+"loop": true,
 "name": &"Glow_Idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
