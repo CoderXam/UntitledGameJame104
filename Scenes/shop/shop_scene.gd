@@ -1,17 +1,17 @@
 extends Node2D
 	
 # positions in array:
-# 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop, 4 = amount in stock
-var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10, 0],
- 				"Magma" : ["Magma","Turn the ground to molten rock", 5, 10, 0],
-			 	"Water" : ["Water Blast","Blast foes back and deal damage with a pressurized beam of water", 5, 10, 0],
-				"Shield" : ["Shield","Block incoming attacks with an arcane ward", 5, 10, 0],
-			 	"Orb" : ["Orb","Pierce through enemies with a spectral orb", 5, 10, 0],
-				"Lifesteal" : ["Lifesteal","Sap away the lifeforce of enemies for yourself", 5, 10, 0], 
-				"Root" : ["Root Snatch","Fix enemies in place with grasping roots", 5, 10, 0],
-				"Lightning" : ["Lightning Bolt","Shock and stun enemies with a bolt of lightning", 5, 10, 0], 
-				"Amplify" : ["Amplify","Amplify other runes", 5, 10, 0], 
-				"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10, 0]}
+# 0 = name, 1 = description, 2 = price, 3 = probability of showing up in shop
+var shop_inv = {"Fire": ["Fireball","Launch a scorching fireball attack", 5, 10],
+ 				"Magma" : ["Magma","Turn the ground to molten rock", 5, 10],
+			 	"Water" : ["Water Blast","Blast foes back and deal damage with a pressurized beam of water", 5, 10],
+				"Shield" : ["Shield","Block incoming attacks with an arcane ward", 5, 10],
+			 	"Orb" : ["Orb","Pierce through enemies with a spectral orb", 5, 10],
+				"Lifesteal" : ["Lifesteal","Sap away the lifeforce of enemies for yourself", 5, 10], 
+				"Root" : ["Root Snatch","Fix enemies in place with grasping roots", 5, 10],
+				"Lightning" : ["Lightning Bolt","Shock and stun enemies with a bolt of lightning", 5, 10], 
+				"Amplify" : ["Amplify","Amplify other runes", 5, 10], 
+				"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
 # Called when the node enters the scene tree for the first time.
 
 var pool = [shop_inv["Fire"],shop_inv["Magma"],shop_inv["Water"],shop_inv["Shield"],shop_inv["Orb"],shop_inv["Lifesteal"],shop_inv["Root"],shop_inv["Lightning"],shop_inv["Amplify"],shop_inv["Thorn"],]
