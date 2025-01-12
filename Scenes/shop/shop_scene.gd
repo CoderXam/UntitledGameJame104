@@ -33,6 +33,7 @@ var names = [] # Rune name GUI element
 var desc = [] # Rune description GUI element
 var stock_text = [] # Rune stock GUI element
 var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
+var buttons = [] # Cost GUI element
 
 var inv_list := "Inventory: \n"
 
@@ -41,6 +42,7 @@ func _ready() -> void:
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
 	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
+	buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy,]
 	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop
 		randnum = randi_range(1,100)
@@ -56,6 +58,7 @@ func _ready() -> void:
 		names[i].text = available[i].rune_name
 		desc[i].text = available[i].description
 		stock_text[i].text = str(stock[i]) +" in stock"
+		buttons[i].text = "Buy \n ("+str(available[i].price)+" moneys)"
 		
 	refresh_inventory()
 
