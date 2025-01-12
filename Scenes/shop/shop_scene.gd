@@ -43,7 +43,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$Balance.text = "You have " + str(PlayerData1.currency) + " moneys"
 	
 
 func _on_rune_1_pressed() -> void:
@@ -58,7 +58,6 @@ func _on_rune_1_pressed() -> void:
 			stock[0].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print("currency: "+ str(PlayerData1.currency))
 		print(PlayerData1.inventory)
 	else:
 		print("not enough money or out of stock")
@@ -75,7 +74,6 @@ func _on_rune_2_pressed() -> void:
 			stock[1].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print("currency: "+ str(PlayerData1.currency))
 		print(PlayerData1.inventory)
 	else:
 		print("not enough money or out of stock")
@@ -93,7 +91,6 @@ func _on_rune_3_pressed() -> void:
 			stock[2].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print("currency: "+ str(PlayerData1.currency))
 		print(PlayerData1.inventory)
 	else:
 		print("not enough money or out of stock")
@@ -111,7 +108,6 @@ func _on_rune_4_pressed() -> void:
 			stock[3].text = "out of stock"
 		
 		print("pruchased " + rune[0])
-		print("currency: "+ str(PlayerData1.currency))
 		print(PlayerData1.inventory)
 	else:
 		print("not enough money or out of stock")

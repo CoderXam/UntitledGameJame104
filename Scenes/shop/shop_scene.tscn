@@ -219,6 +219,13 @@ offset_right = 850.0
 offset_bottom = 127.0
 text = "WELCOME TO MY SHOP"
 
+[node name="Balance" type="RichTextLabel" parent="."]
+offset_left = 682.5
+offset_top = 142.5
+offset_right = 897.5
+offset_bottom = 182.5
+text = "You have 1 morbillion $$$"
+
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
 [connection signal="pressed" from="rune3/buy" to="." method="_on_rune_3_pressed"]
