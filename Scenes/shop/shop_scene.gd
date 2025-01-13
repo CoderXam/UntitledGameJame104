@@ -82,99 +82,37 @@ func refresh_inventory() -> void:
 		inv_slots[i].texture = PlayerData1.inventory[i].image
 		inv_slots[i].show()
 	$Inventory.text = inv_list
+
+func button_pressed(x:int) -> void:
+	var rune = available[x]
+	if PlayerData1.currency >= rune.price and stock[x] > 0: # Check if money >= rune price and if in stock
+		# BUY RUNE
+		$Shopkeeper/Welcome.text = "Great choice!"
+		PlayerData1.currency -= rune.price
+		PlayerData1.add_to_inventory(rune)
+		refresh_inventory()
+		stock[x] -= 1
+		if stock[x] > 0: # If still in stock
+			stock_text[x].text = str(stock[x]) +" in stock"
+		else:
+			stock_text[x].text = "out of stock"
+		print("pruchased " + rune.rune_name)
 	
-#-----------------------------------------------------------------------------------------------------------
-# BUTTONS
-#-----------------------------------------------------------------------------------------------------------
-# Under here are 4 functions that do the same thing, there is 1 for each rune in the shop
-# I used signals to detect when a button is pressed so I had to make a seperate function for each signal
-# If someone can figure out a better way to did (i.e. to avoid 4 copies of the same function) pls fix it
-# - Max
+	elif stock[x] == 0: # If out of stock
+		# BUY FAILED
+		$Shopkeeper/Welcome.text = "Sorry pal, none left"
+	elif PlayerData1.currency < rune.price: # If not enough money
+		# BUY FAILED
+		$Shopkeeper/Welcome.text = "Nothing in life is free"
 
 func _on_rune_1_pressed() -> void:
-	var rune = available[0]
-	if PlayerData1.currency >= rune.price and stock[0] > 0: # Check if money >= rune price and if in stock
-		# BUY RUNE
-		$Shopkeeper/Welcome.text = "Great choice!"
-		PlayerData1.currency -= rune.price
-		PlayerData1.add_to_inventory(rune)
-		refresh_inventory()
-		stock[0] -= 1
-		if stock[0] > 0: # If still in stock
-			stock_text[0].text = str(stock[0]) +" in stock"
-		else:
-			stock_text[0].text = "out of stock"
-		print("pruchased " + rune.rune_name)
-	
-	elif stock[0] == 0: # If out of stock
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Sorry pal, none left"
-	elif PlayerData1.currency < rune.price: # If not enough money
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Nothing in life is free"
+	button_pressed(0)
 
 func _on_rune_2_pressed() -> void:
-	var rune = available[1]
-	if PlayerData1.currency >= rune.price and stock[1] > 0: # Check if money >= rune price and if in stock
-		# BUY RUNE
-		$Shopkeeper/Welcome.text = "Great choice!"
-		PlayerData1.currency -= rune.price
-		PlayerData1.add_to_inventory(rune)
-		refresh_inventory()
-		stock[1] -= 1
-		if stock[1] > 0: # If still in stock
-			stock_text[1].text = str(stock[1]) +" in stock"
-		else:
-			stock_text[1].text = "out of stock"
-		print("pruchased " + rune.rune_name)
-	
-	elif stock[1] == 0: # If out of stock
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Sorry pal, none left"
-	elif PlayerData1.currency < rune.price: # If not enough money
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Nothing in life is free"
+	button_pressed(1)
 
 func _on_rune_3_pressed() -> void:
-	var rune = available[2]
-	if PlayerData1.currency >= rune.price and stock[2] > 0: # Check if money >= rune price and if in stock
-		# BUY RUNE
-		$Shopkeeper/Welcome.text = "Great choice!"
-		PlayerData1.currency -= rune.price
-		PlayerData1.add_to_inventory(rune)
-		refresh_inventory()
-		stock[2] -= 1
-		if stock[2] > 0: # If still in stock
-			stock_text[2].text = str(stock[2]) +" in stock"
-		else:
-			stock_text[2].text = "out of stock"
-		print("pruchased " + rune.rune_name)
-	
-	elif stock[2] == 0: # If out of stock
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Sorry pal, none left"
-	elif PlayerData1.currency < rune.price: # If not enough money
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Nothing in life is free"
+	button_pressed(2)
 
 func _on_rune_4_pressed() -> void:
-	var rune = available[3]
-	if PlayerData1.currency >= rune.price and stock[3] > 0: # Check if money >= rune price and if in stock
-		# BUY RUNE
-		$Shopkeeper/Welcome.text = "Great choice!"
-		PlayerData1.currency -= rune.price
-		PlayerData1.add_to_inventory(rune)
-		refresh_inventory()
-		stock[3] -= 1
-		if stock[3] > 0: # If still in stock
-			stock_text[3].text = str(stock[3]) +" in stock"
-		else:
-			stock_text[3].text = "out of stock"
-		print("pruchased " + rune.rune_name)
-	
-	elif stock[3] == 0: # If out of stock
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Sorry pal, none left"
-	elif PlayerData1.currency < rune.price: # If not enough money
-		# BUY FAILED
-		$Shopkeeper/Welcome.text = "Nothing in life is free"
+	button_pressed(3)
