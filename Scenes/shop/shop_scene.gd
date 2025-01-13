@@ -62,6 +62,7 @@ func _ready() -> void:
 		names[i].text = available[i].rune_name
 		desc[i].text = available[i].description
 		stock_text[i].text = str(stock[i]) +" in stock"
+		stock_text[i].add_theme_color_override("default_color", Color(1,1,1,1))
 		buttons[i].text = "Buy \n ("+str(available[i].price)+" moneys)"
 		images[i].texture = available[i].image
 		
@@ -96,6 +97,7 @@ func button_pressed(x:int) -> void:
 			stock_text[x].text = str(stock[x]) +" in stock"
 		else:
 			stock_text[x].text = "out of stock"
+			stock_text[x].add_theme_color_override("default_color", Color(1,0,0,1))
 		print("pruchased " + rune.rune_name)
 	
 	elif stock[x] == 0: # If out of stock
