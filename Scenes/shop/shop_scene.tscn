@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=12 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
@@ -15,6 +15,8 @@
 [sub_resource type="QuadMesh" id="QuadMesh_cq37w"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_sr8lg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4lx2u"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_cxor8"]
 
@@ -209,16 +211,22 @@ scale = Vector2(126, 56.93)
 mesh = SubResource("QuadMesh_sr8lg")
 
 [node name="Shopkeeper" type="Sprite2D" parent="."]
-position = Vector2(568, 173.557)
+position = Vector2(552, 173.557)
 scale = Vector2(13.735, 7.55538)
 texture = ExtResource("3_6yepq")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Shopkeeper"]
+modulate = Color(0.344076, 0.344076, 0.344076, 1)
+position = Vector2(17.3644, -4.51495)
+scale = Vector2(22.9601, 10.7354)
+mesh = SubResource("SphereMesh_4lx2u")
+
 [node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
-offset_left = 6.22222
-offset_top = -5.64706
-offset_right = 274.222
-offset_bottom = 34.3529
-scale = Vector2(0.1, 0.1)
+offset_left = 8.73681
+offset_top = -7.3533
+offset_right = 195.737
+offset_bottom = 32.6467
+scale = Vector2(0.085, 0.153)
 text = "WELCOME TO MY SHOP"
 
 [node name="rune1" type="TextureRect" parent="."]
@@ -422,6 +430,7 @@ scale = Vector2(1.5, 1.5)
 text = "SHOP"
 
 [node name="Balance" type="RichTextLabel" parent="."]
+modulate = Color(1, 0.894118, 0, 1)
 offset_left = 908.0
 offset_top = 188.0
 offset_right = 1038.0
