@@ -226,14 +226,17 @@ shape = SubResource("RectangleShape2D_c7ptq")
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_odc6b")
 
-[node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
-position = Vector2(244, 162)
+[node name="Drop Areas" type="Node" parent="."]
+
+[node name="Drop Area" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(240, 160)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("2_32mxo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area"]
 shape = SubResource("RectangleShape2D_geryv")
 
-[node name="ColorRect" type="ColorRect" parent="Drop Area"]
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area"]
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
@@ -241,14 +244,127 @@ offset_bottom = 32.0
 color = Color(1, 0.0862745, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Drop Area2" type="StaticBody2D" parent="." groups=["dropable"]]
-position = Vector2(382, 204)
+[node name="Drop Area2" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(300, 160)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("2_32mxo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area2"]
 shape = SubResource("RectangleShape2D_geryv")
 
-[node name="ColorRect" type="ColorRect" parent="Drop Area2"]
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area3" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(360, 160)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area3"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area4" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(240, 215)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area4"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area5" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(300, 215)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area5"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area6" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(360, 215)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area6"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area7" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(240, 270)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area7"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area8" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(300, 270)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area8"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area9" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
+position = Vector2(360, 270)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area9"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area9"]
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
