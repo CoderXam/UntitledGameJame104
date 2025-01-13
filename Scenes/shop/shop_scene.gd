@@ -41,6 +41,7 @@ var inv_slots = [] # Rune images in the inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerData1.currency = 100
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
 	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
@@ -56,7 +57,7 @@ func _ready() -> void:
 			# (This only works since probabilities are equally distributed)
 			if randnum > j*10 and randnum < (j+1)*10+1:
 				available.append(shop_inv[j])
-				stock[i] = 2 # Set the number of runes in stock for all runes
+				stock[i] = 10 # Set the number of runes in stock for all runes
 		
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name
@@ -86,7 +87,9 @@ func refresh_inventory() -> void:
 
 func button_pressed(x:int) -> void:
 	var rune = available[x]
-	if PlayerData1.currency >= rune.price and stock[x] > 0: # Check if money >= rune price and if in stock
+	
+	# Check if money >= rune price AND if in rune is in stock AND if inventory is not full
+	if PlayerData1.currency >= rune.price and stock[x] > 0 and PlayerData1.inventory.size() < PlayerData1.capacity:
 		# BUY RUNE
 		$Shopkeeper/Welcome.text = "Great choice!"
 		PlayerData1.currency -= rune.price
@@ -106,6 +109,8 @@ func button_pressed(x:int) -> void:
 	elif PlayerData1.currency < rune.price: # If not enough money
 		# BUY FAILED
 		$Shopkeeper/Welcome.text = "Nothing in life is free"
+	elif PlayerData1.inventory.size() == PlayerData1.capacity: # If inventory full
+		$Shopkeeper/Welcome.text = "How you gonna carry that?"
 
 func _on_rune_1_pressed() -> void:
 	button_pressed(0)
