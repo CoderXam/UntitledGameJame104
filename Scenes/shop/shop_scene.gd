@@ -47,7 +47,7 @@ func _ready() -> void:
 	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
 	buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy]
 	images = [$rune1, $rune2, $rune3, $rune4]
-	inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9, $Node2D/Inv10, $Node2D/Inv11, $Node2D/Inv12, $Node2D/Inv13, $Node2D/Inv14, $Node2D/Inv15]
+	inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9]
 	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop
 		randnum = randi_range(1,100)
@@ -57,7 +57,7 @@ func _ready() -> void:
 			# (This only works since probabilities are equally distributed)
 			if randnum > j*10 and randnum < (j+1)*10+1:
 				available.append(shop_inv[j])
-				stock[i] = 10 # Set the number of runes in stock for all runes
+				stock[i] = 3 # Set the number of runes in stock for all runes
 		
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name

@@ -146,47 +146,11 @@ position = Vector2(138, 183)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D10" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(43, 136)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
-[node name="MeshInstance2D11" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(91, 136)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
-[node name="MeshInstance2D12" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(138, 137)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
-[node name="MeshInstance2D13" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(43, 90)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
-[node name="MeshInstance2D14" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(91, 90)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
-[node name="MeshInstance2D15" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
-position = Vector2(138, 90)
-scale = Vector2(41.4, 41.4387)
-mesh = SubResource("QuadMesh_cq37w")
-
 [node name="Inventory" type="RichTextLabel" parent="."]
-offset_left = 984.0
-offset_top = 34.0
-offset_right = 1140.0
-offset_bottom = 246.0
+offset_left = 46.0
+offset_top = 146.0
+offset_right = 318.0
+offset_bottom = 308.0
 text = "Inventory:
 A thing
 Another thing
@@ -222,10 +186,10 @@ scale = Vector2(22.9601, 10.7354)
 mesh = SubResource("SphereMesh_4lx2u")
 
 [node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
-offset_left = 8.73681
-offset_top = -7.3533
-offset_right = 195.737
-offset_bottom = 32.6467
+offset_left = 9.0
+offset_top = -7.0
+offset_right = 196.0
+offset_bottom = 64.0
 scale = Vector2(0.085, 0.153)
 text = "WELCOME TO MY SHOP"
 
@@ -453,6 +417,7 @@ offset_bottom = 40.0
 texture = SubResource("ImageTexture_cxor8")
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 185)
 
 [node name="Inv1" type="Sprite2D" parent="Node2D"]
 z_index = 1
@@ -505,42 +470,6 @@ texture = ExtResource("2_eub30")
 [node name="Inv9" type="Sprite2D" parent="Node2D"]
 z_index = 1
 position = Vector2(276, 366)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv10" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(88, 458)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv11" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(184, 460)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv12" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(278, 460)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv13" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(86, 550)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv14" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(182, 550)
-scale = Vector2(4.114, 4)
-texture = ExtResource("2_eub30")
-
-[node name="Inv15" type="Sprite2D" parent="Node2D"]
-z_index = 1
-position = Vector2(278, 552)
 scale = Vector2(4.114, 4)
 texture = ExtResource("2_eub30")
 

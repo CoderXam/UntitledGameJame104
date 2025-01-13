@@ -6,7 +6,7 @@ extends Node
 @export var currency = 21
 
 var inventory: Array = []
-var capacity = 15 # Max amount of items in inventory
+var capacity = 9 # Max amount of items in inventory
 var starting_rune: Rune = Rune.new("magic thing","a magical thing",0,0)
 
 # Called when the node enters the scene tree for the first time.
