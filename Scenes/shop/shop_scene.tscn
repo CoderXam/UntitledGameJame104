@@ -86,95 +86,107 @@ position = Vector2(180, 336.5)
 scale = Vector2(308, 537)
 mesh = SubResource("QuadMesh_sc53u")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(-0.305195, 0.401304)
-scale = Vector2(0.268831, 0.154334)
+[node name="slots" type="Node" parent="Inventory2"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(43, 276)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D4" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(-0.305195, 0.226257)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(91, 276)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D5" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.00649351, 0.229981)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(139, 276)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D6" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.311688, 0.229981)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(43, 229)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D7" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(-0.305195, 0.0512104)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(91, 230)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D8" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.00649351, 0.0512104)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(138, 230)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D9" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.311688, 0.0549348)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(43, 182)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D10" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(-0.305195, -0.120112)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(91, 182)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D11" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.00649345, -0.120112)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D9" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(138, 183)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D12" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.311688, -0.116387)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D10" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(43, 136)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D13" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(-0.305195, -0.291434)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D11" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(91, 136)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D14" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.00649345, -0.291434)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D12" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(138, 137)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D15" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.311688, -0.291434)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D13" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(43, 90)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.00649347, 0.401304)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D14" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(91, 90)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="Inventory2"]
-modulate = Color(0.513233, 0.513233, 0.513233, 1)
-position = Vector2(0.318182, 0.401304)
-scale = Vector2(0.268831, 0.154334)
+[node name="MeshInstance2D15" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+position = Vector2(138, 90)
+scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+
+[node name="Inventory" type="RichTextLabel" parent="."]
+offset_left = 984.0
+offset_top = 34.0
+offset_right = 1140.0
+offset_bottom = 246.0
+text = "Inventory:
+A thing
+Another thing
+Yet another thing"
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0.43134, 0.43134, 0.43134, 1)
@@ -190,13 +202,13 @@ mesh = SubResource("QuadMesh_sr8lg")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
 modulate = Color(0.306923, 0.306923, 0.306923, 1)
-position = Vector2(686, 51.535)
-scale = Vector2(574.763, 56.93)
+position = Vector2(673, 51.535)
+scale = Vector2(126, 56.93)
 mesh = SubResource("QuadMesh_sr8lg")
 
 [node name="Shopkeeper" type="Sprite2D" parent="."]
-position = Vector2(568, 150)
-scale = Vector2(13.5, 7.4375)
+position = Vector2(568, 173.557)
+scale = Vector2(13.735, 7.55538)
 texture = ExtResource("3_6yepq")
 
 [node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
@@ -415,15 +427,14 @@ offset_bottom = 241.0
 text = "You have
 1 morbillion $$$"
 
-[node name="Inventory" type="RichTextLabel" parent="."]
-offset_left = 50.0
-offset_top = 86.0
-offset_right = 206.0
-offset_bottom = 298.0
-text = "Inventory:
-A thing
-Another thing
-Yet another thing"
+[node name="InventoryLabel" type="RichTextLabel" parent="."]
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 188.0
+offset_bottom = 112.0
+scale = Vector2(2, 2)
+text = "Inventory
+"
 
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
