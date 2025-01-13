@@ -28,6 +28,14 @@ var scenes = ["res://Scenes/MapScene.tscn",
 "res://Scenes/shop/shop_scene.tscn"]
 var scene_index:int
 
+func _ready():
+	
+	# Get the current scene
+	for i in len(scenes):
+		if get_tree().current_scene.scene_file_path == scenes[i]:
+			scene_index = i
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_scene") and scene_index<scenes.size()-1:
 		scene_index += 1
@@ -37,8 +45,3 @@ func _input(event: InputEvent) -> void:
 		scene_index = 0
 		get_tree().change_scene_to_file(scenes[scene_index])
 		print("switched to " + scenes[scene_index])
-
-func _ready():
-	for i in len(scenes):
-		if get_tree().current_scene.scene_file_path == scenes[i]:
-			scene_index = i
