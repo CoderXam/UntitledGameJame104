@@ -19,6 +19,8 @@ func _ready():
 	#var PlayerHealth = $PlayerData.get("PlayerHealth")
 	#print(PlayerHealth)
 	$roundCounter.text = "Rounds Left: %d" % rounds
+	
+	refresh_inventory()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,6 +38,14 @@ func _process(delta):
 		_on_round_start()
 	
 
+@onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]
+# Displays list of items in inventory (copied forom shop code)
+func refresh_inventory() -> void:
+	for i in inv_slots:
+		i.hide()
+	for i in len(PlayerData1.inventory):
+		inv_slots[i].texture = PlayerData1.inventory[i].image
+		inv_slots[i].show()
 
 """
 MAKE SURE TO MANUALLY CONNECT THE endRound and startRound SIGNAL TO ALL OTHER INSTANCED SCENES

@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_area.gd" id="2_32mxo"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
+[ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="5_odc6b"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/rune.gd" id="5_ulx58"]
-[ext_resource type="Texture2D" uid="uid://tphf4jnwuugb" path="res://icon.svg" id="6_nlevl"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
@@ -89,19 +89,142 @@ offset_top = 16.0
 offset_right = 128.0
 offset_bottom = 43.0
 
-[node name="Rune" type="Node2D" parent="."]
-position = Vector2(96, 223)
+[node name="Runes" type="Node" parent="."]
+
+[node name="Rune" type="Node2D" parent="Runes"]
+position = Vector2(50, 160)
 script = ExtResource("5_ulx58")
 
-[node name="Sprite2D" type="Sprite2D" parent="Rune"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_nlevl")
+[node name="Area2D" type="Area2D" parent="Runes/Rune"]
+scale = Vector2(0.75, 0.75)
 
-[node name="Area2D" type="Area2D" parent="Rune"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rune/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune/Area2D"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune2" type="Node2D" parent="Runes"]
+position = Vector2(105, 160)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune2"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune2/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune2"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune3" type="Node2D" parent="Runes"]
+position = Vector2(160, 160)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune3"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune3/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune3"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune4" type="Node2D" parent="Runes"]
+position = Vector2(50, 215)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune4"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune4/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune4"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune5" type="Node2D" parent="Runes"]
+position = Vector2(105, 215)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune5"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune5/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune5"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune6" type="Node2D" parent="Runes"]
+position = Vector2(160, 215)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune6"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune6/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune6"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune7" type="Node2D" parent="Runes"]
+position = Vector2(50, 270)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune7"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune7/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune7"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune8" type="Node2D" parent="Runes"]
+position = Vector2(105, 270)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune8"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune8/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune8"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
+
+[node name="Rune9" type="Node2D" parent="Runes"]
+position = Vector2(160, 270)
+script = ExtResource("5_ulx58")
+
+[node name="Area2D" type="Area2D" parent="Runes/Rune9"]
+scale = Vector2(0.75, 0.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune9/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune9"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_odc6b")
 
 [node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
 position = Vector2(244, 162)
@@ -139,7 +262,39 @@ metadata/_edit_use_anchors_ = true
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
-[connection signal="body_entered" from="Rune/Area2D" to="Rune" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Rune/Area2D" to="Rune" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Rune/Area2D" to="Rune" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Rune/Area2D" to="Rune" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_mouse_exited"]
