@@ -7,7 +7,7 @@ extends Node
 
 var inventory: Array = []
 var capacity = 9 # Max amount of items in inventory
-var starting_rune: Rune = Rune.new("magic thing","a magical thing",0,0)
+var starting_rune: Rune = Rune.new("magic thing","a magical thing")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

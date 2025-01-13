@@ -15,16 +15,16 @@ extends Node2D
 				#"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
 
 '''New code using Rune class'''
-var fire := Rune.new("Fireball","Launch a scorching fireball attack")
-var magma := Rune.new("Magma Stomp","Turn the ground to molten rock")
-var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water")
-var shield := Rune.new("Shield","Block incoming attacks with an arcane ward")
-var orb := Rune.new("Orb","Pierce through enemies with a spectral orb")
-var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself")
-var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots")
-var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning")
-var amplify := Rune.new("Amplify","Amplify other runes")
-var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles")
+var fire := Rune.new("Fireball","Launch a scorching fireball attack", preload("res://Sprites/runes/fire.png"))
+var magma := Rune.new("Magma Stomp","Turn the ground to molten rock", preload("res://Sprites/runes/magma.png"))
+var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water", preload("res://Sprites/runes/water.png"))
+var shield := Rune.new("Shield","Block incoming attacks with an arcane ward", preload("res://Sprites/runes/shield.png"))
+var orb := Rune.new("Orb","Pierce through enemies with a spectral orb", preload("res://Sprites/runes/orb.png"))
+var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself", preload("res://Sprites/runes/lifesteal.png"))
+var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", preload("res://Sprites/runes/root.png"))
+var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"))
+var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"))
+var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"))
 
 var shop_inv = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns] # List of all runes
 var available = [] # The runes available in the shop
