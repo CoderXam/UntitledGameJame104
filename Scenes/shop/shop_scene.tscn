@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=9 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
@@ -8,7 +8,11 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_sc53u"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_c5l4o"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_cq37w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_sr8lg"]
 
 [node name="ShopScene" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -25,6 +29,30 @@ modulate = Color(0.501407, 0.501406, 0.501406, 1)
 position = Vector2(714, 430)
 scale = Vector2(700, 350)
 mesh = SubResource("QuadMesh_sc53u")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.521141, 0.521141, 0.52114, 1)
+position = Vector2(-0.348571, -0.325714)
+scale = Vector2(0.114286, 0.228571)
+mesh = SubResource("QuadMesh_c5l4o")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.521141, 0.521141, 0.52114, 1)
+position = Vector2(-0.117143, -0.325714)
+scale = Vector2(0.114286, 0.228571)
+mesh = SubResource("QuadMesh_c5l4o")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.521141, 0.521141, 0.52114, 1)
+position = Vector2(0.086, -0.326)
+scale = Vector2(0.114286, 0.228571)
+mesh = SubResource("QuadMesh_c5l4o")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.521141, 0.521141, 0.52114, 1)
+position = Vector2(0.306, -0.326)
+scale = Vector2(0.114286, 0.228571)
+mesh = SubResource("QuadMesh_c5l4o")
 
 [node name="Inventory2" type="MeshInstance2D" parent="."]
 modulate = Color(0.501407, 0.501406, 0.501406, 1)
@@ -122,200 +150,26 @@ position = Vector2(0.318182, 0.401304)
 scale = Vector2(0.268831, 0.154334)
 mesh = SubResource("QuadMesh_cq37w")
 
-[node name="rune1" type="TextureRect" parent="."]
-offset_left = 420.0
-offset_top = 282.0
-offset_right = 484.0
-offset_bottom = 346.0
-texture = ExtResource("2_eub30")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.43134, 0.43134, 0.43134, 1)
+position = Vector2(686, 128)
+scale = Vector2(574.763, 209.86)
+mesh = SubResource("QuadMesh_sr8lg")
 
-[node name="buy" type="Button" parent="rune1"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 186.0
-offset_right = 54.0
-offset_bottom = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "buy"
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+modulate = Color(0.344076, 0.344076, 0.344076, 1)
+position = Vector2(968, 210)
+scale = Vector2(136, 66)
+mesh = SubResource("QuadMesh_sr8lg")
 
-[node name="description" type="RichTextLabel" parent="rune1"]
-layout_mode = 0
-offset_left = -28.0
-offset_top = 104.0
-offset_right = 150.0
-offset_bottom = 177.0
-scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm "
-
-[node name="name" type="RichTextLabel" parent="rune1"]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 76.0
-offset_right = 108.0
-offset_bottom = 116.0
-text = "name"
-
-[node name="stock" type="RichTextLabel" parent="rune1"]
-layout_mode = 0
-offset_left = -30.0
-offset_top = 168.0
-offset_right = 98.0
-offset_bottom = 208.0
-scale = Vector2(0.9, 0.9)
-text = "1 In stock"
-
-[node name="rune2" type="TextureRect" parent="."]
-offset_left = 572.0
-offset_top = 282.0
-offset_right = 636.0
-offset_bottom = 346.0
-texture = ExtResource("2_eub30")
-
-[node name="buy" type="Button" parent="rune2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 186.0
-offset_right = 54.0
-offset_bottom = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "buy"
-
-[node name="description" type="RichTextLabel" parent="rune2"]
-layout_mode = 0
-offset_left = -16.0
-offset_top = 106.0
-offset_right = 160.0
-offset_bottom = 195.0
-scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm "
-
-[node name="name" type="RichTextLabel" parent="rune2"]
-layout_mode = 0
-offset_left = -8.0
-offset_top = 74.0
-offset_right = 129.0
-offset_bottom = 114.0
-text = "name"
-
-[node name="stock" type="RichTextLabel" parent="rune2"]
-layout_mode = 0
-offset_left = -12.0
-offset_top = 182.0
-offset_right = 100.0
-offset_bottom = 222.0
-scale = Vector2(0.9, 0.9)
-text = "1 In stock"
-
-[node name="rune3" type="TextureRect" parent="."]
-offset_left = 728.0
-offset_top = 282.0
-offset_right = 792.0
-offset_bottom = 346.0
-texture = ExtResource("2_eub30")
-
-[node name="buy" type="Button" parent="rune3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 186.0
-offset_right = 54.0
-offset_bottom = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "buy"
-
-[node name="description" type="RichTextLabel" parent="rune3"]
-layout_mode = 0
-offset_left = -24.0
-offset_top = 104.0
-offset_right = 132.0
-offset_bottom = 188.0
-scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm"
-
-[node name="name" type="RichTextLabel" parent="rune3"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = 76.0
-offset_right = 133.0
-offset_bottom = 116.0
-text = "name"
-
-[node name="stock" type="RichTextLabel" parent="rune3"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = 175.0
-offset_right = 121.0
-offset_bottom = 215.0
-scale = Vector2(0.9, 0.9)
-text = "1 In stock"
-
-[node name="rune4" type="TextureRect" parent="."]
-offset_left = 888.0
-offset_top = 282.0
-offset_right = 952.0
-offset_bottom = 346.0
-texture = ExtResource("2_eub30")
-
-[node name="buy" type="Button" parent="rune4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 186.0
-offset_right = 54.0
-offset_bottom = 246.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "buy"
-
-[node name="description" type="RichTextLabel" parent="rune4"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = 106.0
-offset_right = 131.0
-offset_bottom = 177.0
-scale = Vector2(0.9, 0.9)
-text = "descrption: lorem ipsum skibidi bap mmmmmm "
-
-[node name="name" type="RichTextLabel" parent="rune4"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = 84.0
-offset_right = 108.0
-offset_bottom = 124.0
-text = "name"
-
-[node name="stock" type="RichTextLabel" parent="rune4"]
-layout_mode = 0
-offset_left = -18.0
-offset_top = 178.0
-offset_right = 158.0
-offset_bottom = 218.0
-scale = Vector2(0.9, 0.9)
-text = "1 In stock"
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.306923, 0.306923, 0.306923, 1)
+position = Vector2(686, 51.535)
+scale = Vector2(574.763, 56.93)
+mesh = SubResource("QuadMesh_sr8lg")
 
 [node name="Shopkeeper" type="Sprite2D" parent="."]
-position = Vector2(561, 139)
+position = Vector2(568, 150)
 scale = Vector2(13.5, 7.4375)
 texture = ExtResource("3_6yepq")
 
@@ -327,19 +181,213 @@ offset_bottom = 34.7563
 scale = Vector2(0.1, 0.1)
 text = "WELCOME TO MY SHOP"
 
+[node name="rune1" type="TextureRect" parent="."]
+offset_left = 438.0
+offset_top = 282.0
+offset_right = 502.0
+offset_bottom = 346.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 222.0
+offset_right = 44.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 108.0
+offset_right = 118.0
+offset_bottom = 237.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 82.0
+offset_right = 112.0
+offset_bottom = 122.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune1"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 222.0
+offset_right = 106.0
+offset_bottom = 262.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune2" type="TextureRect" parent="."]
+offset_left = 602.0
+offset_top = 284.0
+offset_right = 666.0
+offset_bottom = 348.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 220.0
+offset_right = 46.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 106.0
+offset_right = 133.0
+offset_bottom = 237.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 82.0
+offset_right = 123.0
+offset_bottom = 122.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune2"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 224.0
+offset_right = 92.0
+offset_bottom = 264.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune3" type="TextureRect" parent="."]
+offset_left = 744.0
+offset_top = 286.0
+offset_right = 808.0
+offset_bottom = 350.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 220.0
+offset_right = 52.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 108.0
+offset_right = 124.0
+offset_bottom = 237.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm"
+
+[node name="name" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 82.0
+offset_right = 131.0
+offset_bottom = 122.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune3"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 220.0
+offset_right = 131.0
+offset_bottom = 260.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
+[node name="rune4" type="TextureRect" parent="."]
+offset_left = 896.0
+offset_top = 288.0
+offset_right = 960.0
+offset_bottom = 352.0
+texture = ExtResource("2_eub30")
+
+[node name="buy" type="Button" parent="rune4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = 218.0
+offset_right = 48.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "buy"
+
+[node name="description" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 110.0
+offset_right = 129.0
+offset_bottom = 234.0
+scale = Vector2(0.9, 0.9)
+text = "descrption: lorem ipsum skibidi bap mmmmmm "
+
+[node name="name" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 82.0
+offset_right = 112.0
+offset_bottom = 122.0
+text = "name"
+
+[node name="stock" type="RichTextLabel" parent="rune4"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 220.0
+offset_right = 156.0
+offset_bottom = 260.0
+scale = Vector2(0.9, 0.9)
+text = "1 In stock"
+
 [node name="Shop" type="RichTextLabel" parent="."]
-offset_left = 545.0
-offset_top = 17.0
-offset_right = 645.0
-offset_bottom = 57.0
+offset_left = 642.0
+offset_top = 34.0
+offset_right = 722.0
+offset_bottom = 74.0
+scale = Vector2(1.5, 1.5)
 text = "SHOP"
 
 [node name="Balance" type="RichTextLabel" parent="."]
-offset_left = 682.5
-offset_top = 142.5
-offset_right = 897.5
-offset_bottom = 182.5
-text = "You have 1 morbillion $$$"
+offset_left = 908.0
+offset_top = 188.0
+offset_right = 1038.0
+offset_bottom = 241.0
+text = "You have
+1 morbillion $$$"
 
 [node name="Inventory" type="RichTextLabel" parent="."]
 offset_left = 50.0

@@ -65,7 +65,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Balance.text = "You have " + str(PlayerData1.currency) + " moneys"
+	$Balance.text = "You have \n" + str(PlayerData1.currency) + " moneys"
 
 # Displays list of items in inventory
 func refresh_inventory() -> void:
