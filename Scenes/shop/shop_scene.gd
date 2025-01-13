@@ -82,6 +82,7 @@ func refresh_inventory() -> void:
 	for i in len(PlayerData1.inventory):
 		inv_list += "- " + PlayerData1.inventory[i].rune_name + "\n"
 		inv_slots[i].texture = PlayerData1.inventory[i].image
+		inv_slots[i].scale = Vector2(1,1) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
 		inv_slots[i].show()
 	$Inventory.text = inv_list
 

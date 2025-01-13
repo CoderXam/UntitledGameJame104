@@ -45,6 +45,7 @@ func refresh_inventory() -> void:
 		i.hide()
 	for i in len(PlayerData1.inventory):
 		inv_slots[i].texture = PlayerData1.inventory[i].image
+		inv_slots[i].scale = Vector2(0.75,0.75) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
 		inv_slots[i].show()
 
 """
