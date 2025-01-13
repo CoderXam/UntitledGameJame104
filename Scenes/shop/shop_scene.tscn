@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=11 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
@@ -15,6 +15,8 @@
 [sub_resource type="QuadMesh" id="QuadMesh_cq37w"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_sr8lg"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_cxor8"]
 
 [node name="ShopScene" type="Node2D"]
 scale = Vector2(0.5, 0.5)
@@ -435,6 +437,103 @@ offset_bottom = 112.0
 scale = Vector2(2, 2)
 text = "Inventory
 "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_cxor8")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Inv1" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(88, 182)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv2" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(184, 182)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv3" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(278, 180)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv4" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(88, 272)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv5" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(182, 272)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv6" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(276, 274)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv7" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(88, 362)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv8" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(184, 364)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv9" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(276, 366)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv10" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(88, 458)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv11" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(184, 460)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv12" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(278, 460)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv13" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(86, 550)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv14" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(182, 550)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
+
+[node name="Inv15" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(278, 552)
+scale = Vector2(4.114, 4)
+texture = ExtResource("2_eub30")
 
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]

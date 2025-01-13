@@ -36,13 +36,15 @@ var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
 var buttons = [] # Cost GUI element
 
 var inv_list := "Inventory: \n"
+var inv_slots = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
 	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
-	buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy,]
+	buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy]
+	inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9, $Node2D/Inv10, $Node2D/Inv11, $Node2D/Inv12, $Node2D/Inv13, $Node2D/Inv14, $Node2D/Inv15]
 	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop
 		randnum = randi_range(1,100)
@@ -69,9 +71,13 @@ func _process(delta: float) -> void:
 
 # Displays list of items in inventory
 func refresh_inventory() -> void:
+	for i in inv_slots:
+		i.hide()
 	inv_list = "Inventory: \n"
-	for i in PlayerData1.inventory:
-		inv_list += "- " + i.rune_name + "\n"
+	for i in len(PlayerData1.inventory):
+		inv_list += "- " + PlayerData1.inventory[i].rune_name + "\n"
+		inv_slots[i].texture = PlayerData1.inventory[i].image
+		inv_slots[i].show()
 	$Inventory.text = inv_list
 	pass
 #-----------------------------------------------------------------------------------------------------------
