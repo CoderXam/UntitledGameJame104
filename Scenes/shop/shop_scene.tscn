@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=10 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
@@ -7,6 +7,8 @@
 [sub_resource type="QuadMesh" id="QuadMesh_i076y"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_sc53u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lt8vg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c5l4o"]
 
@@ -30,6 +32,30 @@ position = Vector2(714, 430)
 scale = Vector2(700, 350)
 mesh = SubResource("QuadMesh_sc53u")
 
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="Shelf"]
+self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
+position = Vector2(-0.354286, 0)
+scale = Vector2(0.22, 0.937143)
+mesh = SubResource("QuadMesh_lt8vg")
+
+[node name="MeshInstance2D6" type="MeshInstance2D" parent="Shelf"]
+self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
+position = Vector2(-0.122857, -0.00571429)
+scale = Vector2(0.22, 0.937143)
+mesh = SubResource("QuadMesh_lt8vg")
+
+[node name="MeshInstance2D7" type="MeshInstance2D" parent="Shelf"]
+self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
+position = Vector2(0.111429, -0.00571429)
+scale = Vector2(0.22, 0.937143)
+mesh = SubResource("QuadMesh_lt8vg")
+
+[node name="MeshInstance2D8" type="MeshInstance2D" parent="Shelf"]
+self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
+position = Vector2(0.348571, -0.00571429)
+scale = Vector2(0.22, 0.937143)
+mesh = SubResource("QuadMesh_lt8vg")
+
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Shelf"]
 modulate = Color(0.521141, 0.521141, 0.52114, 1)
 position = Vector2(-0.348571, -0.325714)
@@ -38,19 +64,19 @@ mesh = SubResource("QuadMesh_c5l4o")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="Shelf"]
 modulate = Color(0.521141, 0.521141, 0.52114, 1)
-position = Vector2(-0.117143, -0.325714)
+position = Vector2(-0.122, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
 
 [node name="MeshInstance2D3" type="MeshInstance2D" parent="Shelf"]
 modulate = Color(0.521141, 0.521141, 0.52114, 1)
-position = Vector2(0.086, -0.326)
+position = Vector2(0.111, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
 
 [node name="MeshInstance2D4" type="MeshInstance2D" parent="Shelf"]
 modulate = Color(0.521141, 0.521141, 0.52114, 1)
-position = Vector2(0.306, -0.326)
+position = Vector2(0.346, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
 
@@ -174,10 +200,10 @@ scale = Vector2(13.5, 7.4375)
 texture = ExtResource("3_6yepq")
 
 [node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
-offset_left = 5.48149
-offset_top = -5.2437
-offset_right = 273.481
-offset_bottom = 34.7563
+offset_left = 6.22222
+offset_top = -5.64706
+offset_right = 274.222
+offset_bottom = 34.3529
 scale = Vector2(0.1, 0.1)
 text = "WELCOME TO MY SHOP"
 
@@ -205,18 +231,18 @@ text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune1"]
 layout_mode = 0
-offset_left = -24.0
+offset_left = -32.0
 offset_top = 108.0
-offset_right = 118.0
+offset_right = 110.0
 offset_bottom = 237.0
 scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune1"]
 layout_mode = 0
-offset_left = -22.0
+offset_left = -32.0
 offset_top = 82.0
-offset_right = 112.0
+offset_right = 102.0
 offset_bottom = 122.0
 text = "name"
 
@@ -230,10 +256,10 @@ scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune2" type="TextureRect" parent="."]
-offset_left = 602.0
-offset_top = 284.0
-offset_right = 666.0
-offset_bottom = 348.0
+offset_left = 598.0
+offset_top = 282.0
+offset_right = 662.0
+offset_bottom = 346.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune2"]
@@ -253,18 +279,18 @@ text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune2"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 106.0
-offset_right = 133.0
-offset_bottom = 237.0
+offset_left = -30.0
+offset_top = 110.0
+offset_right = 119.0
+offset_bottom = 241.0
 scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune2"]
 layout_mode = 0
-offset_left = -14.0
+offset_left = -28.0
 offset_top = 82.0
-offset_right = 123.0
+offset_right = 109.0
 offset_bottom = 122.0
 text = "name"
 
@@ -278,10 +304,10 @@ scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune3" type="TextureRect" parent="."]
-offset_left = 744.0
-offset_top = 286.0
-offset_right = 808.0
-offset_bottom = 350.0
+offset_left = 760.0
+offset_top = 282.0
+offset_right = 824.0
+offset_bottom = 346.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune3"]
@@ -301,35 +327,35 @@ text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune3"]
 layout_mode = 0
-offset_left = -18.0
-offset_top = 108.0
-offset_right = 124.0
-offset_bottom = 237.0
+offset_left = -36.0
+offset_top = 106.0
+offset_right = 106.0
+offset_bottom = 235.0
 scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm"
 
 [node name="name" type="RichTextLabel" parent="rune3"]
 layout_mode = 0
-offset_left = -22.0
+offset_left = -28.0
 offset_top = 82.0
-offset_right = 131.0
+offset_right = 125.0
 offset_bottom = 122.0
 text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune3"]
 layout_mode = 0
-offset_left = -10.0
-offset_top = 220.0
-offset_right = 131.0
-offset_bottom = 260.0
+offset_left = -14.0
+offset_top = 228.0
+offset_right = 127.0
+offset_bottom = 268.0
 scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
 [node name="rune4" type="TextureRect" parent="."]
-offset_left = 896.0
-offset_top = 288.0
-offset_right = 960.0
-offset_bottom = 352.0
+offset_left = 926.0
+offset_top = 284.0
+offset_right = 990.0
+offset_bottom = 348.0
 texture = ExtResource("2_eub30")
 
 [node name="buy" type="Button" parent="rune4"]
@@ -349,19 +375,19 @@ text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune4"]
 layout_mode = 0
-offset_left = -22.0
-offset_top = 110.0
-offset_right = 129.0
-offset_bottom = 234.0
+offset_left = -34.0
+offset_top = 106.0
+offset_right = 117.0
+offset_bottom = 230.0
 scale = Vector2(0.9, 0.9)
 text = "descrption: lorem ipsum skibidi bap mmmmmm "
 
 [node name="name" type="RichTextLabel" parent="rune4"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 82.0
-offset_right = 112.0
-offset_bottom = 122.0
+offset_left = -24.0
+offset_top = 84.0
+offset_right = 104.0
+offset_bottom = 124.0
 text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune4"]
