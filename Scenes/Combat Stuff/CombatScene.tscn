@@ -1,12 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=11 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_area.gd" id="2_32mxo"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/rune.gd" id="5_ulx58"]
+[ext_resource type="Texture2D" uid="uid://tphf4jnwuugb" path="res://icon.svg" id="6_nlevl"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7j0hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7ptq"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geryv"]
+size = Vector2(64.5, 64.5)
 
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
@@ -25,8 +34,8 @@ mesh = SubResource("QuadMesh_2kj1x")
 
 [node name="Inventory" type="MeshInstance2D" parent="Layout/Node2D"]
 modulate = Color(0.568973, 0.568973, 0.568973, 1)
-position = Vector2(141.234, 433.047)
-scale = Vector2(213.531, 354.094)
+position = Vector2(206.234, 433.047)
+scale = Vector2(343.531, 354.094)
 mesh = SubResource("QuadMesh_7j0hp")
 
 [node name="CastingArea" type="MeshInstance2D" parent="Layout/Node2D"]
@@ -37,8 +46,8 @@ mesh = SubResource("QuadMesh_7j0hp")
 
 [node name="OtherStuff" type="MeshInstance2D" parent="Layout/Node2D"]
 modulate = Color(0.568973, 0.568973, 0.568973, 1)
-position = Vector2(576, 433.047)
-scale = Vector2(593.766, 354.094)
+position = Vector2(640.442, 433.047)
+scale = Vector2(464.883, 354.094)
 mesh = SubResource("QuadMesh_7j0hp")
 
 [node name="CombatDisplay" type="MeshInstance2D" parent="Layout/Node2D"]
@@ -80,9 +89,57 @@ offset_top = 16.0
 offset_right = 128.0
 offset_bottom = 43.0
 
+[node name="Rune" type="Node2D" parent="."]
+position = Vector2(96, 223)
+script = ExtResource("5_ulx58")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rune"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_nlevl")
+
+[node name="Area2D" type="Area2D" parent="Rune"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rune/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c7ptq")
+
+[node name="Drop Area" type="StaticBody2D" parent="." groups=["dropable"]]
+position = Vector2(244, 162)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Area"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Drop Area2" type="StaticBody2D" parent="." groups=["dropable"]]
+position = Vector2(382, 204)
+script = ExtResource("2_32mxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Area2"]
+shape = SubResource("RectangleShape2D_geryv")
+
+[node name="ColorRect" type="ColorRect" parent="Drop Area2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 0.0862745, 1, 1)
+metadata/_edit_use_anchors_ = true
+
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="PlayerCombat" method="_on_combat_scene_round_end"]
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
+[connection signal="body_entered" from="Rune/Area2D" to="Rune" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Rune/Area2D" to="Rune" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Rune/Area2D" to="Rune" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Rune/Area2D" to="Rune" method="_on_area_2d_mouse_exited"]

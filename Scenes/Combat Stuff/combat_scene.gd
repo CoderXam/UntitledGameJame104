@@ -9,7 +9,6 @@ signal roundStart()
 @onready var rounds = maxRounds
 @onready var healthBar = $ProgressBar
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -36,14 +35,13 @@ func _process(delta):
 		#(that's all it does for now, might end up doing more later --jacob)
 		_on_round_start()
 	
-	pass
-
 
 
 """
 MAKE SURE TO MANUALLY CONNECT THE endRound and startRound SIGNAL TO ALL OTHER INSTANCED SCENES
 WITHIN THIS SCENE, OR ELSE A BUNCH OF STUFF WONT WORK LOL --JACOB
 """
+
 func _on_round_end():
 	if rounds == 0:
 		return
@@ -57,3 +55,11 @@ func _on_round_end():
 
 func _on_round_start():
 	roundStart.emit()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_exited() -> void:
+	pass # Replace with function body.

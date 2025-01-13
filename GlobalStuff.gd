@@ -18,3 +18,7 @@ enum CharacterState {
 func resetPos(x = 9):
 	for i in range(x):
 		charPositions.append(0)
+
+
+#For runes
+var is_dragging = false
