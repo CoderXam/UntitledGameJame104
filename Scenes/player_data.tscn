@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpuk5bjcroqd4"]
 
 [ext_resource type="Script" path="res://Scenes/player_data.gd" id="1_vjojb"]
-[ext_resource type="Script" path="res://Scenes/item.gd" id="2_8eu80"]
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/item.gd" id="2_8eu80"]
 
 [node name="PlayerData" type="Node2D" node_paths=PackedStringArray("starting_item")]
 position = Vector2(558, 351)
