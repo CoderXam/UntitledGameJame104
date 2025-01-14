@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cakgkij4pjwtg"]
+[gd_scene load_steps=4 format=3 uid="uid://cakgkij4pjwtg"]
 
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/stonyhedgehog_template.gd" id="1_f5q5e"]
 [ext_resource type="SpriteFrames" uid="uid://dbdm3dkv0gyc1" path="res://Sprites/EnemySprites/StonyhedgehogAnims.tres" id="1_x07eh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
 
-[node name="SlimeTemplate" type="Node2D"]
+[node name="StonehedgehogTemplate" type="Node2D"]
+script = ExtResource("1_f5q5e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -15,4 +17,4 @@ shape = SubResource("RectangleShape2D_177gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_x07eh")
-animation = &"Attack"
+animation = &"Rest"

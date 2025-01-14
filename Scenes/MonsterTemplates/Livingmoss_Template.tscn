@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://5exrthuifjck"]
+[gd_scene load_steps=4 format=3 uid="uid://5exrthuifjck"]
 
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/livingmoss_template.gd" id="1_8bwbe"]
 [ext_resource type="SpriteFrames" uid="uid://c2pj18fwmkdoc" path="res://Sprites/EnemySprites/LivingMossAnims.tres" id="2_44pa0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
 
-[node name="SlimeTemplate" type="Node2D"]
+[node name="LivingmossTemplate" type="Node2D"]
+script = ExtResource("1_8bwbe")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -15,4 +17,4 @@ shape = SubResource("RectangleShape2D_177gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_44pa0")
-animation = &"Rest"
+animation = &"Attack"

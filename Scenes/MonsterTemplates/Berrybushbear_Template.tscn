@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://p7l5fj0ic55w"]
+[gd_scene load_steps=4 format=3 uid="uid://p7l5fj0ic55w"]
 
 [ext_resource type="SpriteFrames" uid="uid://143mm5htjn8e" path="res://Sprites/EnemySprites/BerryBushBearAnims.tres" id="1_3ykvf"]
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/berrybushbear_template.gd" id="1_vcnhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
 
-[node name="SlimeTemplate" type="Node2D"]
+[node name="BerrybushbearTemplate" type="Node2D"]
+script = ExtResource("1_vcnhs")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -15,4 +17,4 @@ shape = SubResource("RectangleShape2D_177gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_3ykvf")
-animation = &"Attack"
+animation = &"Rest"

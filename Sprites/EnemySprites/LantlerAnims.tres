@@ -134,15 +134,15 @@ region = Rect2(1344, 0, 64, 64)
 atlas = ExtResource("1_xfgyq")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2dps"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwq0q"]
 atlas = ExtResource("1_xfgyq")
 region = Rect2(448, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5fsyg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sisu"]
 atlas = ExtResource("1_xfgyq")
 region = Rect2(896, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pytc6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5m3d"]
 atlas = ExtResource("1_xfgyq")
 region = Rect2(1344, 0, 64, 64)
 
@@ -161,7 +161,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6b6oa")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 8.0
 }, {
@@ -178,7 +178,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7g5bb")
 }],
-"loop": true,
+"loop": false,
 "name": &"AttackG1",
 "speed": 8.0
 }, {
@@ -195,7 +195,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3wcd5")
 }],
-"loop": true,
+"loop": false,
 "name": &"AttackG2",
 "speed": 8.0
 }, {
@@ -212,7 +212,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6g5le")
 }],
-"loop": true,
+"loop": false,
 "name": &"AttackG3",
 "speed": 8.0
 }, {
@@ -229,7 +229,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u3kub")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 8.0
 }, {
@@ -246,7 +246,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b8grh")
 }],
-"loop": true,
+"loop": false,
 "name": &"HurtG1",
 "speed": 8.0
 }, {
@@ -263,7 +263,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_htarc")
 }],
-"loop": true,
+"loop": false,
 "name": &"HurtG2",
 "speed": 8.0
 }, {
@@ -280,7 +280,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j2wio")
 }],
-"loop": true,
+"loop": false,
 "name": &"HurtG3",
 "speed": 8.0
 }, {
@@ -288,13 +288,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2tev4")
 }],
-"loop": true,
+"loop": false,
 "name": &"Rest",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u2dps")
+"texture": SubResource("AtlasTexture_pwq0q")
 }],
 "loop": true,
 "name": &"RestG1",
@@ -302,7 +302,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5fsyg")
+"texture": SubResource("AtlasTexture_2sisu")
 }],
 "loop": true,
 "name": &"RestG2",
@@ -310,7 +310,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pytc6")
+"texture": SubResource("AtlasTexture_w5m3d")
 }],
 "loop": true,
 "name": &"RestG3",

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://w674nvpsacci"]
+[gd_scene load_steps=4 format=3 uid="uid://w674nvpsacci"]
 
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/lantler_template.gd" id="1_7arhb"]
 [ext_resource type="SpriteFrames" uid="uid://dyn3brww31fv3" path="res://Sprites/EnemySprites/LantlerAnims.tres" id="1_qw8f1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
 
-[node name="SlimeTemplate" type="Node2D"]
+[node name="LantlerTemplate" type="Node2D"]
+script = ExtResource("1_7arhb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -15,4 +17,4 @@ shape = SubResource("RectangleShape2D_177gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_qw8f1")
-animation = &"Attack"
+animation = &"Rest"
