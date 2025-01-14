@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=13 format=3 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
 [ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
+[ext_resource type="Theme" uid="uid://y585b0rnbt7j" path="res://themes/shop_buttons.tres" id="4_4rkwy"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_i076y"]
 
@@ -207,13 +208,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = 222.0
-offset_right = 44.0
-offset_bottom = 272.0
+offset_left = -60.0
+offset_top = 214.0
+offset_right = 40.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_4rkwy")
 text = "buy"
+icon_alignment = 1
+expand_icon = true
 
 [node name="description" type="RichTextLabel" parent="rune1"]
 layout_mode = 0
@@ -255,12 +259,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = 220.0
-offset_right = 46.0
-offset_bottom = 272.0
+offset_left = -64.0
+offset_top = 214.0
+offset_right = 36.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_4rkwy")
 text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune2"]
@@ -303,12 +308,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 220.0
-offset_right = 52.0
-offset_bottom = 272.0
+offset_left = -54.0
+offset_top = 214.0
+offset_right = 46.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_4rkwy")
 text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune3"]
@@ -330,10 +336,10 @@ text = "name"
 
 [node name="stock" type="RichTextLabel" parent="rune3"]
 layout_mode = 0
-offset_left = -14.0
-offset_top = 228.0
-offset_right = 127.0
-offset_bottom = 268.0
+offset_left = -18.0
+offset_top = 224.0
+offset_right = 123.0
+offset_bottom = 264.0
 scale = Vector2(0.9, 0.9)
 text = "1 In stock"
 
@@ -351,12 +357,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = 218.0
-offset_right = 48.0
-offset_bottom = 268.0
+offset_left = -58.0
+offset_top = 212.0
+offset_right = 42.0
+offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_4rkwy")
 text = "buy"
 
 [node name="description" type="RichTextLabel" parent="rune4"]
