@@ -15,16 +15,16 @@ extends Node2D
 				#"Thorn" : ["Thorn Needles","Riddle your enemies with thorny needles", 5, 10]}
 
 '''New code using Rune class'''
-var fire := Rune.new("Fireball","Launch a scorching fireball attack", preload("res://Sprites/runes/fire.png"))
-var magma := Rune.new("Magma Stomp","Turn the ground to molten rock", preload("res://Sprites/runes/magma.png"))
-var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water", preload("res://Sprites/runes/water.png"))
-var shield := Rune.new("Shield","Block incoming attacks with an arcane ward", preload("res://Sprites/runes/shield.png"))
-var orb := Rune.new("Orb","Pierce through enemies with a spectral orb", preload("res://Sprites/runes/orb.png"))
-var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself", preload("res://Sprites/runes/lifesteal.png"))
-var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", preload("res://Sprites/runes/root.png"))
-var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"))
-var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"))
-var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"))
+var fire := Rune.new("Fireball","Launch a scorching fireball attack", preload("res://Sprites/runes/fire.png"),5,15)
+var magma := Rune.new("Magma Stomp","Turn the ground to molten rock", preload("res://Sprites/runes/magma.png"),5,15)
+var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water", preload("res://Sprites/runes/water.png"),5,15)
+var shield := Rune.new("Shield","Block incoming attacks with an arcane ward", preload("res://Sprites/runes/shield.png"),5,15)
+var orb := Rune.new("Orb","Pierce through enemies with a spectral orb", preload("res://Sprites/runes/orb.png"),5,5)
+var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself", preload("res://Sprites/runes/lifesteal.png"),5,10)
+var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", preload("res://Sprites/runes/root.png"),5,5)
+var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"),5,5)
+var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"),5,5)
+var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"),5,10)
 
 var shop_inv = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns] # List of all runes
 var available = [] # The runes available in the shop
@@ -41,6 +41,13 @@ var inv_slots = [] # Rune images in the inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	var total = 0
+	for i in shop_inv:
+		total += i.shop_chance
+	if total != 100:
+		print("WARNING: Rune shop chances do not add to 100!"+" (total="+str(total)+")")
+	
 	PlayerData1.currency = 100
 	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
 	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
@@ -49,15 +56,18 @@ func _ready() -> void:
 	images = [$rune1, $rune2, $rune3, $rune4]
 	inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9]
 	
-	for i in 4: # Generate the rune for each of the 4 slots in the shop
+	for i in 4: # Generate the rune for each of the 4 slots in the shop based on shop chance (the probability for a rune to appear in the shop)
+		'''This for loop is a little goofy, uncomment the print statements to see what the code is doing. -Max'''
 		randnum = randi_range(1,100)
-		for j in 10: # Go through the list of runes and choose 1
-			# If random number is between 1-10, choose the 1st spell,
-			# If randum number is between 11-20 choose the 2nd spell, etc.
-			# (This only works since probabilities are equally distributed)
-			if randnum > j*10 and randnum < (j+1)*10+1:
+		print("generated number: "+str(randnum))
+		var a = 0
+		for j in 10: # Go through the list of runes and choose 1 based on Rune.shop_chance
+			print(str(a)+"-"+str(a+shop_inv[j].shop_chance))
+			if randnum > a and randnum <= a+shop_inv[j].shop_chance:
+				print("found match: "+shop_inv[j].rune_name)
 				available.append(shop_inv[j])
-				stock[i] = 3 # Set the number of runes in stock for all runes
+				stock[i] = 3 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
+			a += shop_inv[j].shop_chance
 		
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name
