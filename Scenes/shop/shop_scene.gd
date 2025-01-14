@@ -30,13 +30,15 @@ var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
 var inv_list := "Inventory: \n"
 @onready var inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9] # Rune images in the inventory
 
-var hue = 0
+var hue = 0 # as in color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	# Check if chances add to 100 (the game will still run but probabilities will be messed up)
 	var total = 0
 	for i in shop_inv:
+		i.in_shop = 0
 		total += i.shop_chance
 	if total != 100:
 		print("WARNING: Rune shop chances do not add to 100!"+" (total="+str(total)+")")
@@ -44,18 +46,8 @@ func _ready() -> void:
 	PlayerData1.currency = 100
 	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop based on shop chance (the probability for a rune to appear in the shop)
-		'''This for loop is a little goofy, uncomment the print statements to see what the code is doing. -Max'''
-		randnum = randi_range(1,100)
-		#print("generated number: "+str(randnum))
-		var a = 0
-		for j in 10: # Go through the list of runes and choose 1 based on Rune.shop_chance
-			#print(str(a)+"-"+str(a+shop_inv[j].shop_chance))
-			if randnum > a and randnum <= a+shop_inv[j].shop_chance:
-				#print("found match: "+shop_inv[j].rune_name)
-				available.append(shop_inv[j])
-				stock[i] = 3 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
-			a += shop_inv[j].shop_chance
-		
+		choose_rune()
+		stock[i] = 3 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name
 		desc[i].text = available[i].description
@@ -66,6 +58,23 @@ func _ready() -> void:
 		
 	refresh_inventory()
 
+func choose_rune():
+	'''This for loop is a little goofy, uncomment the print statements to see what the code is doing. -Max'''
+	randnum = randi_range(1,100)
+	#print("generated number: "+str(randnum))
+	var a = 0
+	for j in 10: # Go through the list of runes and choose 1 based on Rune.shop_chance
+		#print(str(a)+"-"+str(a+shop_inv[j].shop_chance))
+		if randnum > a and randnum <= a+shop_inv[j].shop_chance and shop_inv[j].in_shop == 0:
+			#print("found match: "+shop_inv[j].rune_name)
+			available.append(shop_inv[j]) # make the rune available in the shop
+			shop_inv[j].in_shop = 1 # prevents duplicates
+			#print("added "+shop_inv[j].rune_name)
+		elif randnum > a and randnum <= a+shop_inv[j].shop_chance and shop_inv[j].in_shop > 0:
+			print(shop_inv[j].rune_name+" is already in the shop -> prevented duplicate")
+			choose_rune()
+			break
+		a += shop_inv[j].shop_chance
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
-[ext_resource type="PackedScene" uid="uid://cmdbgn77vxm4o" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
-[ext_resource type="PackedScene" uid="uid://deyprpyauvbog" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
+[ext_resource type="PackedScene" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
+[ext_resource type="PackedScene" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
