@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://deyprpyauvbog"]
+
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_spot.gd" id="1_y0qol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sedaj"]
+size = Vector2(48, 48)
+
+[node name="DropSpot" type="Node2D"]
+script = ExtResource("1_y0qol")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_sedaj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 0.0784314, 0.054902, 0.392157)
+z_index = -1
+offset_right = 48.0
+offset_bottom = 48.0
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]

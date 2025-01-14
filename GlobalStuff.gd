@@ -22,6 +22,13 @@ func resetPos(x = 9):
 #For runes
 var is_dragging = false
 
+
+"JACOBS FIX, WILL CLEAN UP ONCE IM DONE"
+var isClicked = false
+var hasSelection = false
+var newRunePos
+
+
 # For switching scenes (for debugging purposes, should be deleted when game is finished)
 var scenes = ["res://Scenes/MapScene.tscn",
 "res://Scenes/Combat Stuff/CombatScene.tscn",
