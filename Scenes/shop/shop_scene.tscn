@@ -1,17 +1,41 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=17 format=4 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
 [ext_resource type="Texture2D" uid="uid://bwdx36ilblc7j" path="res://Sprites/TestPlayerSprite.png" id="3_6yepq"]
+[ext_resource type="Texture2D" uid="uid://dkkqpofrk8yvo" path="res://Sprites/shop/wood-button2.png" id="3_mp6ft"]
 [ext_resource type="Theme" uid="uid://y585b0rnbt7j" path="res://themes/shop_buttons.tres" id="4_4rkwy"]
+[ext_resource type="Texture2D" uid="uid://be537r286i7hm" path="res://Sprites/shop/wood-plank.png" id="5_t7fo8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_i076y"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_sc53u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvhiv"]
+texture = ExtResource("5_t7fo8")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_tu8da"]
+tile_size = Vector2i(128, 128)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_hvhiv")
 
 [sub_resource type="QuadMesh" id="QuadMesh_lt8vg"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_c5l4o"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_sc53u"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cq37w"]
 
@@ -31,121 +55,153 @@ position = Vector2(576, 324)
 scale = Vector2(1152, 648)
 mesh = SubResource("QuadMesh_i076y")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(1, 0.915667, 0.77, 1)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tu8da")
+
 [node name="Shelf" type="MeshInstance2D" parent="."]
-modulate = Color(0.501407, 0.501406, 0.501406, 1)
 position = Vector2(714, 430)
 scale = Vector2(700, 350)
-mesh = SubResource("QuadMesh_sc53u")
 
-[node name="MeshInstance2D5" type="MeshInstance2D" parent="Shelf"]
+[node name="TileMapLayer2" type="TileMapLayer" parent="Shelf"]
+modulate = Color(0.789242, 0.576147, 0.447592, 1)
+position = Vector2(-1.53106, -0.502857)
+scale = Vector2(0.00797143, 0.00787143)
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tu8da")
+
+[node name="plank1" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.602409, 0.522539, 0.432408, 1)
 self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
 position = Vector2(-0.354286, 0)
 scale = Vector2(0.22, 0.937143)
 mesh = SubResource("QuadMesh_lt8vg")
+texture = ExtResource("5_t7fo8")
 
-[node name="MeshInstance2D6" type="MeshInstance2D" parent="Shelf"]
+[node name="plank2" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.603922, 0.521569, 0.431373, 1)
 self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
 position = Vector2(-0.122857, -0.00571429)
 scale = Vector2(0.22, 0.937143)
 mesh = SubResource("QuadMesh_lt8vg")
+texture = ExtResource("5_t7fo8")
 
-[node name="MeshInstance2D7" type="MeshInstance2D" parent="Shelf"]
+[node name="plank3" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.603922, 0.521569, 0.431373, 1)
 self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
 position = Vector2(0.111429, -0.00571429)
 scale = Vector2(0.22, 0.937143)
 mesh = SubResource("QuadMesh_lt8vg")
+texture = ExtResource("5_t7fo8")
 
-[node name="MeshInstance2D8" type="MeshInstance2D" parent="Shelf"]
+[node name="plank4" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(0.603922, 0.521569, 0.431373, 1)
 self_modulate = Color(0.800491, 0.800491, 0.800491, 1)
 position = Vector2(0.348571, -0.00571429)
 scale = Vector2(0.22, 0.937143)
 mesh = SubResource("QuadMesh_lt8vg")
+texture = ExtResource("5_t7fo8")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Shelf"]
-modulate = Color(0.521141, 0.521141, 0.52114, 1)
+[node name="display1" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(1, 0.90138, 0.765914, 1)
 position = Vector2(-0.348571, -0.325714)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Shelf"]
-modulate = Color(0.521141, 0.521141, 0.52114, 1)
+[node name="display2" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(1, 0.901961, 0.764706, 1)
 position = Vector2(-0.122, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="Shelf"]
-modulate = Color(0.521141, 0.521141, 0.52114, 1)
+[node name="display3" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(1, 0.901961, 0.764706, 1)
 position = Vector2(0.111, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D4" type="MeshInstance2D" parent="Shelf"]
-modulate = Color(0.521141, 0.521141, 0.52114, 1)
+[node name="display4" type="MeshInstance2D" parent="Shelf"]
+modulate = Color(1, 0.901961, 0.764706, 1)
 position = Vector2(0.346, -0.326)
 scale = Vector2(0.114286, 0.228571)
 mesh = SubResource("QuadMesh_c5l4o")
+texture = ExtResource("3_mp6ft")
 
 [node name="Inventory2" type="MeshInstance2D" parent="."]
-modulate = Color(0.501407, 0.501406, 0.501406, 1)
 position = Vector2(180, 336.5)
 scale = Vector2(308, 537)
 mesh = SubResource("QuadMesh_sc53u")
+texture = ExtResource("5_t7fo8")
 
 [node name="slots" type="Node" parent="Inventory2"]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot1" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.577008, 0.577008, 0.577008, 1)
 position = Vector2(43, 276)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot2" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(91, 276)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot3" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(139, 276)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D4" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot4" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(43, 229)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D5" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot5" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(91, 230)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D6" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot6" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(138, 230)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D7" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot7" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(43, 182)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D8" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot8" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(91, 182)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D9" type="MeshInstance2D" parent="Inventory2/slots"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="slot9" type="MeshInstance2D" parent="Inventory2/slots"]
+modulate = Color(0.576471, 0.576471, 0.576471, 1)
 position = Vector2(138, 183)
 scale = Vector2(41.4, 41.4387)
 mesh = SubResource("QuadMesh_cq37w")
+texture = ExtResource("3_mp6ft")
 
 [node name="Inventory" type="RichTextLabel" parent="."]
 offset_left = 46.0
@@ -157,23 +213,33 @@ A thing
 Another thing
 Yet another thing"
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.43134, 0.43134, 0.43134, 1)
+[node name="window" type="MeshInstance2D" parent="."]
+modulate = Color(0.720467, 0.720468, 0.720467, 1)
 position = Vector2(686, 128)
 scale = Vector2(574.763, 209.86)
 mesh = SubResource("QuadMesh_sr8lg")
+texture = ExtResource("5_t7fo8")
 
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
-modulate = Color(0.344076, 0.344076, 0.344076, 1)
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+position = Vector2(14.795, 22.16)
+scale = Vector2(1.495, 0.815)
+tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tu8da")
+
+[node name="moneys" type="MeshInstance2D" parent="."]
+modulate = Color(0.568962, 0.432841, 0.408778, 1)
 position = Vector2(968, 210)
 scale = Vector2(136, 66)
 mesh = SubResource("QuadMesh_sr8lg")
+texture = ExtResource("3_mp6ft")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-modulate = Color(0.306923, 0.306923, 0.306923, 1)
+[node name="Shop sign" type="MeshInstance2D" parent="."]
+modulate = Color(0.96, 0.9168, 0.9024, 1)
 position = Vector2(673, 51.535)
 scale = Vector2(126, 56.93)
 mesh = SubResource("QuadMesh_sr8lg")
+texture = ExtResource("3_mp6ft")
 
 [node name="Shopkeeper" type="Sprite2D" parent="."]
 position = Vector2(552, 173.557)
@@ -402,12 +468,12 @@ text = "SHOP"
 
 [node name="Balance" type="RichTextLabel" parent="."]
 modulate = Color(1, 0.894118, 0, 1)
-offset_left = 908.0
-offset_top = 188.0
-offset_right = 1038.0
-offset_bottom = 241.0
-text = "You have
-1 morbillion $$$"
+offset_left = 926.0
+offset_top = 190.0
+offset_right = 1083.0
+offset_bottom = 218.0
+scale = Vector2(1.5, 1.5)
+text = "[symbol] [amount] "
 
 [node name="InventoryLabel" type="RichTextLabel" parent="."]
 offset_left = 48.0

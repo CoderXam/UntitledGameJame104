@@ -78,7 +78,7 @@ func choose_rune():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Balance.text = "You have \n" + str(PlayerData1.currency) + " moneys"
+	$Balance.text = ":) " + str(PlayerData1.currency)
 	
 	for i in names:
 		i.add_theme_color_override("default_color", Color.from_hsv(hue,1,1,1))
