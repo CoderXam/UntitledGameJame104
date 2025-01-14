@@ -41,7 +41,7 @@ sources/0 = SubResource("TileSetAtlasSource_hvhiv")
 
 [sub_resource type="QuadMesh" id="QuadMesh_sr8lg"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_4lx2u"]
+[sub_resource type="QuadMesh" id="QuadMesh_q8t1s"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_cxor8"]
 
@@ -246,13 +246,15 @@ position = Vector2(552, 173.557)
 scale = Vector2(13.735, 7.55538)
 texture = ExtResource("3_6yepq")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Shopkeeper"]
-modulate = Color(0.344076, 0.344076, 0.344076, 1)
+[node name="bubble" type="MeshInstance2D" parent="Shopkeeper"]
+modulate = Color(10.271, 10.81, 12.432, 0.487)
 position = Vector2(17.3644, -4.51495)
 scale = Vector2(22.9601, 10.7354)
-mesh = SubResource("SphereMesh_4lx2u")
+mesh = SubResource("QuadMesh_q8t1s")
+texture = ExtResource("3_mp6ft")
 
 [node name="Welcome" type="RichTextLabel" parent="Shopkeeper"]
+modulate = Color(0.118581, 0.118581, 0.118581, 1)
 offset_left = 9.0
 offset_top = -7.0
 offset_right = 196.0
