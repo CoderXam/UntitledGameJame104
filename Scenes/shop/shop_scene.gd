@@ -20,15 +20,17 @@ extends Node2D
 var shop_inv = Global.RUNE_POOL # List of all runes
 var available = [] # The runes available in the shop
 var randnum = 0
-var names = [] # Rune name GUI element
-var desc = [] # Rune description GUI element
-var stock_text = [] # Rune stock GUI element
+@onready var names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name] # Rune name GUI element
+@onready var desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description] # Rune description GUI element
+@onready var stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock] # Rune stock GUI element
 var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
-var buttons = [] # Cost GUI element
-var images = [] # Rune images in the shop
+@onready var buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy] # Cost GUI element
+@onready var images = [$rune1, $rune2, $rune3, $rune4] # Rune images in the shop
 
 var inv_list := "Inventory: \n"
-var inv_slots = [] # Rune images in the inventory
+@onready var inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9] # Rune images in the inventory
+
+var hue = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,12 +42,6 @@ func _ready() -> void:
 		print("WARNING: Rune shop chances do not add to 100!"+" (total="+str(total)+")")
 	
 	PlayerData1.currency = 100
-	names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name]
-	desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description]
-	stock_text = [$rune1/stock,$rune2/stock,$rune3/stock,$rune4/stock]
-	buttons = [$rune1/buy,$rune2/buy,$rune3/buy,$rune4/buy]
-	images = [$rune1, $rune2, $rune3, $rune4]
-	inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9]
 	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop based on shop chance (the probability for a rune to appear in the shop)
 		'''This for loop is a little goofy, uncomment the print statements to see what the code is doing. -Max'''
@@ -74,6 +70,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Balance.text = "You have \n" + str(PlayerData1.currency) + " moneys"
+	
+	for i in names:
+		i.add_theme_color_override("default_color", Color.from_hsv(hue,1,1,1))
+	hue += 0.25*delta
 
 # Displays list of items in inventory
 func refresh_inventory() -> void:
