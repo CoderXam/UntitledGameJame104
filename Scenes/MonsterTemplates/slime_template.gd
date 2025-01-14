@@ -1,6 +1,9 @@
 extends Node2D
 
+@export var totalhealth = 10
 @export var health = 10
+
+@onready var AnimatedSprite = $AnimatedSprite2D
 
 var CharacterState = Global.CharacterState
 
@@ -27,10 +30,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#if Input.is_action_just_pressed("ui_accept"):
-		#move()
-		
-	pass
+	if Input.is_action_just_pressed("ui_right"):
+		AnimatedSprite.play("Hurt")
 
 
 
@@ -55,7 +56,12 @@ func move_false():
 	#if arrPos == 7:
 		#currentState = CharacterState.STUCK
 
-
+func hurt(damage):
+	AnimatedSprite.play("Hurt")
+	print("Death Animation Played")
+	health-damage
+	if health <= 0:
+		print("dead")
 
 """
 FOR THIS TO WORK, YOU MUST MANUALLY CONNECT THE roundEnd and roundStart SIGNAL 
@@ -76,6 +82,10 @@ func _on_combat_scene_round_end(rounds):
 		if currentState == CharacterState.MOVING:
 			move()
 	else:
+		
+		if Global.charPositions[arrPos-1] == CharacterState.PLAYER:
+			AnimatedSprite.play("Attack")
+			print("Attack Animation Played")
 		#basically, if this instance is unable to move forward, it puts in the global position
 		#array that it is stuck, just for right now, without changing it's currentState
 		#not sure how well this will hold up tbh, but it works for now --jacob

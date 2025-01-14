@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw3a6j7d7ocns"]
 
-[ext_resource type="Script" path="res://Scenes/Combat Stuff/enemy_template.gd" id="1_5tkq2"]
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/slime_template.gd" id="1_5tkq2"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_xlqm5"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qlsev"]

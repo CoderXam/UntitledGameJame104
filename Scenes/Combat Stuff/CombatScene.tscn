@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=12 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_area.gd" id="2_32mxo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="5_odc6b"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/rune.gd" id="5_ulx58"]
+[ext_resource type="PackedScene" uid="uid://5exrthuifjck" path="res://Scenes/MonsterTemplates/Slime_Template.tscn" id="7_m74fu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
@@ -372,12 +373,17 @@ offset_bottom = 32.0
 color = Color(1, 0.0862745, 1, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="SlimeTemplate" parent="." instance=ExtResource("7_m74fu")]
+position = Vector2(223, 54)
+
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="PlayerCombat" method="_on_combat_scene_round_end"]
+[connection signal="roundEnd" from="." to="SlimeTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
+[connection signal="roundStart" from="." to="SlimeTemplate" method="_on_combat_scene_round_start"]
 [connection signal="body_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_mouse_entered"]

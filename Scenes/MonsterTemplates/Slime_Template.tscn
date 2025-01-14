@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5exrthuifjck"]
+
+[ext_resource type="Script" path="res://Scenes/MonsterTemplates/slime_template.gd" id="1_2ehcd"]
+[ext_resource type="SpriteFrames" uid="uid://c2pj18fwmkdoc" path="res://Sprites/EnemySprites/LivingMossAnims.tres" id="2_44pa0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
+size = Vector2(64, 64)
+
+[node name="SlimeTemplate" type="Node2D"]
+script = ExtResource("1_2ehcd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_177gs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+sprite_frames = ExtResource("2_44pa0")
+animation = &"Rest"
