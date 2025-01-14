@@ -113,60 +113,62 @@ position = Vector2(160, 272)
 
 [node name="Drop Areas" type="Node2D" parent="."]
 
-[node name="DropSpot" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="Casting Area" type="Node2D" parent="Drop Areas"]
+
+[node name="DropSpot" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(216, 136)
 
-[node name="DropSpot2" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot2" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(296, 136)
 
-[node name="DropSpot3" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot3" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(376, 136)
 
-[node name="DropSpot4" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot4" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(216, 192)
 
-[node name="DropSpot5" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot5" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(296, 192)
 
-[node name="DropSpot6" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot6" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(376, 192)
 
-[node name="DropSpot7" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot7" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(216, 248)
 
-[node name="DropSpot8" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot8" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(296, 248)
 
-[node name="DropSpot9" parent="Drop Areas" instance=ExtResource("6_ad514")]
+[node name="DropSpot9" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(376, 248)
 
-[node name="Drop Areas (but in rune spots)" type="Node2D" parent="."]
+[node name="Inventory" type="Node2D" parent="Drop Areas"]
 
-[node name="DropSpot" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(24, 136)
 
-[node name="DropSpot2" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot2" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(80, 136)
 
-[node name="DropSpot3" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot3" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(136, 136)
 
-[node name="DropSpot4" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot4" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(24, 192)
 
-[node name="DropSpot5" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot5" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(80, 192)
 
-[node name="DropSpot6" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot6" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(136, 192)
 
-[node name="DropSpot7" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot7" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(24, 248)
 
-[node name="DropSpot8" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot8" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(80, 248)
 
-[node name="DropSpot9" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+[node name="DropSpot9" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(136, 248)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]

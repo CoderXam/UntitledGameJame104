@@ -4,15 +4,28 @@ var mouseHover = false
 
 @onready var spotList = get_parent().get_children()
 var spotNum
-
+var isCasting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ColorRect.hide()
-	for i in range(len(spotList)):
-		if $"." == spotList[i]:
-			spotNum = i
-	print(spotNum, ": ", $".")
+	
+	"""
+	MAKE SURE THAT THE PARENTS OF THE INSTANCES IN THE CASTING AREA 
+	ARE NAMED 'CASTING AREA', OR ELSE EVERYTHING WILL BREAK --JACOB
+	"""
+	#lets the instance know if it is in the casting area
+	if get_parent().name == "Casting Area":
+		isCasting = true
+		
+		for i in range(len(spotList)):
+			if $"." == spotList[i]:
+				spotNum = i
+				break
+		#print(spotNum, ": ", $".")
+		if len(PlayerData1.inventory) > spotNum:
+			print(PlayerData1.inventory[spotNum].rune_name)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

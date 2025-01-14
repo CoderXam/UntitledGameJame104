@@ -10,7 +10,7 @@ func _ready():
 	for i in range(len(runeList)):
 		if $"." == runeList[i]:
 			runeNum = i
-	print(runeNum, ": ", $".")
+	#print(runeNum, ": ", $".")
 
 
 func _process(delta):
