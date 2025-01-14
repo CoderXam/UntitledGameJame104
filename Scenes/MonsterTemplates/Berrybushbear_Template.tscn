@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://p7l5fj0ic55w"]
+
+[ext_resource type="SpriteFrames" uid="uid://143mm5htjn8e" path="res://Sprites/EnemySprites/BerryBushBearAnims.tres" id="1_3ykvf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
+size = Vector2(64, 64)
+
+[node name="SlimeTemplate" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+shape = SubResource("RectangleShape2D_177gs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_3ykvf")
+animation = &"Attack"

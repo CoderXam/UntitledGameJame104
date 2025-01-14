@@ -25,7 +25,7 @@ var is_dragging = false
 # For switching scenes (for debugging purposes, should be deleted when game is finished)
 var scenes = ["res://Scenes/MapScene.tscn",
 "res://Scenes/Combat Stuff/CombatScene.tscn",
-"res://Scenes/shop/shop_scene.tscn","res://Scenes/Test/AnimationTest.tscn"]
+"res://Scenes/shop/shop_scene.tscn","res://Scenes/Test/AnimationTest.tscn", "res://Scenes/Test/CombatTest.tscn"]
 var scene_index:int
 
 func _ready():

@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://ipom8kw35t2c"]
+
+[ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="2_bqipc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
+
+[node name="CombatTest" type="Node2D"]
+script = ExtResource("1_1unao")
+
+[node name="PlayerSpace" type="Node2D" parent="."]
+position = Vector2(96, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerSpace"]
+modulate = Color(0.146528, 0.440943, 0.350299, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="PlayerCombat" parent="PlayerSpace" instance=ExtResource("2_bqipc")]
+
+[node name="EnemySpaces" type="Node2D" parent="."]
+
+[node name="Space1" type="Node2D" parent="EnemySpaces"]
+position = Vector2(160, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space1"]
+modulate = Color(1, 0.294118, 0.168627, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space2" type="Node2D" parent="EnemySpaces"]
+position = Vector2(224, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space2"]
+modulate = Color(0.729412, 0.537255, 0.337255, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space3" type="Node2D" parent="EnemySpaces"]
+position = Vector2(288, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space3"]
+modulate = Color(1, 0.294118, 0.168627, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space4" type="Node2D" parent="EnemySpaces"]
+position = Vector2(352, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space4"]
+modulate = Color(0.729412, 0.537255, 0.337255, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space5" type="Node2D" parent="EnemySpaces"]
+position = Vector2(416, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space5"]
+modulate = Color(1, 0.294118, 0.168627, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space6" type="Node2D" parent="EnemySpaces"]
+position = Vector2(480, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space6"]
+modulate = Color(0.729412, 0.537255, 0.337255, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
+
+[node name="Space7" type="Node2D" parent="EnemySpaces"]
+position = Vector2(544, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space7"]
+modulate = Color(1, 0.294118, 0.168627, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")

@@ -4,8 +4,8 @@
 [ext_resource type="SpriteFrames" uid="uid://c2pj18fwmkdoc" path="res://Sprites/EnemySprites/LivingMossAnims.tres" id="2_jtirb"]
 [ext_resource type="SpriteFrames" uid="uid://dyn3brww31fv3" path="res://Sprites/EnemySprites/LantlerAnims.tres" id="3_lq8wr"]
 [ext_resource type="SpriteFrames" uid="uid://143mm5htjn8e" path="res://Sprites/EnemySprites/BerryBushBearAnims.tres" id="4_7h61u"]
-[ext_resource type="SpriteFrames" uid="uid://dbdm3dkv0gyc1" path="res://Sprites/EnemySprites/StonyHedgeAnims.tres" id="5_qx8yk"]
-[ext_resource type="PackedScene" uid="uid://5exrthuifjck" path="res://Scenes/MonsterTemplates/Slime_Template.tscn" id="6_5cagd"]
+[ext_resource type="SpriteFrames" uid="uid://dbdm3dkv0gyc1" path="res://Sprites/EnemySprites/StonyhedgehogAnims.tres" id="5_qx8yk"]
+[ext_resource type="PackedScene" uid="uid://5exrthuifjck" path="res://Scenes/MonsterTemplates/Livingmoss_Template.tscn" id="6_5cagd"]
 
 [node name="AnimationTest" type="Node2D"]
 
@@ -31,7 +31,7 @@ frame_progress = 0.400966
 position = Vector2(261, 60)
 sprite_frames = ExtResource("4_7h61u")
 animation = &"Hurt"
-frame_progress = 0.258338
+frame_progress = 0.124798
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
 position = Vector2(103, 138)

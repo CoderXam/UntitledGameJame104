@@ -1,29 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwrcpvq6ulkk2"]
+[gd_scene load_steps=3 format=3 uid="uid://cwrcpvq6ulkk2"]
 
-[ext_resource type="Script" path="res://Scenes/Combat Stuff/player_combat.gd" id="1_775f5"]
 [ext_resource type="SpriteFrames" uid="uid://c7bgygymnwgdn" path="res://Sprites/PlayerSprite/ProtagonistAnims.tres" id="2_ksqqw"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_is1qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apylm"]
 size = Vector2(64, 64)
 
 [node name="PlayerCombat" type="Node2D"]
-script = ExtResource("1_775f5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-modulate = Color(0.102761, 0.687883, 0.704425, 1)
-position = Vector2(32, 32)
-scale = Vector2(64, 64)
-mesh = SubResource("QuadMesh_is1qw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(32, 32)
+visible = false
 shape = SubResource("RectangleShape2D_apylm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(32, 32)
 sprite_frames = ExtResource("2_ksqqw")
 animation = &"Rest"
