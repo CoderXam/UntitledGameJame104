@@ -20,7 +20,7 @@ func _ready():
 	
 	
 	#sets position of character in array thingy
-	position. y = 64
+	position. y = 54
 	arrPos = floor(position.x / 64)
 	#print(arrPos)
 	position.x = arrPos * 64

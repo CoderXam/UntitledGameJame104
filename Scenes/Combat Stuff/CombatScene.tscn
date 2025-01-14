@@ -82,7 +82,7 @@ position = Vector2(328, 64)
 position = Vector2(432, 64)
 
 [node name="PlayerCombat" parent="." instance=ExtResource("4_crla7")]
-position = Vector2(104, 64)
+position = Vector2(96, 54)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 32.0
