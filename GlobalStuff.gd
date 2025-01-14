@@ -19,7 +19,9 @@ func resetPos(x = 9):
 		charPositions.append(0)
 
 
-#For runes
+"""
+RUNES
+"""
 var is_dragging = false
 
 
@@ -30,6 +32,23 @@ var newRunePos
 
 
 # For switching scenes (for debugging purposes, should be deleted when game is finished)
+var fire: Rune = Rune.new("Fireball","Launch a scorching fireball attack",preload("res://Sprites/runes/fire.png"),5,15)
+var magma := Rune.new("Magma Stomp","Turn the ground to molten rock", preload("res://Sprites/runes/magma.png"),5,15)
+var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water", preload("res://Sprites/runes/water.png"),5,15)
+var shield := Rune.new("Shield","Block incoming attacks with an arcane ward", preload("res://Sprites/runes/shield.png"),5,15)
+var orb := Rune.new("Orb","Pierce through enemies with a spectral orb", preload("res://Sprites/runes/orb.png"),5,5)
+var lifesteal := Rune.new("Lifesteal","Sap away the lifeforce of enemies for yourself", preload("res://Sprites/runes/lifesteal.png"),5,10)
+var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", preload("res://Sprites/runes/root.png"),5,5)
+var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"),5,5)
+var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"),5,5)
+var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"),5,10)
+
+var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns]
+
+"""
+SCENE SWITCHING
+"""
+
 var scenes = ["res://Scenes/MapScene.tscn",
 "res://Scenes/Combat Stuff/CombatScene.tscn",
 "res://Scenes/shop/shop_scene.tscn"]

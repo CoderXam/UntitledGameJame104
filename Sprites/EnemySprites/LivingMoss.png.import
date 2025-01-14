@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df6kb6mx2gqt1"
-path="res://.godot/imported/Protagonist-Sheet.png.png-61b3e78fd9912ab6538f244d339a4ef3.ctex"
+uid="uid://ci5koglnurxe6"
+path="res://.godot/imported/LivingMoss.png-a4af213e75f6e05f23f402340c5e361c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Protagonist-Sheet.png.png"
-dest_files=["res://.godot/imported/Protagonist-Sheet.png.png-61b3e78fd9912ab6538f244d339a4ef3.ctex"]
+source_file="res://Sprites/EnemySprites/LivingMoss.png"
+dest_files=["res://.godot/imported/LivingMoss.png-a4af213e75f6e05f23f402340c5e361c.ctex"]
 
 [params]
 
