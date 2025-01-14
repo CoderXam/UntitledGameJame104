@@ -3,6 +3,16 @@ extends Node2D
 var mouseHover = false
 var selected = false
 
+@onready var runeList = get_parent().get_children()
+var runeNum
+
+func _ready():
+	for i in range(len(runeList)):
+		if $"." == runeList[i]:
+			runeNum = i
+	print(runeNum, ": ", $".")
+
+
 func _process(delta):
 	if Input.is_action_just_pressed("click") and mouseHover == true:
 		#locks out other runes from doing anything if another is already selected,
@@ -13,11 +23,11 @@ func _process(delta):
 			#lets other runes know that they cant get selected
 			Global.hasSelection = selected
 			#debugging purposes to see which rune spot got clicked
-			print(selected, $".")
+			#print(selected, $".")
 	
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
-		print($".", " should now appear at ", Global.newRunePos)
+		#print($".", " should now appear at ", Global.newRunePos)
 		var tweenMove = create_tween()
 		tweenMove.tween_property(self, "position", Global.newRunePos + Vector2(24,24), 0.1)
 		

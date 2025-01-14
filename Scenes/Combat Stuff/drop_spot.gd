@@ -2,11 +2,17 @@ extends Node2D
 
 var mouseHover = false
 
+@onready var spotList = get_parent().get_children()
+var spotNum
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ColorRect.hide()
+	for i in range(len(spotList)):
+		if $"." == spotList[i]:
+			spotNum = i
+	print(spotNum, ": ", $".")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +28,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("click") and mouseHover == true:
 		if Global.hasSelection == true:
 			Global.newRunePos = global_position
-			print(global_position, $".")
+			#print(global_position, $".")
 
 
 #func _on_area_2d_mouse_entered():

@@ -19,16 +19,22 @@ func resetPos(x = 9):
 		charPositions.append(0)
 
 
-"""
-RUNES
-"""
-var is_dragging = false
+#"""
+#RUNES
+#"""
+#var is_dragging = false
 
 
 "JACOBS FIX, WILL CLEAN UP ONCE IM DONE"
 var isClicked = false
 var hasSelection = false
 var newRunePos
+
+#turns into an array of 9 0s in _ready(), to represent the rune slots and dropped spots
+var runeArr = []
+var spotArr = []
+
+
 
 
 # For switching scenes (for debugging purposes, should be deleted when game is finished)
@@ -55,6 +61,12 @@ var scenes = ["res://Scenes/MapScene.tscn",
 var scene_index:int
 
 func _ready():
+	
+	#for the rune casting system
+	for i in range(9):
+		runeArr.append(0)
+		spotArr.append(0)
+
 	
 	# Get the current scene
 	for i in len(scenes):

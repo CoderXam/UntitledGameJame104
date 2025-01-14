@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
-[ext_resource type="PackedScene" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
-[ext_resource type="PackedScene" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
+[ext_resource type="PackedScene" uid="uid://cmdbgn77vxm4o" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
+[ext_resource type="PackedScene" uid="uid://deyprpyauvbog" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
@@ -82,13 +82,13 @@ offset_top = 16.0
 offset_right = 128.0
 offset_bottom = 43.0
 
-[node name="Runes" type="Node" parent="."]
+[node name="Runes" type="Node2D" parent="."]
 
 [node name="Rune" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 160)
 
 [node name="Rune2" parent="Runes" instance=ExtResource("4_lvuk1")]
-position = Vector2(106, 160)
+position = Vector2(104, 160)
 
 [node name="Rune3" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 160)
@@ -97,7 +97,7 @@ position = Vector2(160, 160)
 position = Vector2(48, 216)
 
 [node name="Rune5" parent="Runes" instance=ExtResource("4_lvuk1")]
-position = Vector2(106, 216)
+position = Vector2(104, 216)
 
 [node name="Rune6" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 216)
@@ -106,12 +106,12 @@ position = Vector2(160, 216)
 position = Vector2(48, 272)
 
 [node name="Rune8" parent="Runes" instance=ExtResource("4_lvuk1")]
-position = Vector2(106, 272)
+position = Vector2(104, 272)
 
 [node name="Rune9" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 272)
 
-[node name="Drop Areas" type="Node" parent="."]
+[node name="Drop Areas" type="Node2D" parent="."]
 
 [node name="DropSpot" parent="Drop Areas" instance=ExtResource("6_ad514")]
 position = Vector2(216, 136)
@@ -139,6 +139,35 @@ position = Vector2(296, 248)
 
 [node name="DropSpot9" parent="Drop Areas" instance=ExtResource("6_ad514")]
 position = Vector2(376, 248)
+
+[node name="Drop Areas (but in rune spots)" type="Node2D" parent="."]
+
+[node name="DropSpot" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(24, 136)
+
+[node name="DropSpot2" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(80, 136)
+
+[node name="DropSpot3" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(136, 136)
+
+[node name="DropSpot4" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(24, 192)
+
+[node name="DropSpot5" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(80, 192)
+
+[node name="DropSpot6" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(136, 192)
+
+[node name="DropSpot7" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(24, 248)
+
+[node name="DropSpot8" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(80, 248)
+
+[node name="DropSpot9" parent="Drop Areas (but in rune spots)" instance=ExtResource("6_ad514")]
+position = Vector2(136, 248)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
