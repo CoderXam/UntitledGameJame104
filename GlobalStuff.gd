@@ -24,6 +24,14 @@ RUNES
 """
 var is_dragging = false
 
+
+"JACOBS FIX, WILL CLEAN UP ONCE IM DONE"
+var isClicked = false
+var hasSelection = false
+var newRunePos
+
+
+# For switching scenes (for debugging purposes, should be deleted when game is finished)
 var fire: Rune = Rune.new("Fireball","Launch a scorching fireball attack",preload("res://Sprites/runes/fire.png"),5,15)
 var magma := Rune.new("Magma Stomp","Turn the ground to molten rock", preload("res://Sprites/runes/magma.png"),5,15)
 var water := Rune.new("Water Blast","Blast foes back and deal damage with a pressurized beam of water", preload("res://Sprites/runes/water.png"),5,15)
