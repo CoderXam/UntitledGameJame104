@@ -18,6 +18,8 @@ func _process(delta):
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
 		print($".", " should now appear at ", Global.newRunePos)
+		var tweenMove = create_tween()
+		tweenMove.tween_property(self, "position", Global.newRunePos + Vector2(24,24), 0.1)
 		
 		#resetting everything so that a new rune can be selected
 		selected = false
