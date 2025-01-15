@@ -4,6 +4,7 @@ var mouseHover = false
 
 @onready var spotList = get_parent().get_children()
 var spotNum
+var runeNum
 var isCasting = false
 
 # Called when the node enters the scene tree for the first time.
@@ -21,11 +22,17 @@ func _ready():
 		for i in range(len(spotList)):
 			if $"." == spotList[i]:
 				spotNum = i
+				Global.spotArr[i]=global_position
 				break
 		#print(spotNum, ": ", $".")
 		if len(PlayerData1.inventory) > spotNum:
 			print(PlayerData1.inventory[spotNum].rune_name)
-	
+	elif get_parent().name == "Inventory":
+		isCasting = false
+		for i in range(len(spotList)):
+			if $"." == spotList[i]:
+				runeNum = i
+				Global.runeArr[i]=global_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
