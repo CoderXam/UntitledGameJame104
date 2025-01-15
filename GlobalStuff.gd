@@ -48,6 +48,7 @@ var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", p
 var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"),5,5)
 var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"),5,5)
 var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"),5,10)
+var EMPTY := Rune.new("empty","placeholder rune")
 
 var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns]
 

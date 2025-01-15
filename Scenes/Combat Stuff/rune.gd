@@ -6,11 +6,19 @@ var selected = false
 @onready var runeList = get_parent().get_children()
 var runeNum
 
+var rune_spell # The spell (instance of rune) associated with this node
+
 func _ready():
 	for i in range(len(runeList)):
 		if $"." == runeList[i]:
 			runeNum = i
-	#print(runeNum, ": ", $".")
+			
+			if PlayerData1.inventory.size() > runeNum:
+				rune_spell=PlayerData1.inventory[i]
+			else:
+				rune_spell=Global.EMPTY
+			
+	print(runeNum, ": ", $".", rune_spell.rune_name)
 
 
 func _process(delta):
