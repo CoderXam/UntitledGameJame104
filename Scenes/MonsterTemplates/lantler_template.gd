@@ -7,6 +7,7 @@ extends Node2D
 @export var power = 5
 @export var glowlevel = 0
 var maxhealth = 15
+var round = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +19,6 @@ func on_attack():
 		1:$AnimatedSprite2D.play("AttackG1")
 		2:$AnimatedSprite2D.play("AttackG2")
 		3:$AnimatedSprite2D.play("AttackG3")
-	await $AnimatedSprite2D.animation_finished
 	return(power)
 	
 #plays the hurt animation and applies the damage
@@ -28,9 +28,11 @@ func on_hurt(damage):
 		1:$AnimatedSprite2D.play("HurtG1")
 		2:$AnimatedSprite2D.play("HurtG2")
 		3:$AnimatedSprite2D.play("HurtG3")
-	await $AnimatedSprite2D.animation_finished
 	health = health-damage
-	return(health)
+	if health <=0:
+		stun = true
+		await get_tree().create_timer(round).timeout
+		death()
 	
 #Destroys the node should have an animation
 func death():
@@ -38,11 +40,9 @@ func death():
 	
 #Behaviour for each turn
 func turn():
-	print("Lantler_turn")
 	if stun == true:
 		stun = false
 	if glowlevel !=3:
-		print("Increase glow level")
 		glowlevel = glowlevel + 1
 		match glowlevel:
 			1:$AnimatedSprite2D.play("RestG1")

@@ -5,6 +5,8 @@ var enemies = []
 var EnemiesNode
 var EnemySpaceArray = []
 
+var round = 1.5
+
 signal attack
 
 func _ready() -> void:
@@ -48,14 +50,11 @@ func _ready() -> void:
 	enemies = EnemiesNode.get_children()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_button_pressed() -> void:
 	enemies = EnemiesNode.get_children()
-	player_attack("root")
+	player_attack("fire")
 	#PlayerAttack
 	
 	
@@ -63,6 +62,7 @@ func _on_button_pressed() -> void:
 func player_attack(current_attack):
 	match current_attack:
 		"fire":
+			enemies[0].on_hurt(5)
 			pass
 		"lifesteal":
 			pass
@@ -75,32 +75,34 @@ func player_attack(current_attack):
 		"root":
 			enemies[0].stun = true
 			enemies[0].on_hurt(5)
-			if enemies[0].health <= 0:
-				enemies[0].death()
 		"shield":
 			pass
 		"thorns":
 			pass
 		"water":
 			pass
+	await get_tree().create_timer(round/2).timeout
 	enemies = EnemiesNode.get_children()
 	enemy_movement()
 func enemy_movement():
 	if enemies[0].infrontplayer == true && enemies[0].stun == false:
 		var damage = enemies[0].on_attack()
-		print("Damage taken: "+ str(damage))
+		await get_tree().create_timer(round/2).timeout
+		$PlayerSpace/PlayerCombat.hurt(damage)
 	for i in range(enemies.size()):
 		if enemies[i-1].squarepos+1 == enemies[i].squarepos && (enemies[i-1].stun == true || enemies[i-1].infrontplayer == true) || enemies[i].squarepos == 1:
 			enemies[i].stun = true
 		elif enemies[i].stun != true:
+			var tween = get_tree().create_tween()
 			enemies[i].squarepos = enemies[i].squarepos-1
-			enemies[i].position = EnemySpaceArray[enemies[i].squarepos-1].position
+			tween.tween_property(enemies[i], "position", EnemySpaceArray[enemies[i].squarepos-1].position, round/4)
 			if enemies[i].squarepos == 1:
 				enemies[i].infrontplayer = true		
+	await get_tree().create_timer(round).timeout
+	enemies = EnemiesNode.get_children()
 	enemy_turn()
 func enemy_turn():
 	for i in range(enemies.size()):
 		enemies[i].turn()
-
 	
 	

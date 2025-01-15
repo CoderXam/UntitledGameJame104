@@ -6,6 +6,7 @@ extends Node2D
 @export var squarepos = 0
 @export var power = 5
 var maxhealth = 30
+var round = 0.5
 
 
 
@@ -18,7 +19,10 @@ func on_attack():
 func on_hurt(damage):
 	$AnimatedSprite2D.play("Hurt")
 	health = health-damage
-	return(health)
+	if health <= 0:
+		stun = true
+		await get_tree().create_timer(round).timeout
+		death()
 	
 #Destroys the node should have an animation
 func death():

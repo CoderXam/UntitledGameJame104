@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ipom8kw35t2c"]
+[gd_scene load_steps=4 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="2_bqipc"]
-[ext_resource type="Script" path="res://Scenes/Combat Stuff/player_build.gd" id="3_a4tf6"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
 
@@ -19,7 +18,6 @@ scale = Vector2(64, 64)
 mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="PlayerCombat" parent="PlayerSpace" instance=ExtResource("2_bqipc")]
-script = ExtResource("3_a4tf6")
 
 [node name="EnemySpaces" type="Node2D" parent="."]
 
