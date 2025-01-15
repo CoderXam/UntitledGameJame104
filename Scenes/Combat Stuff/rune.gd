@@ -12,13 +12,14 @@ func _ready():
 	for i in range(len(runeList)):
 		if $"." == runeList[i]:
 			runeNum = i
-			
-			if PlayerData1.inventory.size() > runeNum:
-				rune_spell=PlayerData1.inventory[i]
-			else:
-				rune_spell=Global.EMPTY
-			
-	print(runeNum, ": ", $".", rune_spell.rune_name)
+			break
+	
+	if len(PlayerData1.inventory) > runeNum:
+		rune_spell=PlayerData1.inventory[runeNum]
+	else:
+		rune_spell=Global.EMPTY
+		
+	print("Inventory ",runeNum+1, ": ", rune_spell.rune_name)
 
 
 func _process(delta):
@@ -35,9 +36,9 @@ func _process(delta):
 	
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
-		#print($".", " should now appear at ", Global.newRunePos)
 		var tweenMove = create_tween()
 		tweenMove.tween_property(self, "position", Global.newRunePos + Vector2(24,24), 0.1)
+		print(rune_spell.rune_name, " moved to ", Global.newRunePos)
 		
 		#resetting everything so that a new rune can be selected
 		selected = false
