@@ -19,16 +19,22 @@ func resetPos(x = 9):
 		charPositions.append(0)
 
 
-"""
-RUNES
-"""
-var is_dragging = false
+#"""
+#RUNES
+#"""
+#var is_dragging = false
 
 
 "JACOBS FIX, WILL CLEAN UP ONCE IM DONE"
 var isClicked = false
 var hasSelection = false
 var newRunePos
+
+# Represents the rune (inventory) slots and dropped (casting area) spots
+var runeArr = []
+var spotArr = []
+
+
 
 
 # For switching scenes (for debugging purposes, should be deleted when game is finished)
@@ -42,6 +48,7 @@ var root := Rune.new("Root Snatch","Fix enemies in place with grasping roots", p
 var lightning := Rune.new("Lightning Bolt","Shock and stun enemies with a bolt of lightning", preload("res://Sprites/runes/lightning.png"),5,5)
 var amplify := Rune.new("Amplify","Amplify other runes", preload("res://Sprites/runes/amplify.png"),5,5)
 var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"),5,10)
+var EMPTY := Rune.new("empty","placeholder rune")
 
 var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns]
 
@@ -55,6 +62,12 @@ var scenes = ["res://Scenes/MapScene.tscn",
 var scene_index:int
 
 func _ready():
+	
+	#for the rune casting system
+	for i in range(9):
+		runeArr.append(0)
+		spotArr.append(0)
+
 	
 	# Get the current scene
 	for i in len(scenes):
