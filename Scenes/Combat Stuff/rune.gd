@@ -24,15 +24,16 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("click") and mouseHover == true:
-		#locks out other runes from doing anything if another is already selected,
-		#but lets the selected rune still unselect itself
-		if selected == true or Global.hasSelection == false:
-			#lets the rune know that it is selected
-			selected = not selected
-			#lets other runes know that they cant get selected
-			Global.hasSelection = selected
-			#debugging purposes to see which rune spot got clicked
-			#print(selected, $".")
+		if rune_spell.rune_name != "empty":
+			#locks out other runes from doing anything if another is already selected,
+			#but lets the selected rune still unselect itself
+			if selected == true or Global.hasSelection == false:
+				#lets the rune know that it is selected
+				selected = not selected
+				#lets other runes know that they cant get selected
+				Global.hasSelection = selected
+				#debugging purposes to see which rune spot got clicked
+				#print(selected, $".")
 	
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
