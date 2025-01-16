@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=9 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
+[ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="2_8m6u4"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
 [ext_resource type="PackedScene" uid="uid://b8u5v3mjxuun0" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
@@ -13,6 +14,8 @@
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
 maxRounds = 15
+metadata/_edit_horizontal_guides_ = [36.0]
+metadata/_edit_vertical_guides_ = [36.0]
 
 [node name="Layout" type="Node2D" parent="."]
 z_index = -1
@@ -43,6 +46,8 @@ position = Vector2(640.442, 433.047)
 scale = Vector2(464.883, 354.094)
 mesh = SubResource("QuadMesh_7j0hp")
 
+[node name="Sprite2D" type="Sprite2D" parent="Layout/Node2D/OtherStuff"]
+
 [node name="CombatDisplay" type="MeshInstance2D" parent="Layout/Node2D"]
 modulate = Color(0.568973, 0.568973, 0.568973, 1)
 position = Vector2(576, 128)
@@ -56,6 +61,11 @@ self_modulate = Color(0.288518, 0.288518, 0.288518, 1)
 position = Vector2(120, 48)
 scale = Vector2(151, 46.1309)
 mesh = SubResource("QuadMesh_7j0hp")
+
+[node name="MossyTabletBiggerCircles" type="Sprite2D" parent="Layout/Node2D"]
+position = Vector2(634, 434)
+scale = Vector2(1.16667, 1.17333)
+texture = ExtResource("2_8m6u4")
 
 [node name="roundCounter" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -86,30 +96,41 @@ offset_bottom = 43.0
 
 [node name="Rune" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 160)
+scale = Vector2(0.75, 0.75)
 
 [node name="Rune2" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(104, 160)
 
+
 [node name="Rune3" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 160)
+scale = Vector2(0.75, 0.75)
 
 [node name="Rune4" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 216)
+scale = Vector2(0.75, 0.75)
 
 [node name="Rune5" parent="Runes" instance=ExtResource("4_lvuk1")]
+
 position = Vector2(104, 216)
+
 
 [node name="Rune6" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 216)
+scale = Vector2(0.75, 0.75)
 
 [node name="Rune7" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 272)
+scale = Vector2(0.75, 0.75)
 
 [node name="Rune8" parent="Runes" instance=ExtResource("4_lvuk1")]
+
 position = Vector2(104, 272)
+
 
 [node name="Rune9" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 272)
+scale = Vector2(0.75, 0.75)
 
 [node name="Drop Areas" type="Node2D" parent="."]
 
@@ -141,6 +162,7 @@ position = Vector2(296, 248)
 
 [node name="DropSpot9" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(376, 248)
+
 
 [node name="Inventory" type="Node2D" parent="Drop Areas"]
 

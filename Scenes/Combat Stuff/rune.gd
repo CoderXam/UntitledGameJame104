@@ -38,7 +38,7 @@ func _process(delta):
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
 		var tweenMove = create_tween()
-		tweenMove.tween_property(self, "position", Global.newRunePos + Vector2(24,24), 0.1)
+		tweenMove.tween_property(self, "position", Global.newRunePos + Vector2(18,18), 0.1)
 		
 		for i in 9:
 			if Global.newRunePos == Global.runeArr[i]:
