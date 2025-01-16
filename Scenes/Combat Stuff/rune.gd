@@ -79,7 +79,7 @@ func _process(delta):
 		
 		for i in 9:
 			if Global.oldRunePos == Global.spotArr[i]:
-				print("casting slot ",i+1,"is now empty")
+				#print("casting slot ",i+1," is now empty")
 				Global.attack[i] = Global.EMPTY
 		
 		#resetting everything so that a new rune can be selected

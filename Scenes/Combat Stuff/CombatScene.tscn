@@ -124,31 +124,31 @@ z_index = 1
 [node name="Casting Area" type="Node2D" parent="Drop Areas"]
 
 [node name="DropSpot" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(256, 240)
+position = Vector2(350, 151)
 
 [node name="DropSpot2" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(256, 192)
+position = Vector2(389, 188)
 
 [node name="DropSpot3" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(336, 160)
+position = Vector2(390, 245)
 
 [node name="DropSpot4" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(296, 160)
+position = Vector2(348, 286)
 
 [node name="DropSpot5" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(320, 216)
+position = Vector2(292, 286)
 
 [node name="DropSpot6" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(389, 189)
+position = Vector2(252, 245)
 
 [node name="DropSpot7" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(296, 272)
+position = Vector2(251, 189)
 
 [node name="DropSpot8" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(344, 280)
+position = Vector2(294, 149)
 
 [node name="DropSpot9" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(376, 240)
+position = Vector2(320, 215)
 
 [node name="Inventory" type="Node2D" parent="Drop Areas"]
 

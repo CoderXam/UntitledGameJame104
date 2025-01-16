@@ -39,9 +39,9 @@ func _process(delta):
 		#(that's all it does for now, might end up doing more later --jacob)
 		_on_round_start()
 	
-	$Attack.text = "Attack:\n"
-	for i in Global.attack:
-		if i!=Global.EMPTY: $Attack.text += i.rune_name+"\n"
+	$Attack.text = "Main attack:\n"+Global.attack[8].rune_name+"\n"+"Enhance with: "+"\n"
+	for i in 8:
+		if Global.attack[i]!=Global.EMPTY: $Attack.text += Global.attack[i].rune_name+"\n"
 	
 
 @onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]
