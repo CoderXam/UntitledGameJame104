@@ -11,7 +11,9 @@ signal roundStart()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	for i in Global.attack:
+		i=Global.EMPTY
+	
 	healthBar.value = 100
 	
 	Global.resetPos()
@@ -36,6 +38,10 @@ func _process(delta):
 		#just a signal to let everything know to go add its state to the global position array
 		#(that's all it does for now, might end up doing more later --jacob)
 		_on_round_start()
+	
+	$Attack.text = "Attack:\n"
+	for i in Global.attack:
+		if i!=Global.EMPTY: $Attack.text += i.rune_name+"\n"
 	
 
 @onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]

@@ -24,11 +24,11 @@ func resetPos(x = 9):
 #"""
 #var is_dragging = false
 
-
 "JACOBS FIX, WILL CLEAN UP ONCE IM DONE"
 var isClicked = false
 var hasSelection = false
 var newRunePos
+var oldRunePos
 
 # Represents the rune (inventory) slots and dropped (casting area) spots
 var runeArr = []
@@ -51,6 +51,8 @@ var thorns := Rune.new("Thorn Needles","Riddle your enemies with thorny needles"
 var EMPTY := Rune.new("empty","placeholder rune")
 
 var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns]
+
+var attack = [EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY]
 
 """
 SCENE SWITCHING

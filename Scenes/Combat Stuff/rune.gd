@@ -38,13 +38,20 @@ func _process(delta):
 	if selected == true and Global.newRunePos:
 		#put actually useful code here
 		var tweenMove = create_tween()
+		Global.oldRunePos = position
 		tweenMove.tween_property(self, "position", Global.newRunePos, 0.1)
 		
 		for i in 9:
 			if Global.newRunePos == Global.runeArr[i]:
-				print(rune_spell.rune_name, " moved to inventory slot ",i+1," at ",Global.newRunePos)
+				print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
-				print(rune_spell.rune_name, " moved to casting slot ",i+1," at ",Global.newRunePos)
+				Global.attack[i] = rune_spell
+				print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
+		
+		for i in 9:
+			if Global.oldRunePos == Global.spotArr[i]:
+				print("casting slot ",i+1,"is now empty")
+				Global.attack[i] = Global.EMPTY
 		
 		#resetting everything so that a new rune can be selected
 		selected = false
