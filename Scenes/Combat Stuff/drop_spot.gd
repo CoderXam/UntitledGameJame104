@@ -3,8 +3,8 @@ extends Node2D
 var mouseHover = false
 
 @onready var spotList = get_parent().get_children()
-var spotNum
-var runeNum
+var spotNum # The index for the spotArr array
+var runeNum # The index for the runeArr array
 var isCasting = false
 
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +14,9 @@ func _ready():
 	"""
 	MAKE SURE THAT THE PARENTS OF THE INSTANCES IN THE CASTING AREA 
 	ARE NAMED 'CASTING AREA', OR ELSE EVERYTHING WILL BREAK --JACOB
+	AND THE PARENT OF THE ONES IN THE INVENTORY NAMED "INVENTORY --MAX
+	
+	(just don't change the node names)
 	"""
 	#lets the instance know if it is in the casting area
 	if get_parent().name == "Casting Area":
@@ -25,8 +28,8 @@ func _ready():
 				Global.spotArr[i]=global_position
 				break
 		#print(spotNum, ": ", $".")
-		if len(PlayerData1.inventory) > spotNum:
-			print(PlayerData1.inventory[spotNum].rune_name)
+		#if len(PlayerData1.inventory) > spotNum:
+			#print(PlayerData1.inventory[spotNum].rune_name)
 	elif get_parent().name == "Inventory":
 		isCasting = false
 		for i in range(len(spotList)):

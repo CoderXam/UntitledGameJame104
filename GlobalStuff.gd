@@ -30,7 +30,7 @@ var isClicked = false
 var hasSelection = false
 var newRunePos
 
-#turns into an array of 9 0s in _ready(), to represent the rune slots and dropped spots
+# Represents the rune (inventory) slots and dropped (casting area) spots
 var runeArr = []
 var spotArr = []
 

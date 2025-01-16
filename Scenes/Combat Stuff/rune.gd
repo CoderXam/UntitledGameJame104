@@ -18,7 +18,7 @@ func _ready():
 		rune_spell=PlayerData1.inventory[runeNum]
 	else:
 		rune_spell=Global.EMPTY
-		
+	
 	print("Inventory ",runeNum+1, ": ", rune_spell.rune_name)
 
 
