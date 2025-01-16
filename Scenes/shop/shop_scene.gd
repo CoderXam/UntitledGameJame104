@@ -30,8 +30,6 @@ var stock = [0,0,0,0] # Amount of runes in stock for each rune in the shop
 var inv_list := "Inventory: \n"
 @onready var inv_slots = [$Node2D/Inv1, $Node2D/Inv2, $Node2D/Inv3, $Node2D/Inv4, $Node2D/Inv5, $Node2D/Inv6, $Node2D/Inv7, $Node2D/Inv8, $Node2D/Inv9] # Rune images in the inventory
 
-var hue = 0 # as in color
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -50,6 +48,7 @@ func _ready() -> void:
 		stock[i] = 3 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name
+		names[i].add_theme_color_override("default_color", available[i].color)
 		desc[i].text = available[i].description
 		stock_text[i].text = str(stock[i]) +" in stock"
 		stock_text[i].add_theme_color_override("default_color", Color(1,1,1,1))
@@ -79,10 +78,6 @@ func choose_rune():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Balance.text = ":) " + str(PlayerData1.currency)
-	
-	for i in names:
-		i.add_theme_color_override("default_color", Color.from_hsv(hue,1,1,1))
-	hue += 0.25*delta
 
 # Displays list of items in inventory
 func refresh_inventory() -> void:
