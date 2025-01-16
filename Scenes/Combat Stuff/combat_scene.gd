@@ -9,6 +9,8 @@ signal roundStart()
 @onready var rounds = maxRounds
 @onready var healthBar = $ProgressBar
 
+@onready var support = $AttackList/Supporting.get_children()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in Global.attack:
@@ -39,9 +41,12 @@ func _process(delta):
 		#(that's all it does for now, might end up doing more later --jacob)
 		_on_round_start()
 	
-	$Attack.text = "Main attack:\n"+Global.attack[8].rune_name+"\n"+"Enhance with: "+"\n"
-	for i in 8:
-		if Global.attack[i]!=Global.EMPTY: $Attack.text += Global.attack[i].rune_name+"\n"
+	for i in len(support):
+		support[i].text = Global.attack[i].rune_name
+		support[i].add_theme_color_override("default_color", Global.attack[i].color)
+	
+	$AttackList/Main/MainAttack.text = Global.attack[8].rune_name
+	$AttackList/Main/MainAttack.add_theme_color_override("default_color", Global.attack[8].color)
 	
 
 @onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]

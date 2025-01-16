@@ -179,14 +179,99 @@ position = Vector2(104, 272)
 [node name="DropSpot9" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
 position = Vector2(160, 272)
 
-[node name="Attack" type="RichTextLabel" parent="."]
+[node name="AttackList" type="Node2D" parent="."]
+
+[node name="AttackTitle" type="RichTextLabel" parent="AttackList"]
 offset_left = 457.0
-offset_top = 132.0
+offset_top = 130.0
 offset_right = 586.0
-offset_bottom = 356.0
+offset_bottom = 155.0
 scale = Vector2(0.75, 0.75)
-text = "Attack:
-none"
+text = "Attack:"
+
+[node name="Main" type="Node2D" parent="AttackList"]
+
+[node name="MainAttack" type="RichTextLabel" parent="AttackList/Main"]
+offset_left = 457.0
+offset_top = 145.0
+offset_right = 586.0
+offset_bottom = 170.0
+scale = Vector2(0.75, 0.75)
+text = "main attack"
+
+[node name="AttackSupport" type="RichTextLabel" parent="AttackList"]
+offset_left = 457.0
+offset_top = 160.0
+offset_right = 586.0
+offset_bottom = 185.0
+scale = Vector2(0.75, 0.75)
+text = "Support:"
+
+[node name="Supporting" type="Node2D" parent="AttackList"]
+
+[node name="Support" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 175.0
+offset_right = 586.0
+offset_bottom = 200.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support2" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 190.0
+offset_right = 586.0
+offset_bottom = 215.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support3" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 205.0
+offset_right = 586.0
+offset_bottom = 230.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support4" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 220.0
+offset_right = 586.0
+offset_bottom = 245.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support5" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 235.0
+offset_right = 586.0
+offset_bottom = 260.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support6" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 250.0
+offset_right = 586.0
+offset_bottom = 275.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support7" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 265.0
+offset_right = 586.0
+offset_bottom = 290.0
+scale = Vector2(0.75, 0.75)
+text = "support"
+
+[node name="Support8" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 280.0
+offset_right = 586.0
+offset_bottom = 305.0
+scale = Vector2(0.75, 0.75)
+text = "support"
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
