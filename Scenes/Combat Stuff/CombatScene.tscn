@@ -95,7 +95,7 @@ offset_bottom = 43.0
 [node name="Runes" type="Node" parent="."]
 
 [node name="Rune" parent="Runes" instance=ExtResource("4_lvuk1")]
-position = Vector2(18, 18)
+position = Vector2(48, 160)
 scale = Vector2(0.75, 0.75)
 
 [node name="Rune2" parent="Runes" instance=ExtResource("4_lvuk1")]
@@ -149,11 +149,8 @@ position = Vector2(238, 222)
 scale = Vector2(0.75, 0.75)
 
 [node name="DropSpot5" parent="Drop Areas" instance=ExtResource("6_ad514")]
-position = Vector2(290, 199)
+position = Vector2(280, 200)
 scale = Vector2(0.75, 0.75)
-
-[node name="DropSpot5" parent="Drop Areas/DropSpot5" instance=ExtResource("6_ad514")]
-position = Vector2(25.3333, -2.07424e-05)
 
 [node name="DropSpot6" parent="Drop Areas" instance=ExtResource("6_ad514")]
 position = Vector2(359, 176)
@@ -169,6 +166,10 @@ scale = Vector2(0.75, 0.75)
 
 [node name="DropSpot9" parent="Drop Areas" instance=ExtResource("6_ad514")]
 position = Vector2(327, 259)
+scale = Vector2(0.75, 0.75)
+
+[node name="DropSpot10" parent="Drop Areas" instance=ExtResource("6_ad514")]
+position = Vector2(320, 200)
 scale = Vector2(0.75, 0.75)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
