@@ -42,8 +42,11 @@ func _process(delta):
 		_on_round_start()
 	
 	for i in len(support):
-		support[i].text = Global.attack[i].rune_name
-		support[i].add_theme_color_override("default_color", Global.attack[i].color)
+		if Global.attack[i] != Global.EMPTY:
+			support[i].text = Global.attack[i].rune_name
+			support[i].add_theme_color_override("default_color", Global.attack[i].color)
+		elif Global.attack[i] == Global.EMPTY:
+			support[i].text = " "
 	
 	$AttackList/Main/MainAttack.text = Global.attack[8].rune_name
 	$AttackList/Main/MainAttack.add_theme_color_override("default_color", Global.attack[8].color)

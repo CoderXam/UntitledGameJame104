@@ -45,12 +45,12 @@ func _process(delta):
 	#this is once it gets told where to go
 	if selected == true and Global.newRunePos:
 		Global.oldRunePos = position
-		
 		#removes itself from where it was in the rune dictionary
 		if isInInv:
 			Global.runeDict["Inv"][runeNum] = 0
 		elif isInInv == false:
 			Global.runeDict["Cast"][runeNum] = 0
+			Global.attack[runeNum] = Global.EMPTY
 		
 		
 		for i in 9:
@@ -60,7 +60,7 @@ func _process(delta):
 				#updates rune dictionary
 				Global.runeDict["Inv"][runeNum] = rune_spell
 				isInInv = true
-				print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
+				#print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
 				#mostly the same as above
 				runeNum = i
@@ -68,19 +68,12 @@ func _process(delta):
 				isInInv = false
 				#lets it know what attacks are "cast"
 				Global.attack[i] = rune_spell
-				print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
-		
-		
+				#print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 		
 		
 		#actually moves the rune
 		var tweenMove = create_tween()
 		tweenMove.tween_property(self, "position", Global.newRunePos, 0.1)
-		
-		for i in 9:
-			if Global.oldRunePos == Global.spotArr[i]:
-				#print("casting slot ",i+1," is now empty")
-				Global.attack[i] = Global.EMPTY
 		
 		#resetting everything so that a new rune can be selected
 	
