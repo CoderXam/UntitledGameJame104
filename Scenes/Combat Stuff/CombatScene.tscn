@@ -96,102 +96,90 @@ offset_bottom = 43.0
 
 [node name="Rune" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 160)
-scale = Vector2(0.75, 0.75)
 
 [node name="Rune2" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(104, 160)
 
-
 [node name="Rune3" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 160)
-scale = Vector2(0.75, 0.75)
 
 [node name="Rune4" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 216)
-scale = Vector2(0.75, 0.75)
 
 [node name="Rune5" parent="Runes" instance=ExtResource("4_lvuk1")]
-
 position = Vector2(104, 216)
-
 
 [node name="Rune6" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 216)
-scale = Vector2(0.75, 0.75)
 
 [node name="Rune7" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(48, 272)
-scale = Vector2(0.75, 0.75)
 
 [node name="Rune8" parent="Runes" instance=ExtResource("4_lvuk1")]
-
 position = Vector2(104, 272)
-
 
 [node name="Rune9" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 272)
-scale = Vector2(0.75, 0.75)
 
 [node name="Drop Areas" type="Node2D" parent="."]
 
 [node name="Casting Area" type="Node2D" parent="Drop Areas"]
 
 [node name="DropSpot" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(216, 136)
+position = Vector2(256, 240)
 
 [node name="DropSpot2" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(296, 136)
+position = Vector2(256, 192)
 
 [node name="DropSpot3" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(376, 136)
+position = Vector2(336, 160)
 
 [node name="DropSpot4" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(216, 192)
+position = Vector2(296, 160)
 
 [node name="DropSpot5" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(296, 192)
+position = Vector2(320, 216)
 
 [node name="DropSpot6" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
 position = Vector2(376, 192)
 
 [node name="DropSpot7" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(216, 248)
+position = Vector2(296, 272)
 
 [node name="DropSpot8" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(296, 248)
+position = Vector2(344, 280)
 
 [node name="DropSpot9" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
-position = Vector2(376, 248)
-
+position = Vector2(376, 240)
 
 [node name="Inventory" type="Node2D" parent="Drop Areas"]
 
 [node name="DropSpot" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(24, 136)
+position = Vector2(48, 160)
 
 [node name="DropSpot2" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(80, 136)
+position = Vector2(104, 160)
 
 [node name="DropSpot3" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(136, 136)
+position = Vector2(160, 160)
 
 [node name="DropSpot4" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(24, 192)
+position = Vector2(48, 216)
 
 [node name="DropSpot5" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(80, 192)
+position = Vector2(104, 216)
 
 [node name="DropSpot6" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(136, 192)
+position = Vector2(160, 216)
 
 [node name="DropSpot7" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(24, 248)
+position = Vector2(48, 272)
 
 [node name="DropSpot8" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(80, 248)
+position = Vector2(104, 272)
 
 [node name="DropSpot9" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
-position = Vector2(136, 248)
+position = Vector2(160, 272)
 
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
