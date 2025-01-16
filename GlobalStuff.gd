@@ -29,6 +29,11 @@ var isClicked = false
 var hasSelection = false
 var newRunePos
 var oldRunePos
+#Dictionary to keep track of each rune's position
+var runeDict = {
+	"Inv": [0,0,0,0,0,0,0,0,0],
+	"Cast": [0,0,0,0,0,0,0,0,0]
+}
 
 # Represents the rune (inventory) slots and dropped (casting area) spots
 var runeArr = []
