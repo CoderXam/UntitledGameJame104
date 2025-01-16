@@ -25,6 +25,7 @@ script = ExtResource("3_a4tf6")
 
 [node name="Space1" type="Node2D" parent="EnemySpaces"]
 position = Vector2(160, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space1"]
 modulate = Color(1, 0.294118, 0.168627, 1)
@@ -34,6 +35,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space2" type="Node2D" parent="EnemySpaces"]
 position = Vector2(224, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space2"]
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
@@ -43,6 +45,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space3" type="Node2D" parent="EnemySpaces"]
 position = Vector2(288, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space3"]
 modulate = Color(1, 0.294118, 0.168627, 1)
@@ -52,6 +55,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space4" type="Node2D" parent="EnemySpaces"]
 position = Vector2(352, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space4"]
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
@@ -61,6 +65,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space5" type="Node2D" parent="EnemySpaces"]
 position = Vector2(416, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space5"]
 modulate = Color(1, 0.294118, 0.168627, 1)
@@ -70,6 +75,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space6" type="Node2D" parent="EnemySpaces"]
 position = Vector2(480, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space6"]
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
@@ -79,6 +85,7 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Space7" type="Node2D" parent="EnemySpaces"]
 position = Vector2(544, 64)
+metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space7"]
 modulate = Color(1, 0.294118, 0.168627, 1)

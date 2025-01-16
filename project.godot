@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://GlobalStuff.gd"
 PlayerData1="*res://player_data.gd"
 StageBuilder="*res://Scenes/Test/StageBuilder.gd"
+RuneData="*res://Scenes/Test/RuneData.gd"
 
 [display]
 

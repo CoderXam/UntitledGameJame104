@@ -3,10 +3,10 @@ extends Node
 
 var stage1 = {
 	1 : null,
-	2 : "Stonyhedgehod",
-	3 : "Livingmoss",
-	4 : null,
-	5: "Livingmoss",
-	6 : "Berrybushbear",
-	7 : "Lantler"
+	2 : "Stonyhedgehog",
+	3 : null,
+	4 : "Stonyhedgehog",
+	5:  null,
+	6 : null,
+	7 : null
 }
