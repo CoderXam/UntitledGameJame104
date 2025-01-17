@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwrcpvq6ulkk2"]
+[gd_scene load_steps=5 format=3 uid="uid://cwrcpvq6ulkk2"]
 
+[ext_resource type="Script" path="res://Scenes/Test/player_build.gd" id="1_08pcf"]
+[ext_resource type="SpriteFrames" uid="uid://c8wrc5a7raihi" path="res://Sprites/PlayerSprite/shield.tres" id="2_6x4sh"]
 [ext_resource type="SpriteFrames" uid="uid://c7bgygymnwgdn" path="res://Sprites/PlayerSprite/ProtagonistAnims.tres" id="2_ksqqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apylm"]
 size = Vector2(64, 64)
 
-[node name="PlayerCombat" type="Node2D"]
+[node name="PlayerBuild" type="Node2D"]
+script = ExtResource("1_08pcf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -15,4 +18,10 @@ shape = SubResource("RectangleShape2D_apylm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_ksqqw")
-animation = &"Rest"
+animation = &"Bob_Idle"
+frame_progress = 0.990348
+
+[node name="shield" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_6x4sh")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://5exrthuifjck"]
+[gd_scene load_steps=6 format=3 uid="uid://5exrthuifjck"]
 
 [ext_resource type="Script" path="res://Scenes/MonsterTemplates/livingmoss_template.gd" id="1_8bwbe"]
 [ext_resource type="SpriteFrames" uid="uid://c2pj18fwmkdoc" path="res://Sprites/EnemySprites/LivingMossAnims.tres" id="2_44pa0"]
+[ext_resource type="SpriteFrames" uid="uid://q1rtgnx0b5uv" path="res://Sprites/VFX/VFX.tres" id="3_a6rn3"]
+[ext_resource type="SpriteFrames" uid="uid://c6slmer6arrus" path="res://Sprites/EnemySprites/pointer.tres" id="4_0fm2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
@@ -18,3 +20,11 @@ shape = SubResource("RectangleShape2D_177gs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_44pa0")
 animation = &"Rest"
+
+[node name="VFX" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_a6rn3")
+
+[node name="pointer" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_0fm2l")
+
+[connection signal="animation_finished" from="VFX" to="." method="_on_vfx_animation_finished"]

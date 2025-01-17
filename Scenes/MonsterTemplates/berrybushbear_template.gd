@@ -9,18 +9,23 @@ extends Node2D
 var maxhealth = 25
 var round = 0.5
 
+var anim
+var vfx
+var pointer
+
+func _ready():
+	anim = $AnimatedSprite2D
+	vfx = $VFX
+	pointer = $pointer
+
 func on_attack():
 	$AnimatedSprite2D.play("Attack")
 	return(power)
 	
 #plays the hurt animation and applies the damage
-func on_hurt(damage):
-	$AnimatedSprite2D.play("Hurt")
+func on_hurt(damage: int, spell:String):
+	vfx.play(spell)
 	health = health-damage
-	if health <=0:
-		stun = true
-		await get_tree().create_timer(round).timeout
-		death()
 	
 #Destroys the node should have an animation
 func death():
@@ -30,3 +35,14 @@ func death():
 func turn():
 	if stun == true:
 		stun = false
+		
+func _on_vfx_animation_finished() -> void:
+	anim.play("Hurt")
+	if health <= 0:
+		stun = true
+		await get_tree().create_timer(round).timeout
+		death()
+		
+
+func on_first():
+	pointer.play("pointer")

@@ -64,10 +64,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_php5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_php5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_php5b")
 }],
-"loop": false,
+"loop": true,
 "name": &"Bob_Idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,

@@ -15,7 +15,7 @@ func _ready() -> void:
 	var Stonyhedgehog_load = preload("res://Scenes/MonsterTemplates/Stonyhedgehog_Template.tscn")
 	var Lantler_load = preload("res://Scenes/MonsterTemplates/Lantler_Template.tscn")
 	var Berrybushbear_load = preload("res://Scenes/MonsterTemplates/Berrybushbear_Template.tscn")
-	player = $PlayerSpace/PlayerCombat
+	player = $PlayerSpace/PlayerBuild
 	
 	EnemySpaceArray = get_node("EnemySpaces").get_children()
 	EnemiesNode = get_node("Enemies")
@@ -48,7 +48,7 @@ func _ready() -> void:
 					BerrybushbearEnemy.position = EnemySpaceArray[i].position
 					print("Berrybushbear loaded in space: " + str(i+1))
 	enemies = EnemiesNode.get_children()
-
+	enemies[0].on_first()
 
 
 
@@ -56,11 +56,11 @@ func _on_button_pressed() -> void:
 	if playerturn == true:
 		playerturn = false
 		enemies = EnemiesNode.get_children()
-		player_attack("wave")
+		player_attack("magma")
 
 
 func player_attack(current_attack):
-	spellcast(enemies, EnemySpaceArray, current_attack)
+	spellcast(current_attack)
 	await get_tree().create_timer(round).timeout
 	enemies = EnemiesNode.get_children()
 	enemy_movement()
@@ -90,15 +90,18 @@ func enemy_movement():
 	await get_tree().create_timer(round/2).timeout
 	#update list of enemies in case one died
 	enemies = EnemiesNode.get_children()
+	enemies[0].on_first()
 	enemy_turn()
 #lets the enemy do logic stuff
 func enemy_turn():
 	for i in range(enemies.size()):
 		enemies[i].turn()
 	await get_tree().create_timer(round/3).timeout
+	if player.shielded == true:
+			player.deshield()
 	playerturn = true
 
-func spellcast(enemies: Array, EnemySpace: Array, spell: String):
+func spellcast(spell: String):
 	var chosenspell = RuneData.runedictionary[spell]
 	var damage = chosenspell["damage"]
 	if chosenspell["stun"] == true:

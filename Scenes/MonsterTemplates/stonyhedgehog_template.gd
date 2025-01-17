@@ -9,11 +9,12 @@ var maxhealth = 30
 var round = 0.5
 var anim
 var vfx
+var pointer
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
 	vfx = $VFX
-
+	pointer = $pointer
 
 
 #plays the attack animation &  returns the damage
@@ -37,9 +38,11 @@ func turn():
 
 
 func _on_vfx_animation_finished() -> void:
-	print("vfx played")
 	anim.play("Hurt")
 	if health <= 0:
 		stun = true
 		await get_tree().create_timer(round).timeout
 		death()
+		
+func on_first():
+	pointer.play("pointer")

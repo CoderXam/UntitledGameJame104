@@ -9,9 +9,15 @@ extends Node2D
 var maxhealth = 15
 var round = 0.5
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var anim
+var vfx
+var pointer
+
+func _ready():
+	anim = $AnimatedSprite2D
+	vfx = $VFX
+	pointer = $pointer
+	
 #plays the attack animation &  returns the damage
 func on_attack():
 	match glowlevel:
@@ -22,17 +28,9 @@ func on_attack():
 	return(power)
 	
 #plays the hurt animation and applies the damage
-func on_hurt(damage):
-	match glowlevel:
-		0:$AnimatedSprite2D.play("Hurt")
-		1:$AnimatedSprite2D.play("HurtG1")
-		2:$AnimatedSprite2D.play("HurtG2")
-		3:$AnimatedSprite2D.play("HurtG3")
+func on_hurt(damage: int, spell:String):
+	vfx.play(spell)
 	health = health-damage
-	if health <=0:
-		stun = true
-		await get_tree().create_timer(round).timeout
-		death()
 	
 #Destroys the node should have an animation
 func death():
@@ -51,5 +49,16 @@ func turn():
 	else:
 		glowlevel = 0
 		$AnimatedSprite2D.play("Rest")
-
+func _on_vfx_animation_finished() -> void:
+	match glowlevel: 
+		0:anim.play("Hurt")
+		1:anim.play("HurtG1")
+		2:anim.play("HurtG2")
+		3:anim.play("HurtG3")
+	if health <= 0:
+		stun = true
+		await get_tree().create_timer(round).timeout
+		death()
 	 
+func on_first():
+	pointer.play("pointer")
