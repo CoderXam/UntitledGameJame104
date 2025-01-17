@@ -12,25 +12,30 @@ var round = 0.5
 var anim
 var vfx
 var pointer
+@onready var healthbar =$Healthbar
+
+signal blast
 
 func _ready():
 	anim = $AnimatedSprite2D
 	vfx = $VFX
 	pointer = $pointer
-	
+	anim.animation_finished.connect(_on_anim_finish)
+	healthbar.init_health(health)
 #plays the attack animation &  returns the damage
 func on_attack():
 	match glowlevel:
-		0:$AnimatedSprite2D.play("Attack")
-		1:$AnimatedSprite2D.play("AttackG1")
-		2:$AnimatedSprite2D.play("AttackG2")
-		3:$AnimatedSprite2D.play("AttackG3")
+		0:anim.play("Attack")
+		1:anim.play("AttackG1")
+		2:anim.play("AttackG2")
+		3:anim.play("AttackG3")
 	return(power)
 	
 #plays the hurt animation and applies the damage
 func on_hurt(damage: int, spell:String):
 	vfx.play(spell)
 	health = health-damage
+	healthbar.set_health(health)
 	
 #Destroys the node should have an animation
 func death():
@@ -43,12 +48,12 @@ func turn():
 	if glowlevel !=3:
 		glowlevel = glowlevel + 1
 		match glowlevel:
-			1:$AnimatedSprite2D.play("RestG1")
-			2:$AnimatedSprite2D.play("RestG2")
-			3:$AnimatedSprite2D.play("RestG3")
+			1:anim.play("RestG1")
+			2:anim.play("RestG2")
+			3:anim.play("RestG3")
 	else:
-		glowlevel = 0
-		$AnimatedSprite2D.play("Rest")
+		anim.play("blast")
+		
 func _on_vfx_animation_finished() -> void:
 	match glowlevel: 
 		0:anim.play("Hurt")
@@ -62,3 +67,10 @@ func _on_vfx_animation_finished() -> void:
 	 
 func on_first():
 	pointer.play("pointer")
+	
+
+func _on_anim_finish() -> void:
+	if anim.animation == "blast":
+		glowlevel =0
+		blast.emit(power*4)
+	

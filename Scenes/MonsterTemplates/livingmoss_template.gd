@@ -10,11 +10,13 @@ var round = 0.5
 var anim
 var vfx
 var pointer
+@onready var healthbar =$Healthbar
 
 func _ready():
 	anim = $AnimatedSprite2D
 	vfx = $VFX
 	pointer = $pointer
+	healthbar.init_health(health)
 
 #plays the attack animation &  returns the damage
 func on_attack():
@@ -25,6 +27,7 @@ func on_attack():
 func on_hurt(damage: int, spell:String):
 	vfx.play(spell)
 	health = health-damage
+	healthbar.set_health(health)
 
 #Destroys the node should have an animation
 func death():

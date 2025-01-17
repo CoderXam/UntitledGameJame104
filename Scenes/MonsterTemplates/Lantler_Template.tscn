@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://w674nvpsacci"]
+[gd_scene load_steps=7 format=3 uid="uid://w674nvpsacci"]
 
 [ext_resource type="Script" path="res://Scenes/MonsterTemplates/lantler_template.gd" id="1_7arhb"]
 [ext_resource type="SpriteFrames" uid="uid://dyn3brww31fv3" path="res://Sprites/EnemySprites/LantlerAnims.tres" id="1_qw8f1"]
 [ext_resource type="SpriteFrames" uid="uid://c6slmer6arrus" path="res://Sprites/EnemySprites/pointer.tres" id="3_dhfcv"]
 [ext_resource type="SpriteFrames" uid="uid://q1rtgnx0b5uv" path="res://Sprites/VFX/VFX.tres" id="4_y2fh5"]
+[ext_resource type="PackedScene" uid="uid://bgbo1wobjkahy" path="res://Sprites/Healthbar/healthbar.tscn" id="5_p84kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)
@@ -19,12 +20,20 @@ shape = SubResource("RectangleShape2D_177gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_qw8f1")
-animation = &"Rest"
+animation = &"blast"
+frame = 8
+frame_progress = 1.0
 
 [node name="pointer" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_dhfcv")
 
 [node name="VFX" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_y2fh5")
+
+[node name="Healthbar" parent="." instance=ExtResource("5_p84kq")]
+offset_left = -30.0
+offset_top = -39.0
+offset_right = 30.0
+offset_bottom = -33.0
 
 [connection signal="animation_finished" from="VFX" to="." method="_on_vfx_animation_finished"]

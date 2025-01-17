@@ -1,0 +1,93 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://2iv7i4ulel14"]
+
+[ext_resource type="Texture2D" uid="uid://dgjp8iv8k4pfv" path="res://Sprites/VFX/lightball.png" id="1_7p1qw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq5iv"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u0t6"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbxm"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df00h"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw4u8"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uafu"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckgee"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avgq8"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb1hb"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aonko"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybwyi"]
+atlas = ExtResource("1_7p1qw")
+region = Rect2(640, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq5iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u0t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df00h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw4u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uafu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckgee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avgq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb1hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aonko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybwyi")
+}],
+"loop": false,
+"name": &"lightball",
+"speed": 12.0
+}]

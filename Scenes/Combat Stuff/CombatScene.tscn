@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_area.gd" id="2_32mxo"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
-[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="4_crla7"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="5_odc6b"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/rune.gd" id="5_ulx58"]
 [ext_resource type="PackedScene" uid="uid://5exrthuifjck" path="res://Scenes/MonsterTemplates/Livingmoss_Template.tscn" id="7_m74fu"]

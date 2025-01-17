@@ -37,6 +37,7 @@ func _ready() -> void:
 					print("Stonyhedgehod loaded in space: " + str(i+1))
 				"Lantler":
 					var LantlerEnemy = Lantler_load.instantiate()
+					LantlerEnemy.blast.connect(lantlerblast)
 					LantlerEnemy.squarepos = (i+1)
 					EnemiesNode.add_child(LantlerEnemy)
 					LantlerEnemy.position = EnemySpaceArray[i].position
@@ -56,7 +57,7 @@ func _on_button_pressed() -> void:
 	if playerturn == true:
 		playerturn = false
 		enemies = EnemiesNode.get_children()
-		player_attack("magma")
+		player_attack("fire")
 
 
 func player_attack(current_attack):
@@ -87,7 +88,7 @@ func enemy_movement():
 			if enemies[i].squarepos == 1:
 				enemies[i].infrontplayer = true		
 	#waits until the movement round is over
-	await get_tree().create_timer(round/2).timeout
+	await get_tree().create_timer(round).timeout
 	#update list of enemies in case one died
 	enemies = EnemiesNode.get_children()
 	enemies[0].on_first()
@@ -96,7 +97,7 @@ func enemy_movement():
 func enemy_turn():
 	for i in range(enemies.size()):
 		enemies[i].turn()
-	await get_tree().create_timer(round/3).timeout
+	await get_tree().create_timer(round/2).timeout
 	if player.shielded == true:
 			player.deshield()
 	playerturn = true
@@ -113,10 +114,13 @@ func spellcast(spell: String):
 			var tween = get_tree().create_tween()
 			tween.tween_property(enemies[0], "position", EnemySpaceArray[enemies[0].squarepos].position, round/4)
 			enemies[0].squarepos = enemies[0].squarepos+1
-		elif enemies[0].squarepos+1 != enemies[1].squarepos && enemies[0].squarepos != 7:
+		elif enemies[0].squarepos != 7 && enemies[0].squarepos+1 != enemies[1].squarepos:
 			var tween = get_tree().create_tween()
 			tween.tween_property(enemies[0], "position", EnemySpaceArray[enemies[0].squarepos].position, round/4)
 			enemies[0].squarepos = enemies[0].squarepos+1
 	if chosenspell["shield"] == true:
 		player.on_shield()
 	enemies[0].on_hurt(damage, spell)
+
+func lantlerblast(damage: int):
+	player.lightball(damage)
