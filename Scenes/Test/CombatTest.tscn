@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ipom8kw35t2c"]
+[gd_scene load_steps=8 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="2_bqipc"]
+[ext_resource type="PackedScene" path="res://Scenes/rune_slots.tscn" id="3_5xrgm"]
+[ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="3_g2y3d"]
+[ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="4_sxir3"]
+[ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_1114h"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
 
@@ -92,12 +96,141 @@ scale = Vector2(64, 64)
 mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 271.0
-offset_top = 238.0
-offset_right = 318.0
-offset_bottom = 269.0
+offset_left = 451.0
+offset_top = 277.0
+offset_right = 498.0
+offset_bottom = 308.0
 text = "Cast"
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="CombatScene" type="Node2D" parent="."]
+position = Vector2(33, 37.5)
+scale = Vector2(0.9, 0.9)
+script = ExtResource("3_g2y3d")
+
+[node name="MossyTabletBiggerCircles" type="Sprite2D" parent="CombatScene"]
+position = Vector2(321, 217)
+scale = Vector2(0.675, 0.675)
+texture = ExtResource("5_1114h")
+
+[node name="Runes" type="Node2D" parent="CombatScene"]
+z_index = 2
+
+[node name="Rune" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(48, 160)
+
+[node name="Rune2" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(104, 160)
+
+[node name="Rune3" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(160, 160)
+
+[node name="Rune4" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(48, 216)
+
+[node name="Rune5" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(104, 216)
+
+[node name="Rune6" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(160, 216)
+
+[node name="Rune7" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(48, 272)
+
+[node name="Rune8" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(104, 272)
+
+[node name="Rune9" parent="CombatScene/Runes" instance=ExtResource("3_5xrgm")]
+position = Vector2(160, 272)
+
+[node name="Drop Areas" type="Node2D" parent="CombatScene"]
+z_index = 1
+
+[node name="Casting Area" type="Node2D" parent="CombatScene/Drop Areas"]
+
+[node name="DropSpot" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(350, 151)
+
+[node name="DropSpot2" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(389, 188)
+
+[node name="DropSpot3" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(390, 245)
+
+[node name="DropSpot4" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(348, 286)
+
+[node name="DropSpot5" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(292, 286)
+
+[node name="DropSpot6" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(252, 245)
+
+[node name="DropSpot7" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(251, 189)
+
+[node name="DropSpot8" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(294, 149)
+
+[node name="DropSpot9" parent="CombatScene/Drop Areas/Casting Area" instance=ExtResource("4_sxir3")]
+position = Vector2(320, 215)
+
+[node name="Inventory" type="Node2D" parent="CombatScene/Drop Areas"]
+
+[node name="DropSpot" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(48, 160)
+
+[node name="DropSpot2" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(104, 160)
+
+[node name="DropSpot3" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(160, 160)
+
+[node name="DropSpot4" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(48, 216)
+
+[node name="DropSpot5" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(104, 216)
+
+[node name="DropSpot6" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(160, 216)
+
+[node name="DropSpot7" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(48, 272)
+
+[node name="DropSpot8" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(104, 272)
+
+[node name="DropSpot9" parent="CombatScene/Drop Areas/Inventory" instance=ExtResource("4_sxir3")]
+position = Vector2(160, 272)
+
+[node name="AttackList" type="Node2D" parent="CombatScene"]
+
+[node name="AttackTitle" type="RichTextLabel" parent="CombatScene/AttackList"]
+offset_left = 457.0
+offset_top = 130.0
+offset_right = 586.0
+offset_bottom = 155.0
+scale = Vector2(0.75, 0.75)
+text = "Attack:"
+
+[node name="Main" type="Node2D" parent="CombatScene/AttackList"]
+
+[node name="MainAttack" type="RichTextLabel" parent="CombatScene/AttackList/Main"]
+offset_left = 457.0
+offset_top = 145.0
+offset_right = 586.0
+offset_bottom = 170.0
+scale = Vector2(0.75, 0.75)
+text = "main attack"
+
+[node name="AttackSupport" type="RichTextLabel" parent="CombatScene/AttackList"]
+offset_left = 457.0
+offset_top = 160.0
+offset_right = 588.0
+offset_bottom = 293.0
+scale = Vector2(0.75, 0.75)
+text = "Support:"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

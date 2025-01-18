@@ -13,12 +13,6 @@
 
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
-maxRounds = 15
-
-[node name="MossyTabletBiggerCircles" type="Sprite2D" parent="."]
-position = Vector2(321, 217)
-scale = Vector2(0.675, 0.675)
-texture = ExtResource("5_nio0y")
 
 [node name="Layout" type="Node2D" parent="."]
 z_index = -1
@@ -273,9 +267,7 @@ offset_bottom = 305.0
 scale = Vector2(0.75, 0.75)
 text = "support"
 
-[connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
-[connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
-[connection signal="roundEnd" from="." to="PlayerCombat" method="_on_combat_scene_round_end"]
-[connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
-[connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
-[connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
+[node name="MossyTabletBiggerCircles" type="Sprite2D" parent="."]
+position = Vector2(321, 217)
+scale = Vector2(0.675, 0.675)
+texture = ExtResource("5_nio0y")
