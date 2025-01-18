@@ -19,6 +19,7 @@ extends Node2D
 
 var shop_inv = Global.RUNE_POOL # List of all runes
 var available = [] # The runes available in the shop
+var total = 0
 var randnum = 0
 @onready var names = [$rune1/name,$rune2/name,$rune3/name,$rune4/name] # Rune name GUI element
 @onready var desc = [$rune1/description,$rune2/description,$rune3/description,$rune4/description] # Rune description GUI element
@@ -34,7 +35,6 @@ var inv_list := "Inventory: \n"
 func _ready() -> void:
 	
 	# Check if chances add to 100 (the game will still run but probabilities will be messed up)
-	var total = 0
 	for i in shop_inv:
 		i.in_shop = 0
 		total += i.shop_chance
@@ -59,7 +59,7 @@ func _ready() -> void:
 
 func choose_rune():
 	'''This for loop is a little goofy, uncomment the print statements to see what the code is doing. -Max'''
-	randnum = randi_range(1,100)
+	randnum = randi_range(1,total)
 	#print("generated number: "+str(randnum))
 	var a = 0
 	for j in len(Global.RUNE_POOL): # Go through the list of runes and choose 1 based on Rune.shop_chance

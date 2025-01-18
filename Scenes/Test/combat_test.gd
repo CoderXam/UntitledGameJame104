@@ -86,7 +86,7 @@ func enemy_movement():
 			enemies[i].squarepos = enemies[i].squarepos-1
 			tween.tween_property(enemies[i], "position", EnemySpaceArray[enemies[i].squarepos-1].position, round/4)
 			if enemies[i].squarepos == 1:
-				enemies[i].infrontplayer = true		
+				enemies[i].infrontplayer = true
 	#waits until the movement round is over
 	await get_tree().create_timer(round).timeout
 	#update list of enemies in case one died
