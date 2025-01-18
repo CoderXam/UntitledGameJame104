@@ -14,7 +14,6 @@ func init_health(_health):
 	
 
 func set_health(new_health):
-	print("health updated")
 	health = new_health
 	value = health
 	timer.start()
