@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
-[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
-[ext_resource type="PackedScene" uid="uid://b8u5v3mjxuun0" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="4_crla7"]
+[ext_resource type="PackedScene" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
 [ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_nio0y"]
 [ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
 
@@ -73,9 +73,6 @@ offset_bottom = 39.0
 text = "Rounds Left: xx"
 metadata/_edit_use_anchors_ = true
 
-[node name="SlimeTemplate" parent="." instance=ExtResource("7_m74fu")]
-position = Vector2(495, 46)
-
 [node name="EnemyTemplate" parent="." instance=ExtResource("3_8yaja")]
 position = Vector2(328, 64)
 
@@ -83,7 +80,7 @@ position = Vector2(328, 64)
 position = Vector2(432, 64)
 
 [node name="PlayerCombat" parent="." instance=ExtResource("4_crla7")]
-position = Vector2(96, 54)
+position = Vector2(104, 64)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 32.0
@@ -276,11 +273,9 @@ offset_bottom = 305.0
 scale = Vector2(0.75, 0.75)
 text = "support"
 
-[connection signal="roundEnd" from="." to="SlimeTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate2" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="PlayerCombat" method="_on_combat_scene_round_end"]
-[connection signal="roundStart" from="." to="SlimeTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
