@@ -16,6 +16,7 @@
 script = ExtResource("1_1unao")
 
 [node name="Background" type="Node2D" parent="."]
+z_index = -1
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Background"]
 position = Vector2(288, 48)
@@ -26,12 +27,6 @@ texture = ExtResource("2_kajqy")
 
 [node name="PlayerSpace" type="Node2D" parent="."]
 position = Vector2(96, 64)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerSpace"]
-modulate = Color(0.146528, 0.440943, 0.350299, 1)
-z_index = -1
-scale = Vector2(64, 64)
-mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="PlayerBuild" parent="PlayerSpace" instance=ExtResource("2_bqipc")]
 

@@ -24,9 +24,6 @@ frame_progress = 0.990348
 
 [node name="shield" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_6x4sh")
-animation = &"shield"
-frame = 10
-frame_progress = 1.0
 
 [node name="VFX" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_hcghp")
