@@ -57,7 +57,7 @@ func _on_button_pressed() -> void:
 	if playerturn == true:
 		playerturn = false
 		enemies = EnemiesNode.get_children()
-		player_attack("fire")
+		player_attack(Global.attack[8].id)
 
 
 func player_attack(current_attack):
