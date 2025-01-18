@@ -64,7 +64,7 @@ SCENE SWITCHING
 """
 
 var scenes = ["res://Scenes/MapScene.tscn",
-"res://Scenes/shop/shop_scene.tscn","res://Scenes/Test/AnimationTest.tscn", "res://Scenes/Test/CombatTest.tscn"]
+"res://Scenes/shop/shop_scene.tscn", "res://Scenes/Test/CombatTest.tscn"]
 var scene_index:int
 
 func _ready():
@@ -80,13 +80,11 @@ func _ready():
 		if get_tree().current_scene.scene_file_path == scenes[i]:
 			scene_index = i
 
-
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_scene") and scene_index<scenes.size()-1:
-		scene_index += 1
-		get_tree().change_scene_to_file(scenes[scene_index])
-		print("switched to " + scenes[scene_index])
-	elif event.is_action_pressed("switch_scene"):
-		scene_index = 0
+	if event.is_action_pressed("switch_scene"):
+		if scene_index<scenes.size()-1:
+			scene_index += 1
+		else:
+			scene_index = 0
 		get_tree().change_scene_to_file(scenes[scene_index])
 		print("switched to " + scenes[scene_index])
