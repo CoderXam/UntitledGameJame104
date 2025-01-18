@@ -1,26 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://w86h5rnen7fg"]
+[gd_scene load_steps=9 format=3 uid="uid://w86h5rnen7fg"]
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
-[ext_resource type="Script" path="res://Scenes/Combat Stuff/drop_area.gd" id="2_32mxo"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
-[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="4_crla7"]
-[ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="5_odc6b"]
-[ext_resource type="Script" path="res://Scenes/Combat Stuff/rune.gd" id="5_ulx58"]
-[ext_resource type="PackedScene" uid="uid://5exrthuifjck" path="res://Scenes/MonsterTemplates/Livingmoss_Template.tscn" id="7_m74fu"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Combat Stuff/player_combat.tscn" id="4_crla7"]
+[ext_resource type="PackedScene" uid="uid://b8u5v3mjxuun0" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
+[ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_nio0y"]
+[ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_2kj1x"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7j0hp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7ptq"]
-size = Vector2(128, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_geryv"]
-size = Vector2(64.5, 64.5)
-
 [node name="CombatScene" type="Node2D"]
 script = ExtResource("1_77n8x")
 maxRounds = 15
+
+[node name="MossyTabletBiggerCircles" type="Sprite2D" parent="."]
+position = Vector2(321, 217)
+scale = Vector2(0.675, 0.675)
+texture = ExtResource("5_nio0y")
 
 [node name="Layout" type="Node2D" parent="."]
 z_index = -1
@@ -93,288 +91,190 @@ offset_top = 16.0
 offset_right = 128.0
 offset_bottom = 43.0
 
-[node name="Runes" type="Node" parent="."]
+[node name="Runes" type="Node2D" parent="."]
+z_index = 2
 
-[node name="Rune" type="Node2D" parent="Runes"]
-position = Vector2(50, 160)
-script = ExtResource("5_ulx58")
+[node name="Rune" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(48, 160)
 
-[node name="Area2D" type="Area2D" parent="Runes/Rune"]
-scale = Vector2(0.75, 0.75)
+[node name="Rune2" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(104, 160)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune2" type="Node2D" parent="Runes"]
-position = Vector2(105, 160)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune2"]
-scale = Vector2(0.75, 0.75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune2/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune2"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune3" type="Node2D" parent="Runes"]
+[node name="Rune3" parent="Runes" instance=ExtResource("4_lvuk1")]
 position = Vector2(160, 160)
-script = ExtResource("5_ulx58")
 
-[node name="Area2D" type="Area2D" parent="Runes/Rune3"]
+[node name="Rune4" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(48, 216)
+
+[node name="Rune5" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(104, 216)
+
+[node name="Rune6" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(160, 216)
+
+[node name="Rune7" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(48, 272)
+
+[node name="Rune8" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(104, 272)
+
+[node name="Rune9" parent="Runes" instance=ExtResource("4_lvuk1")]
+position = Vector2(160, 272)
+
+[node name="Drop Areas" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Casting Area" type="Node2D" parent="Drop Areas"]
+
+[node name="DropSpot" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(350, 151)
+
+[node name="DropSpot2" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(389, 188)
+
+[node name="DropSpot3" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(390, 245)
+
+[node name="DropSpot4" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(348, 286)
+
+[node name="DropSpot5" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(292, 286)
+
+[node name="DropSpot6" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(252, 245)
+
+[node name="DropSpot7" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(251, 189)
+
+[node name="DropSpot8" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(294, 149)
+
+[node name="DropSpot9" parent="Drop Areas/Casting Area" instance=ExtResource("6_ad514")]
+position = Vector2(320, 215)
+
+[node name="Inventory" type="Node2D" parent="Drop Areas"]
+
+[node name="DropSpot" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(48, 160)
+
+[node name="DropSpot2" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(104, 160)
+
+[node name="DropSpot3" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(160, 160)
+
+[node name="DropSpot4" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(48, 216)
+
+[node name="DropSpot5" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(104, 216)
+
+[node name="DropSpot6" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(160, 216)
+
+[node name="DropSpot7" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(48, 272)
+
+[node name="DropSpot8" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(104, 272)
+
+[node name="DropSpot9" parent="Drop Areas/Inventory" instance=ExtResource("6_ad514")]
+position = Vector2(160, 272)
+
+[node name="AttackList" type="Node2D" parent="."]
+
+[node name="AttackTitle" type="RichTextLabel" parent="AttackList"]
+offset_left = 457.0
+offset_top = 130.0
+offset_right = 586.0
+offset_bottom = 155.0
 scale = Vector2(0.75, 0.75)
+text = "Attack:"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune3/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
+[node name="Main" type="Node2D" parent="AttackList"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune3"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune4" type="Node2D" parent="Runes"]
-position = Vector2(50, 215)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune4"]
+[node name="MainAttack" type="RichTextLabel" parent="AttackList/Main"]
+offset_left = 457.0
+offset_top = 145.0
+offset_right = 586.0
+offset_bottom = 170.0
 scale = Vector2(0.75, 0.75)
+text = "main attack"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune4/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune4"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune5" type="Node2D" parent="Runes"]
-position = Vector2(105, 215)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune5"]
+[node name="AttackSupport" type="RichTextLabel" parent="AttackList"]
+offset_left = 457.0
+offset_top = 160.0
+offset_right = 586.0
+offset_bottom = 185.0
 scale = Vector2(0.75, 0.75)
+text = "Support:"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune5/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
+[node name="Supporting" type="Node2D" parent="AttackList"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune5"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune6" type="Node2D" parent="Runes"]
-position = Vector2(160, 215)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune6"]
+[node name="Support" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 175.0
+offset_right = 586.0
+offset_bottom = 200.0
 scale = Vector2(0.75, 0.75)
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune6/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune6"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune7" type="Node2D" parent="Runes"]
-position = Vector2(50, 270)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune7"]
+[node name="Support2" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 190.0
+offset_right = 586.0
+offset_bottom = 215.0
 scale = Vector2(0.75, 0.75)
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune7/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune7"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune8" type="Node2D" parent="Runes"]
-position = Vector2(105, 270)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune8"]
+[node name="Support3" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 205.0
+offset_right = 586.0
+offset_bottom = 230.0
 scale = Vector2(0.75, 0.75)
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune8/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune8"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Rune9" type="Node2D" parent="Runes"]
-position = Vector2(160, 270)
-script = ExtResource("5_ulx58")
-
-[node name="Area2D" type="Area2D" parent="Runes/Rune9"]
+[node name="Support4" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 220.0
+offset_right = 586.0
+offset_bottom = 245.0
 scale = Vector2(0.75, 0.75)
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Runes/Rune9/Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_c7ptq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Runes/Rune9"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("5_odc6b")
-
-[node name="Drop Areas" type="Node" parent="."]
-
-[node name="Drop Area" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(240, 160)
+[node name="Support5" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 235.0
+offset_right = 586.0
+offset_bottom = 260.0
 scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area2" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(300, 160)
+[node name="Support6" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 250.0
+offset_right = 586.0
+offset_bottom = 275.0
 scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area2"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area2"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area3" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(360, 160)
+[node name="Support7" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 265.0
+offset_right = 586.0
+offset_bottom = 290.0
 scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
+text = "support"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area3"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area3"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area4" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(240, 215)
+[node name="Support8" type="RichTextLabel" parent="AttackList/Supporting"]
+offset_left = 457.0
+offset_top = 280.0
+offset_right = 586.0
+offset_bottom = 305.0
 scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area4"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area4"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area5" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(300, 215)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area5"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area5"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area6" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(360, 215)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area6"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area6"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area7" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(240, 270)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area7"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area7"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area8" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(300, 270)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area8"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area8"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Drop Area9" type="StaticBody2D" parent="Drop Areas" groups=["dropable"]]
-position = Vector2(360, 270)
-scale = Vector2(0.75, 0.75)
-script = ExtResource("2_32mxo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Drop Areas/Drop Area9"]
-shape = SubResource("RectangleShape2D_geryv")
-
-[node name="ColorRect" type="ColorRect" parent="Drop Areas/Drop Area9"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-color = Color(1, 0.0862745, 1, 1)
-metadata/_edit_use_anchors_ = true
+text = "support"
 
 [connection signal="roundEnd" from="." to="SlimeTemplate" method="_on_combat_scene_round_end"]
 [connection signal="roundEnd" from="." to="EnemyTemplate" method="_on_combat_scene_round_end"]
@@ -384,39 +284,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="roundStart" from="." to="EnemyTemplate" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="EnemyTemplate2" method="_on_combat_scene_round_start"]
 [connection signal="roundStart" from="." to="PlayerCombat" method="_on_combat_scene_round_start"]
-[connection signal="body_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune/Area2D" to="Runes/Rune" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune2/Area2D" to="Runes/Rune2" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune3/Area2D" to="Runes/Rune3" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune4/Area2D" to="Runes/Rune4" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune5/Area2D" to="Runes/Rune5" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune6/Area2D" to="Runes/Rune6" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune7/Area2D" to="Runes/Rune7" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune8/Area2D" to="Runes/Rune8" method="_on_area_2d_mouse_exited"]
-[connection signal="body_entered" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_body_exited"]
-[connection signal="mouse_entered" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Runes/Rune9/Area2D" to="Runes/Rune9" method="_on_area_2d_mouse_exited"]
