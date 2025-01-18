@@ -42,12 +42,12 @@ func _process(delta):
 		#_on_round_start()
 	
 	support.text = "Support spells:\n"
-	for i in len(Global.attack):
+	for i in len(Global.attack)-2:
 		if Global.attack[i] != Global.EMPTY:
-			support.text += Global.attack[i].rune_name+"\n"	
+			support.text += Global.attack[i].rune_name+"\n"
 	
-	$AttackList/Main/MainAttack.text = Global.attack[8].rune_name
-	$AttackList/Main/MainAttack.add_theme_color_override("default_color", Global.attack[8].color)
+	$AttackList/Main/MainAttack.text = Global.attack[len(Global.attack)-2].rune_name
+	$AttackList/Main/MainAttack.add_theme_color_override("default_color", Global.attack[len(Global.attack)-2].color)
 	
 
 @onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]

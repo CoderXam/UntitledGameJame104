@@ -55,7 +55,7 @@ var amplify := Rune.new("Amplify","amplify","Amplify other runes", preload("res:
 var thorns := Rune.new("Thorn Needles","thorns","Riddle your enemies with thorny needles", preload("res://Sprites/runes/thorns.png"),5,10,Color(1,1,0,1))
 var EMPTY := Rune.new("empty","empty","placeholder rune")
 
-var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,amplify,thorns]
+var RUNE_POOL = [fire,magma,water,shield,orb,lifesteal,root,lightning,thorns]
 
 var attack = [EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY]
 

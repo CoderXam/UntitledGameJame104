@@ -62,7 +62,7 @@ func choose_rune():
 	randnum = randi_range(1,100)
 	#print("generated number: "+str(randnum))
 	var a = 0
-	for j in 10: # Go through the list of runes and choose 1 based on Rune.shop_chance
+	for j in len(Global.RUNE_POOL): # Go through the list of runes and choose 1 based on Rune.shop_chance
 		#print(str(a)+"-"+str(a+shop_inv[j].shop_chance))
 		if randnum > a and randnum <= a+shop_inv[j].shop_chance and shop_inv[j].in_shop == 0:
 			#print("found match: "+shop_inv[j].rune_name)
