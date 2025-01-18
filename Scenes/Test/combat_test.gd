@@ -105,6 +105,12 @@ func enemy_turn():
 func spellcast(spell: String):
 	var chosenspell = RuneData.runedictionary[spell]
 	var damage = chosenspell["damage"]
+	
+	# Multiplies damage by 1.2 for each supporting spell/rune
+	for i in len(Global.attack)-1:
+		if Global.attack[i] != Global.EMPTY:
+			damage *= 1.2
+	
 	if chosenspell["stun"] == true:
 		enemies[0].stun = true
 	if chosenspell["heal"] != 0:
