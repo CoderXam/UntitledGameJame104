@@ -19,19 +19,19 @@ func _ready():
 	if len(PlayerData1.inventory) > runeNum:
 		rune_spell=PlayerData1.inventory[runeNum]
 	else:
-		rune_spell=0
+		rune_spell=Global.EMPTY
 	
 	#puts the instance of the rune into a dictionary that describes
 	#where are the runes are
 	Global.runeDict["Inv"][runeNum] = rune_spell
-	#makes sure rune_spell isn't zero
-	if rune_spell:
+	#makes sure rune_spell isn't empty
+	if rune_spell!=Global.EMPTY:
 		print("Inventory ",runeNum+1, ": ", rune_spell.rune_name)
 
 
 func _process(delta):
 	if Input.is_action_just_pressed("click") and mouseHover == true:
-		if rune_spell:
+		if rune_spell!=Global.EMPTY:
 			#locks out other runes from doing anything if another is already selected,
 			#but lets the selected rune still unselect itself
 			if selected == true or Global.hasSelection == false:
@@ -47,11 +47,10 @@ func _process(delta):
 		Global.oldRunePos = position
 		#removes itself from where it was in the rune dictionary
 		if isInInv:
-			Global.runeDict["Inv"][runeNum] = 0
+			Global.runeDict["Inv"][runeNum] = Global.EMPTY
 		elif isInInv == false:
-			Global.runeDict["Cast"][runeNum] = 0
+			Global.runeDict["Cast"][runeNum] = Global.EMPTY
 			Global.attack[runeNum] = Global.EMPTY
-		
 		
 		for i in 9:
 			#will find out where it is moving
@@ -59,17 +58,23 @@ func _process(delta):
 				runeNum = i
 				#updates rune dictionary
 				Global.runeDict["Inv"][runeNum] = rune_spell
-				isInInv = true
+				if isInInv == false:
+					isInInv = true
 				#print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
 				#mostly the same as above
 				runeNum = i
 				Global.runeDict["Cast"][runeNum] = rune_spell
-				isInInv = false
+				if isInInv == true:
+					isInInv = false
 				#lets it know what attacks are "cast"
 				Global.attack[i] = rune_spell
 				#print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 		
+		PlayerData1.inventory = []
+		for i in 9:
+			if Global.runeDict["Inv"][i]!=Global.EMPTY:
+				PlayerData1.add_to_inventory(Global.runeDict["Inv"][i])
 		
 		#actually moves the rune
 		var tweenMove = create_tween()

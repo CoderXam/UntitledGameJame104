@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://qxvd5kc3x1kj"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_e70cw"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_e70cw")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 231.0
+offset_top = 154.0
+offset_right = 350.0
+offset_bottom = 185.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 231.0
+offset_top = 192.0
+offset_right = 350.0
+offset_bottom = 223.0
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 177.0
+offset_top = 65.0
+offset_right = 364.0
+offset_bottom = 98.0
+scale = Vector2(1.5, 1.5)
+text = "Untitled Rune Game"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

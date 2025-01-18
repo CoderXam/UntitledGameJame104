@@ -50,14 +50,14 @@ func _process(delta):
 	$AttackList/Main/MainAttack.add_theme_color_override("default_color", Global.attack[len(Global.attack)-2].color)
 	
 
-@onready var inv_slots = [$Runes/Rune/Sprite2D, $Runes/Rune2/Sprite2D, $Runes/Rune3/Sprite2D, $Runes/Rune4/Sprite2D, $Runes/Rune5/Sprite2D, $Runes/Rune6/Sprite2D, $Runes/Rune7/Sprite2D, $Runes/Rune8/Sprite2D, $Runes/Rune9/Sprite2D]
+@onready var inv_slots = [$Runes/Rune, $Runes/Rune2, $Runes/Rune3, $Runes/Rune4, $Runes/Rune5, $Runes/Rune6, $Runes/Rune7, $Runes/Rune8, $Runes/Rune9]
 # Displays list of items in inventory (copied forom shop code)
 func refresh_inventory() -> void:
 	for i in inv_slots:
 		i.hide()
 	for i in len(PlayerData1.inventory):
-		inv_slots[i].texture = PlayerData1.inventory[i].image
-		inv_slots[i].scale = Vector2(0.75,0.75) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
+		inv_slots[i].get_child(1).texture = PlayerData1.inventory[i].image
+		inv_slots[i].get_child(1).scale = Vector2(0.75,0.75) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
 		inv_slots[i].show()
 
 """

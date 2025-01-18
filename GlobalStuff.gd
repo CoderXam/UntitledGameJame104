@@ -31,8 +31,8 @@ var newRunePos
 var oldRunePos
 #Dictionary to keep track of each rune's position
 var runeDict = {
-	"Inv": [0,0,0,0,0,0,0,0,0],
-	"Cast": [0,0,0,0,0,0,0,0,0]
+	"Inv": [EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY],
+	"Cast": [EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY]
 }
 
 # Represents the rune (inventory) slots and dropped (casting area) spots
