@@ -115,7 +115,7 @@ func enemy_turn():
 	for i in range(enemies.size()):
 		enemies[i].turn()
 	await get_tree().create_timer(round/2).timeout
-	if player.shielded == true:
+	if player.shielded == 0:
 			player.deshield()
 	playerturn = true
 

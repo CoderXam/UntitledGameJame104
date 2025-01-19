@@ -1,7 +1,7 @@
 extends Node2D
 @export var health = 30
 @export var totalhealth = 30
-@export var shielded = false
+@export var shielded = 0
 var anim
 var shield
 var vfx
@@ -16,12 +16,14 @@ func _ready() -> void:
 	anim.play("Bob_Idle")
 
 func hurt(damage: int):
-	if shielded != true && damage != 0:
+	if shielded == 0 && damage != 0:
 		health = health - damage
 		healthbar.set_health(health)
 		anim.play("Hurt")
-	elif shielded == true:
+	elif shielded:
+		shielded -= 1
 		shield.play("shieldblock")
+		print("shield blocked ",damage," damage!")
 	
 func on_heal(heal: int):
 	health = health + heal
@@ -29,11 +31,11 @@ func on_heal(heal: int):
 		health = totalhealth
 	healthbar.set_health(health)
 func on_shield():
-	shielded = true
+	shielded = 1 # Amount of hits shield can take
 	shield.play("shield")
 	
 func deshield():
-	shielded = false
+	shielded = 0
 	shield.play("default")
 
 
