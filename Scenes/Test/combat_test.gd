@@ -13,6 +13,7 @@ var playerturn = true
 func _ready() -> void:
 	print("COMBAT_TEST READY")
 	$CombatScene.refresh_pool()
+	playerturn = true
 	
 	# THIS IS NECESSARY BECAUSE THE RUNES AUTOMATICALLY LOAD BEFORE COMBAT TEST AND COMBAT SCENE NODES!!!!!!!!!!!!
 	for i in $CombatScene/Runes.get_children():
