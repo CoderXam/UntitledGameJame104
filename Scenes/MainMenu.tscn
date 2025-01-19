@@ -28,3 +28,4 @@ scale = Vector2(1.5, 1.5)
 text = "Untitled Rune Game"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
