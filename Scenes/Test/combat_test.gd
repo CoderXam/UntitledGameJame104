@@ -81,7 +81,10 @@ func player_attack(current_attack):
 		print("you win")
 		PlayerData1.currency += 10
 		Global.level += 1
-		get_tree().change_scene_to_file("res://Scenes/shop/shop_scene.tscn")
+		if Global.level < Global.levels+1:
+			get_tree().change_scene_to_file("res://Scenes/shop/shop_scene.tscn")
+		else:
+			get_tree().change_scene_to_file("res://Scenes/EndScreen.tscn")
 
 #Function that moves enemies
 func enemy_movement():

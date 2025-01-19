@@ -1,7 +1,7 @@
 extends Node
 
 var level = 1
-var levels = 3 # The amount of levels in the game
+var levels = 4 # The amount of levels in the game
 
 """
 COMBAT SCENE WORKSPACE
@@ -84,10 +84,11 @@ func _ready():
 			scene_index = i
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("switch_scene"):
-		if scene_index<scenes.size()-1:
-			scene_index += 1
-		else:
-			scene_index = 0
-		get_tree().change_scene_to_file(scenes[scene_index])
-		print("switched to " + scenes[scene_index])
+	#if event.is_action_pressed("switch_scene"):
+		#if scene_index<scenes.size()-1:
+			#scene_index += 1
+		#else:
+			#scene_index = 0
+		#get_tree().change_scene_to_file(scenes[scene_index])
+		#print("switched to " + scenes[scene_index])
+	pass

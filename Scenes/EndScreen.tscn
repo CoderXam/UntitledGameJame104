@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dion30tu2rj76"]
+
+[node name="EndScreen" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 170.0
+offset_top = 75.0
+offset_right = 278.0
+offset_bottom = 107.0
+scale = Vector2(3.045, 3.045)
+text = "YOU WIN
+"
