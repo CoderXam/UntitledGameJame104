@@ -11,6 +11,13 @@ var player
 var playerturn = true
 
 func _ready() -> void:
+	print("COMBAT_TEST READY")
+	$CombatScene.refresh_pool()
+	
+	# THIS IS NECESSARY BECAUSE THE RUNES AUTOMATICALLY LOAD BEFORE COMBAT TEST AND COMBAT SCENE NODES!!!!!!!!!!!!
+	for i in $CombatScene/Runes.get_children():
+		i._ready()
+	
 	var Livingmoss_load = preload("res://Scenes/MonsterTemplates/Livingmoss_Template.tscn")
 	var Stonyhedgehog_load = preload("res://Scenes/MonsterTemplates/Stonyhedgehog_Template.tscn")
 	var Lantler_load = preload("res://Scenes/MonsterTemplates/Lantler_Template.tscn")
@@ -60,7 +67,7 @@ func _on_button_pressed() -> void:
 		player_attack(Global.attack[len(Global.attack)-2].id)
 	Global.runeDict["Cast"] = [Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
 	Global.attack=[Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
-	$CombatScene.refresh_inventory()
+	$CombatScene.refresh_pool()
 	
 func player_attack(current_attack):
 	spellcast(current_attack)

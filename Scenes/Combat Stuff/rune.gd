@@ -11,22 +11,21 @@ var isNewSpotTaken = false # bit on the nose, but does what it says
 var rune_spell # The spell (instance of rune) associated with this node
 
 func _ready():
-	for i in range(len(runeList)):
+	print("RUNE_READY")
+	for i in len(runeList):
 		if $"." == runeList[i]:
 			runeNum = i
 			break
 	
-	if len(PlayerData1.inventory) > runeNum:
-		rune_spell=PlayerData1.inventory[runeNum]
+	if len(PlayerData1.rune_pool) > runeNum:
+		rune_spell=PlayerData1.rune_pool[runeNum]
+		print(runeNum,rune_spell.rune_name)
 	else:
 		rune_spell=Global.EMPTY
 	
 	#puts the instance of the rune into a dictionary that describes
 	#where are the runes are
 	Global.runeDict["Inv"][runeNum] = rune_spell
-	#makes sure rune_spell isn't empty
-	if rune_spell!=Global.EMPTY:
-		print("Inventory ",runeNum+1, ": ", rune_spell.rune_name)
 
 
 func _process(delta):
@@ -71,10 +70,10 @@ func _process(delta):
 				Global.attack[i] = rune_spell
 				#print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 		
-		PlayerData1.inventory = []
+		PlayerData1.rune_pool = []
 		for i in 9:
 			if Global.runeDict["Inv"][i]!=Global.EMPTY:
-				PlayerData1.add_to_inventory(Global.runeDict["Inv"][i])
+				PlayerData1.rune_pool.append(Global.runeDict["Inv"][i])
 		
 		#actually moves the rune
 		var tweenMove = create_tween()

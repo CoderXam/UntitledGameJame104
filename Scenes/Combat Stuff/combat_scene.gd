@@ -13,6 +13,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("COMBAT_SCENE READY")
 	for i in Global.attack:
 		i=Global.EMPTY
 	
@@ -23,8 +24,6 @@ func _ready():
 	#var PlayerHealth = $PlayerData.get("PlayerHealth")
 	#print(PlayerHealth)
 	#$roundCounter.text = "Rounds Left: %d" % rounds
-	
-	refresh_inventory()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,12 +50,22 @@ func _process(delta):
 	
 
 @onready var inv_slots = [$Runes/Rune, $Runes/Rune2, $Runes/Rune3, $Runes/Rune4, $Runes/Rune5, $Runes/Rune6, $Runes/Rune7, $Runes/Rune8, $Runes/Rune9]
-# Displays list of items in inventory (copied forom shop code)
-func refresh_inventory() -> void:
-	for i in inv_slots:
-		i.hide()
-	for i in len(PlayerData1.inventory):
-		inv_slots[i].get_child(1).texture = PlayerData1.inventory[i].image
+
+# Loads the textures for the runes in the rune pool
+func refresh_pool() -> void:
+	print("refresh")
+	
+	# Generate rune pool
+	PlayerData1.rune_pool = []
+	for i in 4:
+		PlayerData1.rune_pool.append(PlayerData1.inventory[randi_range(0,PlayerData1.inventory.size()-1)])
+	
+	for i in len(inv_slots):
+		var tweenMove = create_tween()
+		tweenMove.tween_property(inv_slots[i], "global_position", Global.runeArr[i], 0.1)
+		inv_slots[i].hide()
+	for i in len(PlayerData1.rune_pool):
+		inv_slots[i].get_child(1).texture = PlayerData1.rune_pool[i].image
 		inv_slots[i].get_child(1).scale = Vector2(0.75,0.75) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
 		inv_slots[i].show()
 
