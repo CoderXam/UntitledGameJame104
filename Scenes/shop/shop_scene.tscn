@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ctl8ju1py7w3o"]
+[gd_scene load_steps=20 format=4 uid="uid://ctl8ju1py7w3o"]
 
 [ext_resource type="Script" path="res://Scenes/shop/shop_scene.gd" id="1_2nlhh"]
 [ext_resource type="Texture2D" uid="uid://dc1qc31iporqm" path="res://Sprites/testdummy.png" id="2_eub30"]
@@ -40,6 +40,18 @@ sources/0 = SubResource("TileSetAtlasSource_hvhiv")
 [sub_resource type="QuadMesh" id="QuadMesh_cq37w"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_sr8lg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5bwif"]
+texture = ExtResource("3_mp6ft")
+modulate_color = Color(0.261215, 0.375439, 0.254197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijp05"]
+texture = ExtResource("3_mp6ft")
+modulate_color = Color(0.0667801, 0.250637, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41kqk"]
+texture = ExtResource("3_mp6ft")
+modulate_color = Color(0.175721, 0.329731, 0.203897, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_q8t1s"]
 
@@ -249,11 +261,14 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 330.0
 offset_top = 180.0
-offset_right = 430.0
-offset_bottom = 240.0
+offset_right = 434.0
+offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_4rkwy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5bwif")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ijp05")
+theme_override_styles/normal = SubResource("StyleBoxTexture_41kqk")
 text = "EXIT SHOP"
 icon_alignment = 1
 expand_icon = true

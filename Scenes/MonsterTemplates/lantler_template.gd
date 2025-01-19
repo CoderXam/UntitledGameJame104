@@ -4,7 +4,7 @@ extends Node2D
 @export var stun = false
 @export var infrontplayer = false
 @export var squarepos = 0
-@export var power = 5
+@export var power = 4
 @export var glowlevel = 0
 var maxhealth = 15
 var round = 0.5
@@ -72,5 +72,5 @@ func on_first():
 func _on_anim_finish() -> void:
 	if anim.animation == "blast":
 		glowlevel =0
-		blast.emit(power*4)
+		blast.emit(power*3)
 	

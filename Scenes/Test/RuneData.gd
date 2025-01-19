@@ -3,7 +3,7 @@ extends Node
 
 var runedictionary = {
 	"fire": {
-		"damage": 10,
+		"damage": 8,
 		"knockback": false,
 		"stun": false,
 		"heal": 0,
@@ -19,7 +19,7 @@ var runedictionary = {
 		"ground": false
 	},
 	"lightning": {
-		"damage": 20,
+		"damage": 15,
 		"knockback": false,
 		"stun": false,
 		"heal": 0,
@@ -27,7 +27,7 @@ var runedictionary = {
 		"ground": false
 	},
 	"magma": {
-		"damage": 10,
+		"damage": 12,
 		"knockback": false,
 		"stun": false,
 		"heal": 0,
@@ -35,7 +35,7 @@ var runedictionary = {
 		"ground": true
 	},
 	"orb": {
-		"damage": 10,
+		"damage": 6,
 		"knockback": false,
 		"stun": false,
 		"heal": 0,
@@ -59,7 +59,7 @@ var runedictionary = {
 		"ground": false
 	},
 	"thorns":{
-		"damage": 15,
+		"damage": 12,
 		"knockback": false,
 		"stun": false,
 		"heal": 0,
