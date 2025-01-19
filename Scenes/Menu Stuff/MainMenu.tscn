@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qxvd5kc3x1kj"]
+[gd_scene load_steps=3 format=3 uid="uid://qxvd5kc3x1kj"]
 
 [ext_resource type="Script" path="res://Scenes/Menu Stuff/main_menu.gd" id="1_e70cw"]
+[ext_resource type="Texture2D" uid="uid://dbe5lupq5msdw" path="res://Sprites/ui/TitleScreen.png" id="2_rtmm2"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_e70cw")
@@ -19,14 +20,6 @@ offset_right = 350.0
 offset_bottom = 223.0
 text = "Quit"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 177.0
-offset_top = 65.0
-offset_right = 364.0
-offset_bottom = 98.0
-scale = Vector2(1.5, 1.5)
-text = "Untitled Rune Game"
-
 [node name="Credits" type="Button" parent="."]
 offset_left = 287.0
 offset_top = 228.0
@@ -41,6 +34,11 @@ offset_top = 228.0
 offset_right = 274.0
 offset_bottom = 259.0
 text = "Lore"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(302, 82)
+scale = Vector2(0.878472, 0.853774)
+texture = ExtResource("2_rtmm2")
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
