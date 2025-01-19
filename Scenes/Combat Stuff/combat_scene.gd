@@ -53,9 +53,11 @@ func _process(delta):
 # Loads the textures for the runes in the rune pool
 func refresh_pool() -> void:
 	# Generate rune pool
+	#for i in PlayerData1.rune_pool: print("leftover pool: ",i.rune_name)
 	for i in 4-len(PlayerData1.rune_pool):
 		PlayerData1.rune_pool.append(PlayerData1.inventory[randi_range(0,PlayerData1.inventory.size()-1)])
-		print("added ",PlayerData1.rune_pool[i].rune_name," to pool")
+		print("added ",PlayerData1.rune_pool.back().rune_name)
+	#for i in PlayerData1.rune_pool: print("new pool: ",i.rune_name)
 	
 	for i in len(inv_slots):
 		var tweenMove = create_tween()

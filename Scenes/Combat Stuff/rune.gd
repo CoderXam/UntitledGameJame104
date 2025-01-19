@@ -60,7 +60,7 @@ func _process(delta):
 				if isInInv == false:
 					isInInv = true
 					PlayerData1.rune_pool.append(rune_spell)
-					print("added ",rune_spell.rune_name," back to pool")
+					print("re-added ",rune_spell.rune_name," back to pool")
 				#print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
 				#mostly the same as above
