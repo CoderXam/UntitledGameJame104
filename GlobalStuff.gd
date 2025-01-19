@@ -1,5 +1,8 @@
 extends Node
 
+var level = 1
+var levels = 3 # The amount of levels in the game
+
 """
 COMBAT SCENE WORKSPACE
 """

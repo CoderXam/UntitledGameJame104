@@ -241,6 +241,23 @@ scale = Vector2(126, 56.93)
 mesh = SubResource("QuadMesh_sr8lg")
 texture = ExtResource("3_mp6ft")
 
+[node name="EXIT" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = 180.0
+offset_right = 430.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_4rkwy")
+text = "EXIT SHOP"
+icon_alignment = 1
+expand_icon = true
+
 [node name="Shopkeeper" type="Sprite2D" parent="."]
 position = Vector2(552, 173.557)
 scale = Vector2(13.735, 7.55538)
@@ -548,6 +565,7 @@ position = Vector2(276, 366)
 scale = Vector2(4.114, 4)
 texture = ExtResource("2_eub30")
 
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="rune1/buy" to="." method="_on_rune_1_pressed"]
 [connection signal="pressed" from="rune2/buy" to="." method="_on_rune_2_pressed"]
 [connection signal="pressed" from="rune3/buy" to="." method="_on_rune_3_pressed"]
