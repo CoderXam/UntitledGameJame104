@@ -16,6 +16,8 @@ func _ready():
 			runeNum = i
 			break
 	
+	isInInv = true
+	
 	if len(PlayerData1.rune_pool) > runeNum:
 		rune_spell=PlayerData1.rune_pool[runeNum]
 	else:
