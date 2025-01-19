@@ -75,8 +75,10 @@ func player_attack(current_attack):
 	spellcast(current_attack)
 	await get_tree().create_timer(round).timeout
 	enemies = EnemiesNode.get_children()
-	enemy_movement()
-	
+	if enemies.size()!=0:
+		enemy_movement()
+	else:
+		print("you win")
 
 #Function that moves enemies
 func enemy_movement():
@@ -138,6 +140,7 @@ func spellcast(spell: String):
 	if chosenspell["shield"] == true:
 		player.on_shield()
 	enemies[0].on_hurt(damage, spell)
+	print(spell," did ",damage," damage!")
 
 func lantlerblast(damage: int):
 	player.lightball(damage)

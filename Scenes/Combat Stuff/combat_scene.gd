@@ -58,7 +58,7 @@ func refresh_pool() -> void:
 	#        v number of runes that will be in the rune pool
 	for i in 9-len(PlayerData1.rune_pool):
 		PlayerData1.rune_pool.append(PlayerData1.inventory[randi_range(0,PlayerData1.inventory.size()-1)])
-		print("added ",PlayerData1.rune_pool.back().rune_name)
+		#print("added ",PlayerData1.rune_pool.back().rune_name)
 	#for i in PlayerData1.rune_pool: print("new pool: ",i.rune_name)
 	
 	for i in len(inv_slots):

@@ -60,7 +60,7 @@ func _process(delta):
 				if isInInv == false:
 					isInInv = true
 					PlayerData1.rune_pool.append(rune_spell)
-					print("re-added ",rune_spell.rune_name," back to pool")
+					#print("re-added ",rune_spell.rune_name," back to pool")
 				#print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
 				#mostly the same as above
@@ -71,7 +71,7 @@ func _process(delta):
 					for j in len(PlayerData1.rune_pool):
 						if PlayerData1.rune_pool[j]==rune_spell:
 							PlayerData1.rune_pool.pop_at(j)
-							print("removed ",rune_spell.rune_name," from pool")
+							#print("removed ",rune_spell.rune_name," from pool")
 							break
 				#lets it know what attacks are "cast"
 				Global.attack[i] = rune_spell
