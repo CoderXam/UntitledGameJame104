@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://l75faie200bw"]
+
+[ext_resource type="Script" path="res://Scenes/Menu Stuff/back.gd" id="1_tqh5w"]
+
+[node name="Lore" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 550.0
+offset_bottom = 327.0
+text = "An astronaut has crash landed on an alien planet. It is lush and full of weird creatures, it seems like some ancient civilization used to live here. The astronaut must fight through the hoard of creatures by using magic runes sold by a robot in a shop still standing from the ancient civilisation."
+
+[node name="Back" type="Button" parent="."]
+offset_left = 240.0
+offset_top = 173.0
+offset_right = 285.0
+offset_bottom = 204.0
+text = "Back"
+script = ExtResource("1_tqh5w")
+
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
