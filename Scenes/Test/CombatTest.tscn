@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ipom8kw35t2c"]
+[gd_scene load_steps=12 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="2_bqipc"]
@@ -7,10 +7,13 @@
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="3_g2y3d"]
 [ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="4_sxir3"]
 [ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_1114h"]
+[ext_resource type="Texture2D" uid="uid://ddmr6pl3wy7e1" path="res://Sprites/tiles/groundtile1.png" id="8_iyl1r"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yv7hj"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4b1ri"]
 
 [node name="CombatTest" type="Node2D"]
 script = ExtResource("1_1unao")
@@ -246,5 +249,70 @@ offset_right = 588.0
 offset_bottom = 293.0
 scale = Vector2(0.75, 0.75)
 text = "Support:"
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Tile1" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(32, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile2" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(96, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile3" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(160, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile4" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(224, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile5" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(288, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile6" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(352, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile7" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(416, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile8" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(480, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
+
+[node name="Tile9" type="MeshInstance2D" parent="Tiles"]
+position = Vector2(544, 104)
+rotation = 3.14159
+scale = Vector2(64, 16)
+mesh = SubResource("QuadMesh_4b1ri")
+texture = ExtResource("8_iyl1r")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
