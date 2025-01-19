@@ -29,8 +29,8 @@ func _ready() -> void:
 	EnemiesNode = get_node("Enemies")
 	
 	for i in range(7):
-		if (StageBuilder.stage1[i+1] !=null):
-			match StageBuilder.stage1[i+1]:
+		if (StageBuilder.stages[Global.level][i+1] !=null):
+			match StageBuilder.stages[Global.level][i+1]:
 				"Livingmoss":
 					var LivingmossEnemy = Livingmoss_load.instantiate()
 					LivingmossEnemy.squarepos = (i+1)
@@ -75,10 +75,12 @@ func player_attack(current_attack):
 	spellcast(current_attack)
 	await get_tree().create_timer(round).timeout
 	enemies = EnemiesNode.get_children()
-	if enemies.size()!=0:
+	if enemies.size()>0:
 		enemy_movement()
 	else:
 		print("you win")
+		Global.level += 1
+		get_tree().change_scene_to_file("res://Scenes/shop/shop_scene.tscn")
 
 #Function that moves enemies
 func enemy_movement():
@@ -106,6 +108,7 @@ func enemy_movement():
 	enemies = EnemiesNode.get_children()
 	enemies[0].on_first()
 	enemy_turn()
+
 #lets the enemy do logic stuff
 func enemy_turn():
 	for i in range(enemies.size()):
