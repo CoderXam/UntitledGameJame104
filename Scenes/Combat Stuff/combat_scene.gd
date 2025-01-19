@@ -68,6 +68,9 @@ func refresh_pool() -> void:
 		inv_slots[i].get_child(1).texture = PlayerData1.rune_pool[i].image
 		inv_slots[i].get_child(1).scale = Vector2(0.75,0.75) # THIS IS TO ADJUST THE NEW IMAGE SCALE FOR THE RUNES
 		inv_slots[i].show()
+	
+	for i in inv_slots:
+		i._ready()
 
 """
 MAKE SURE TO MANUALLY CONNECT THE endRound and startRound SIGNAL TO ALL OTHER INSTANCED SCENES
