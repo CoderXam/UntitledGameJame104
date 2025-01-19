@@ -1,22 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://ipom8kw35t2c"]
+[gd_scene load_steps=16 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="2_bqipc"]
 [ext_resource type="Texture2D" uid="uid://coijhi6bmq8qh" path="res://Sprites/background/background1forest.png" id="2_oeueb"]
+[ext_resource type="Texture2D" uid="uid://dssrhppi7yb84" path="res://Sprites/ui/backgroundmenu1.png" id="2_w7eed"]
 [ext_resource type="PackedScene" uid="uid://d0xce0p4f1fw6" path="res://Scenes/rune_slots.tscn" id="3_5xrgm"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="3_g2y3d"]
 [ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="4_sxir3"]
+[ext_resource type="Texture2D" uid="uid://b2mvxgfxp6dmv" path="res://Sprites/ui/button1.png" id="4_yx0fa"]
 [ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_1114h"]
 [ext_resource type="Texture2D" uid="uid://ddmr6pl3wy7e1" path="res://Sprites/tiles/groundtile1.png" id="8_iyl1r"]
+[ext_resource type="Texture2D" uid="uid://clu8qc6fubjyg" path="res://Sprites/ui/textborder1.png" id="9_kqsg3"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yv7hj"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4i8v"]
+texture = ExtResource("4_yx0fa")
+
 [sub_resource type="QuadMesh" id="QuadMesh_4b1ri"]
 
 [node name="CombatTest" type="Node2D"]
 script = ExtResource("1_1unao")
+
+[node name="backgroundmenu" type="Sprite2D" parent="."]
+position = Vector2(288, 218)
+texture = ExtResource("2_w7eed")
 
 [node name="background" type="Node2D" parent="."]
 z_index = -1
@@ -112,11 +122,16 @@ z_index = -1
 scale = Vector2(64, 64)
 mesh = SubResource("QuadMesh_1gbm6")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(451, 263)
+
 [node name="Button" type="Button" parent="."]
 offset_left = 451.0
 offset_top = 263.0
-offset_right = 498.0
-offset_bottom = 294.0
+offset_right = 511.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.00359478, 0.00389001, 0.000714045, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_j4i8v")
 text = "Cast"
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -223,6 +238,10 @@ position = Vector2(104, 272)
 position = Vector2(160, 272)
 
 [node name="AttackList" type="Node2D" parent="CombatScene"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CombatScene/AttackList"]
+position = Vector2(507.778, 196.667)
+texture = ExtResource("9_kqsg3")
 
 [node name="AttackTitle" type="RichTextLabel" parent="CombatScene/AttackList"]
 offset_left = 457.0
