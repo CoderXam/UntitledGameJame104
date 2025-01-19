@@ -64,11 +64,12 @@ func _on_button_pressed() -> void:
 	if playerturn == true:
 		playerturn = false
 		enemies = EnemiesNode.get_children()
-		player_attack(Global.attack[len(Global.attack)-2].id)
-	Global.runeDict["Cast"] = [Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
-	Global.attack=[Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
-	$CombatScene.refresh_pool()
-	
+		if Global.attack[len(Global.attack)-2]!=Global.EMPTY:
+			player_attack(Global.attack[len(Global.attack)-2].id)
+			Global.runeDict["Cast"] = [Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
+			Global.attack=[Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY,Global.EMPTY]
+			$CombatScene.refresh_pool()
+
 func player_attack(current_attack):
 	spellcast(current_attack)
 	await get_tree().create_timer(round).timeout
