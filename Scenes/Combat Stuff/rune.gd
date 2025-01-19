@@ -11,7 +11,6 @@ var isNewSpotTaken = false # bit on the nose, but does what it says
 var rune_spell # The spell (instance of rune) associated with this node
 
 func _ready():
-	print("RUNE_READY")
 	for i in len(runeList):
 		if $"." == runeList[i]:
 			runeNum = i
@@ -19,7 +18,6 @@ func _ready():
 	
 	if len(PlayerData1.rune_pool) > runeNum:
 		rune_spell=PlayerData1.rune_pool[runeNum]
-		print(runeNum,rune_spell.rune_name)
 	else:
 		rune_spell=Global.EMPTY
 	
@@ -59,6 +57,8 @@ func _process(delta):
 				Global.runeDict["Inv"][runeNum] = rune_spell
 				if isInInv == false:
 					isInInv = true
+					PlayerData1.rune_pool.append(rune_spell)
+					print("added ",rune_spell.rune_name," back to pool")
 				#print(rune_spell.rune_name, " moved to inventory slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 			if Global.newRunePos == Global.spotArr[i]:
 				#mostly the same as above
@@ -66,14 +66,18 @@ func _process(delta):
 				Global.runeDict["Cast"][runeNum] = rune_spell
 				if isInInv == true:
 					isInInv = false
+					for j in len(PlayerData1.rune_pool):
+						if PlayerData1.rune_pool[j]==rune_spell:
+							PlayerData1.rune_pool.pop_at(j)
+							print("removed ",rune_spell.rune_name," from pool")
+							break
 				#lets it know what attacks are "cast"
 				Global.attack[i] = rune_spell
 				#print(rune_spell.rune_name, " moved to casting slot ",i+1," from ",Global.oldRunePos," to ", Global.newRunePos)
 		
-		PlayerData1.rune_pool = []
-		for i in 9:
-			if Global.runeDict["Inv"][i]!=Global.EMPTY:
-				PlayerData1.rune_pool.append(Global.runeDict["Inv"][i])
+		#for i in 9:
+			#if Global.runeDict["Inv"][i]!=Global.EMPTY:
+				#PlayerData1.rune_pool.append(Global.runeDict["Inv"][i])
 		
 		#actually moves the rune
 		var tweenMove = create_tween()

@@ -28,7 +28,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	#if Input.is_action_just_pressed("ui_accept"):
 		##all the code ones on one thread, so only once everything that _on_round_end() affects
 		##is done, will it move onto the next thing in this line
@@ -53,12 +52,10 @@ func _process(delta):
 
 # Loads the textures for the runes in the rune pool
 func refresh_pool() -> void:
-	print("refresh")
-	
 	# Generate rune pool
-	PlayerData1.rune_pool = []
-	for i in 4:
+	for i in 4-len(PlayerData1.rune_pool):
 		PlayerData1.rune_pool.append(PlayerData1.inventory[randi_range(0,PlayerData1.inventory.size()-1)])
+		print("added ",PlayerData1.rune_pool[i].rune_name," to pool")
 	
 	for i in len(inv_slots):
 		var tweenMove = create_tween()
