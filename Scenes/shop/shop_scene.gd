@@ -41,11 +41,9 @@ func _ready() -> void:
 	if total != 100:
 		print("WARNING: Rune shop chances do not add to 100!"+" (total="+str(total)+")")
 	
-	PlayerData1.currency = 100
-	
 	for i in 4: # Generate the rune for each of the 4 slots in the shop based on shop chance (the probability for a rune to appear in the shop)
 		choose_rune()
-		stock[i] = 3 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
+		stock[i] = 1 # SET THE NUMBER OF RUNES IN STOCK FOR ALL RUNES
 		#print(str(i+1)+". "+available[i][0])
 		names[i].text = available[i].rune_name
 		names[i].add_theme_color_override("default_color", available[i].color)
@@ -77,7 +75,7 @@ func choose_rune():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Balance.text = ":) " + str(PlayerData1.currency)
+	$Balance.text = "$ " + str(PlayerData1.currency)
 
 # Displays list of items in inventory
 func refresh_inventory() -> void:

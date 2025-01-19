@@ -79,6 +79,7 @@ func player_attack(current_attack):
 		enemy_movement()
 	else:
 		print("you win")
+		PlayerData1.currency += 10
 		Global.level += 1
 		get_tree().change_scene_to_file("res://Scenes/shop/shop_scene.tscn")
 
