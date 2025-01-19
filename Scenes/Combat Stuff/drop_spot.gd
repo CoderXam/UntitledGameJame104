@@ -9,6 +9,9 @@ var isCasting = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	if self.get_parent().name == "Inventory":
+		$tilebackset.visible = true
 	$ColorRect.hide()
 	
 	"""
