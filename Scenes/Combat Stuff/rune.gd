@@ -78,7 +78,7 @@ func _process(delta):
 		
 		#actually moves the rune
 		var tweenMove = create_tween()
-		tweenMove.tween_property(self, "position", Global.newRunePos, 0.1)
+		tweenMove.tween_property(self, "global_position", Global.newRunePos, 0.1)
 		
 		#resetting everything so that a new rune can be selected
 	

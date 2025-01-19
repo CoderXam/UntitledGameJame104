@@ -1,32 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://ipom8kw35t2c"]
+[gd_scene load_steps=8 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
 [ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="2_bqipc"]
-[ext_resource type="Texture2D" uid="uid://coijhi6bmq8qh" path="res://Sprites/background/background1forest.png" id="2_kajqy"]
 [ext_resource type="PackedScene" uid="uid://d0xce0p4f1fw6" path="res://Scenes/rune_slots.tscn" id="3_5xrgm"]
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="3_g2y3d"]
 [ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="4_sxir3"]
 [ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_1114h"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_v0n3h"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1gbm6"]
 
 [node name="CombatTest" type="Node2D"]
 script = ExtResource("1_1unao")
 
-[node name="Background" type="Node2D" parent="."]
-z_index = -1
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Background"]
-position = Vector2(288, 48)
-rotation = 3.14159
-scale = Vector2(576, 96)
-mesh = SubResource("QuadMesh_v0n3h")
-texture = ExtResource("2_kajqy")
-
 [node name="PlayerSpace" type="Node2D" parent="."]
 position = Vector2(96, 64)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerSpace"]
+modulate = Color(0.146528, 0.440943, 0.350299, 1)
+z_index = -1
+scale = Vector2(64, 64)
+mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="PlayerBuild" parent="PlayerSpace" instance=ExtResource("2_bqipc")]
 
@@ -37,7 +30,6 @@ position = Vector2(160, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space1"]
-visible = false
 modulate = Color(1, 0.294118, 0.168627, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -48,7 +40,6 @@ position = Vector2(224, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space2"]
-visible = false
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -59,7 +50,6 @@ position = Vector2(288, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space3"]
-visible = false
 modulate = Color(1, 0.294118, 0.168627, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -70,7 +60,6 @@ position = Vector2(352, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space4"]
-visible = false
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -81,7 +70,6 @@ position = Vector2(416, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space5"]
-visible = false
 modulate = Color(1, 0.294118, 0.168627, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -92,7 +80,6 @@ position = Vector2(480, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space6"]
-visible = false
 modulate = Color(0.729412, 0.537255, 0.337255, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -103,7 +90,6 @@ position = Vector2(544, 64)
 metadata/ContainsEnemy = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="EnemySpaces/Space7"]
-visible = false
 modulate = Color(1, 0.294118, 0.168627, 1)
 z_index = -1
 scale = Vector2(64, 64)
@@ -111,15 +97,15 @@ mesh = SubResource("QuadMesh_1gbm6")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 451.0
-offset_top = 277.0
+offset_top = 263.0
 offset_right = 498.0
-offset_bottom = 308.0
+offset_bottom = 294.0
 text = "Cast"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CombatScene" type="Node2D" parent="."]
-position = Vector2(33, 37.5)
+position = Vector2(31, 20)
 scale = Vector2(0.9, 0.9)
 script = ExtResource("3_g2y3d")
 
