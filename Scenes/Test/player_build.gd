@@ -7,6 +7,7 @@ var shield
 var vfx
 @onready var healthbar =$Healthbar
 
+
 func _ready() -> void:
 	anim = $AnimatedSprite2D
 	shield = $shield
@@ -24,6 +25,7 @@ func hurt(damage: int):
 		shielded -= 1
 		shield.play("shieldblock")
 		print("shield blocked ",damage," damage!")
+		
 	
 func on_heal(heal: int):
 	health = health + heal

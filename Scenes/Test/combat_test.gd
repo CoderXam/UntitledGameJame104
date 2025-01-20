@@ -62,7 +62,7 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	if playerturn == true:
+	if playerturn == true && $CombatScene/AttackList/Main/MainAttack.text != "empty":
 		playerturn = false
 		enemies = EnemiesNode.get_children()
 		if Global.attack[len(Global.attack)-2]!=Global.EMPTY:
@@ -107,20 +107,26 @@ func enemy_movement():
 			if enemies[i].squarepos == 1:
 				enemies[i].infrontplayer = true
 	#waits until the movement round is over
-	await get_tree().create_timer(round).timeout
+	if player.health <= 0:
+		deathscreenload()
+	else:
+		await get_tree().create_timer(round).timeout
 	#update list of enemies in case one died
-	enemies = EnemiesNode.get_children()
-	enemies[0].on_first()
-	enemy_turn()
+		enemies = EnemiesNode.get_children()
+		enemies[0].on_first()
+		enemy_turn()
 
 #lets the enemy do logic stuff
 func enemy_turn():
 	for i in range(enemies.size()):
 		enemies[i].turn()
-	await get_tree().create_timer(round/2).timeout
-	if player.shielded == 0:
-			player.deshield()
-	playerturn = true
+	if player.health <= 0:
+		deathscreenload()
+	else:
+		await get_tree().create_timer(round/2).timeout
+		if player.shielded == 0:
+				player.deshield()
+		playerturn = true
 
 func spellcast(spell: String):
 	var chosenspell = RuneData.runedictionary[spell]
@@ -151,3 +157,6 @@ func spellcast(spell: String):
 
 func lantlerblast(damage: int):
 	player.lightball(damage)
+
+func deathscreenload():
+	get_tree().change_scene_to_file("res://Scenes/Menu Stuff/deathscreen.tscn")
