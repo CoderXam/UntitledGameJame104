@@ -9,3 +9,16 @@ The game is a 2d tactical, turn-based spell caster. In which you play as an astr
 ## Itch.io download page
 [Untitled Rune Game](https://comradewolfskii.itch.io/untitled-rune-game)
 
+## Credits
+Rune Art: MistyPluto
+
+Art & Animation : Comrade_Wolfskii
+
+Shop art: LordXam
+
+Programming:
+Comrade_Wolfskii
+LordXam
+Bigtroublejake
+MistyPluto
+Crazybaconmaster
