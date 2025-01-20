@@ -1,4 +1,11 @@
 ![Banner](Sprites/ui/TitleScreen.png)
 
-Repository for our project submission to the Untitled Game Jame number #104
-Link to game: https://comradewolfskii.itch.io/untitled-rune-game
+## About
+This repository is a game made in the Godot engine for the Game Jame contest: Untitled Game Jame #104. 
+
+## Game
+The game is a 2d tactical, turn-based spell caster. In which you play as an astronaut who has crash landed into an alien planet. Upon which you are forced to defend yourself from the wildlife using ancient runes sold by a robotic shop keeper.
+
+## Itch.io download page
+[Untitled Rune Game](https://comradewolfskii.itch.io/untitled-rune-game)
+
