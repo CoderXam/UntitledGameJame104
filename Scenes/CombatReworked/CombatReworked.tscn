@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://xuv58aejxiv7"]
+
+[ext_resource type="Script" path="res://Scenes/CombatReworked/combat_reworked.gd" id="1_kbkg7"]
+[ext_resource type="Texture2D" uid="uid://coijhi6bmq8qh" path="res://Sprites/background/background1forest.png" id="2_fi4xf"]
+[ext_resource type="PackedScene" uid="uid://c5vytmoyff7xx" path="res://Sprites/tiles/tile.tscn" id="3_6ofo7"]
+[ext_resource type="Texture2D" uid="uid://ddmr6pl3wy7e1" path="res://Sprites/tiles/groundtile1.png" id="4_i8ahi"]
+
+[node name="CombatReworked" type="Node2D"]
+script = ExtResource("1_kbkg7")
+
+[node name="CombatBackground" type="Sprite2D" parent="."]
+position = Vector2(288, 48)
+texture = ExtResource("2_fi4xf")
+
+[node name="enemyspaces" type="Node2D" parent="."]
+
+[node name="enemyspace1" type="Node2D" parent="enemyspaces"]
+position = Vector2(160, 64)
+
+[node name="enemyspace2" type="Node2D" parent="enemyspaces"]
+position = Vector2(224, 64)
+
+[node name="enemyspace3" type="Node2D" parent="enemyspaces"]
+position = Vector2(288, 64)
+
+[node name="enemyspace4" type="Node2D" parent="enemyspaces"]
+position = Vector2(352, 64)
+
+[node name="enemyspace5" type="Node2D" parent="enemyspaces"]
+position = Vector2(416, 64)
+
+[node name="enemyspace6" type="Node2D" parent="enemyspaces"]
+position = Vector2(480, 64)
+
+[node name="enemyspace7" type="Node2D" parent="enemyspaces"]
+position = Vector2(544, 64)
+
+[node name="PlayerSpace" type="Node2D" parent="."]
+position = Vector2(96, 64)
+
+[node name="enemytiles" type="Node2D" parent="."]
+
+[node name="Tile1" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(160, 104)
+
+[node name="Tile2" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(224, 104)
+
+[node name="Tile3" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(288, 104)
+
+[node name="Tile4" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(352, 104)
+
+[node name="Tile5" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(416, 104)
+
+[node name="Tile6" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(480, 104)
+
+[node name="Tile7" parent="enemytiles" instance=ExtResource("3_6ofo7")]
+position = Vector2(544, 104)
+
+[node name="neutraltiles" type="Node2D" parent="."]
+
+[node name="neutraltile1" type="Sprite2D" parent="neutraltiles"]
+position = Vector2(32, 104)
+texture = ExtResource("4_i8ahi")
+
+[node name="neutraltile2" type="Sprite2D" parent="neutraltiles"]
+position = Vector2(96, 104)
+texture = ExtResource("4_i8ahi")

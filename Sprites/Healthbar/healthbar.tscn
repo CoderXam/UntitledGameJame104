@@ -48,4 +48,16 @@ show_percentage = false
 wait_time = 0.8
 one_shot = true
 
+[node name="health value" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -15.0
+offset_right = 79.0
+offset_bottom = 4.0
+theme_override_colors/default_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 11
+text = "health/max health"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
