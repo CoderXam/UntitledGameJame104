@@ -1,16 +1,16 @@
 extends Node2D
-@export var id ="Stonyhedgehog"
-@export var health = 30
-@export var stun = false
-@export var infrontplayer = false
-@export var squarepos = 0
-@export var power = 5
-var maxhealth = 30
-var round = 0.5
+var health = 30
+var stun = false
+var infrontplayer = false
+var squarepos = 0
+var power = 5
+
 var anim
 var vfx
 var pointer
 @onready var healthbar =$Healthbar
+
+signal hurtfinished()
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
@@ -21,13 +21,24 @@ func _ready() -> void:
 #plays the attack animation &  returns the damage
 func on_attack():
 	anim.play("Attack")
-	return(power)
+	await anim.animation_finished
+	return
 	
 #plays the hurt animation and applies the damage
 func on_hurt(damage: int, spell: String):
-	vfx.play(spell)
-	health = health-damage
-	healthbar.set_health(health)
+	if damage != 0:
+		vfx.play(spell)
+		await vfx.animation_finished
+		health = health-damage
+		healthbar.set_health(health)
+		anim.play("Hurt")
+		await anim.animation_finished
+		hurtfinished.emit()
+		if health <= 0:
+			stun = true
+			death()
+	else:
+		hurtfinished.emit()
 	
 #Destroys the node should have an animation
 func death():
@@ -38,13 +49,5 @@ func turn():
 	if stun == true:
 		stun = false
 
-
-func _on_vfx_animation_finished() -> void:
-	anim.play("Hurt")
-	if health <= 0:
-		stun = true
-		await get_tree().create_timer(round).timeout
-		death()
-		
 func on_first():
 	pointer.play("pointer")

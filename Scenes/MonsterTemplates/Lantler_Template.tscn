@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dyn3brww31fv3" path="res://Sprites/EnemySprites/LantlerAnims.tres" id="1_qw8f1"]
 [ext_resource type="SpriteFrames" uid="uid://c6slmer6arrus" path="res://Sprites/EnemySprites/pointer.tres" id="3_dhfcv"]
 [ext_resource type="SpriteFrames" uid="uid://q1rtgnx0b5uv" path="res://Sprites/VFX/VFX.tres" id="4_y2fh5"]
-[ext_resource type="PackedScene" uid="uid://bgbo1wobjkahy" path="res://Sprites/Healthbar/healthbar.tscn" id="5_p84kq"]
+[ext_resource type="PackedScene" uid="uid://bgbo1wobjkahy" path="res://Scenes/Healthbar/healthbar.tscn" id="5_p84kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_177gs"]
 size = Vector2(64, 64)

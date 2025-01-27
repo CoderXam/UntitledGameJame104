@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://cwrcpvq6ulkk2"]
 
-[ext_resource type="Script" path="res://Scenes/Test/player_build.gd" id="1_08pcf"]
-[ext_resource type="SpriteFrames" uid="uid://c8wrc5a7raihi" path="res://Sprites/PlayerSprite/shield.tres" id="2_6x4sh"]
-[ext_resource type="SpriteFrames" uid="uid://c7bgygymnwgdn" path="res://Sprites/PlayerSprite/ProtagonistAnims.tres" id="2_ksqqw"]
-[ext_resource type="SpriteFrames" uid="uid://2iv7i4ulel14" path="res://Sprites/VFX/playervfx.tres" id="4_hcghp"]
-[ext_resource type="PackedScene" uid="uid://bgbo1wobjkahy" path="res://Sprites/Healthbar/healthbar.tscn" id="5_rdi80"]
+[ext_resource type="Script" path="res://Scenes/CombatReworked/player_build.gd" id="1_nbqyd"]
+[ext_resource type="SpriteFrames" uid="uid://c7bgygymnwgdn" path="res://Sprites/PlayerSprite/ProtagonistAnims.tres" id="2_nhiiq"]
+[ext_resource type="SpriteFrames" uid="uid://c8wrc5a7raihi" path="res://Sprites/PlayerSprite/shield.tres" id="3_u6uo4"]
+[ext_resource type="SpriteFrames" uid="uid://2iv7i4ulel14" path="res://Sprites/VFX/playervfx.tres" id="4_3yqbv"]
+[ext_resource type="PackedScene" uid="uid://bgbo1wobjkahy" path="res://Scenes/Healthbar/healthbar.tscn" id="5_fomxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apylm"]
 size = Vector2(64, 64)
 
 [node name="PlayerBuild" type="Node2D"]
-script = ExtResource("1_08pcf")
+script = ExtResource("1_nbqyd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -18,17 +18,17 @@ script = ExtResource("1_08pcf")
 shape = SubResource("RectangleShape2D_apylm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_ksqqw")
+sprite_frames = ExtResource("2_nhiiq")
 animation = &"Bob_Idle"
 frame_progress = 0.990348
 
 [node name="shield" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_6x4sh")
+sprite_frames = ExtResource("3_u6uo4")
 
 [node name="VFX" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("4_hcghp")
+sprite_frames = ExtResource("4_3yqbv")
 
-[node name="Healthbar" parent="." instance=ExtResource("5_rdi80")]
+[node name="Healthbar" parent="." instance=ExtResource("5_fomxx")]
 offset_left = -30.0
 offset_top = -31.0
 offset_right = 30.0

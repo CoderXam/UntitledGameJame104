@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ipom8kw35t2c"]
 
 [ext_resource type="Script" path="res://Scenes/Test/combat_test.gd" id="1_1unao"]
-[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="2_bqipc"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/CombatReworked/player_build.tscn" id="2_bqipc"]
 [ext_resource type="Texture2D" uid="uid://coijhi6bmq8qh" path="res://Sprites/background/background1forest.png" id="2_oeueb"]
 [ext_resource type="Texture2D" uid="uid://dssrhppi7yb84" path="res://Sprites/ui/backgroundmenu1.png" id="2_w7eed"]
 [ext_resource type="PackedScene" uid="uid://d0xce0p4f1fw6" path="res://Scenes/rune_slots.tscn" id="3_5xrgm"]

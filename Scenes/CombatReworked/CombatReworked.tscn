@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://xuv58aejxiv7"]
+[gd_scene load_steps=8 format=3 uid="uid://xuv58aejxiv7"]
 
 [ext_resource type="Script" path="res://Scenes/CombatReworked/combat_reworked.gd" id="1_kbkg7"]
 [ext_resource type="Texture2D" uid="uid://coijhi6bmq8qh" path="res://Sprites/background/background1forest.png" id="2_fi4xf"]
-[ext_resource type="PackedScene" uid="uid://c5vytmoyff7xx" path="res://Sprites/tiles/tile.tscn" id="3_6ofo7"]
+[ext_resource type="PackedScene" uid="uid://c5vytmoyff7xx" path="res://Scenes/Tile/tile.tscn" id="3_6ofo7"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/CombatReworked/player_build.tscn" id="3_mtisn"]
 [ext_resource type="Texture2D" uid="uid://ddmr6pl3wy7e1" path="res://Sprites/tiles/groundtile1.png" id="4_i8ahi"]
+[ext_resource type="Texture2D" uid="uid://b2mvxgfxp6dmv" path="res://Sprites/ui/button1.png" id="6_cqch7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrvnh"]
+texture = ExtResource("6_cqch7")
 
 [node name="CombatReworked" type="Node2D"]
 script = ExtResource("1_kbkg7")
@@ -38,6 +43,8 @@ position = Vector2(544, 64)
 [node name="PlayerSpace" type="Node2D" parent="."]
 position = Vector2(96, 64)
 
+[node name="PlayerBuild" parent="PlayerSpace" instance=ExtResource("3_mtisn")]
+
 [node name="enemytiles" type="Node2D" parent="."]
 
 [node name="Tile1" parent="enemytiles" instance=ExtResource("3_6ofo7")]
@@ -70,3 +77,16 @@ texture = ExtResource("4_i8ahi")
 [node name="neutraltile2" type="Sprite2D" parent="neutraltiles"]
 position = Vector2(96, 104)
 texture = ExtResource("4_i8ahi")
+
+[node name="CastButton" type="Button" parent="."]
+offset_left = 451.0
+offset_top = 263.0
+offset_right = 511.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.00359478, 0.00389001, 0.000714045, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xrvnh")
+text = "Cast"
+
+[node name="enemies" type="Node2D" parent="."]
+
+[connection signal="pressed" from="CastButton" to="." method="_on_cast_button_pressed"]

@@ -1,17 +1,20 @@
 extends Node2D
-@export var health = 30
-@export var totalhealth = 30
-@export var shielded = 0
+var health = 30
+var totalhealth = 30
+var shielded = 0
 var anim
 var shield
 var vfx
-@onready var healthbar =$Healthbar
+var healthbar 
+
+signal hurtfinished()
 
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
 	shield = $shield
 	vfx = $VFX
+	healthbar = $Healthbar
 	healthbar.init_health(totalhealth)
 	healthbar.health = health
 	anim.play("Bob_Idle")
@@ -21,10 +24,12 @@ func hurt(damage: int):
 		health = health - damage
 		healthbar.set_health(health)
 		anim.play("Hurt")
+		await anim.animation_finished
+		hurtfinished.emit()
 	elif shielded:
-		shielded -= 1
 		shield.play("shieldblock")
-		print("shield blocked ",damage," damage!")
+		await shield.animation_finished()
+		hurtfinished.emit()
 		
 	
 func on_heal(heal: int):

@@ -1,18 +1,31 @@
 extends Node
 
-#Livingmoss
-#Stonyhedgehog
-#Lantler
-#Berrybushbear
+#enemies
+var livingmoss = "Livingmoss"
+var stonyhedgehog = "Stonyhedgehog"
+var lantler = "Lantler"
+var berrybushbear = "Berrybushbear"
 
-var stage1 = {
-	1 : null,
-	2 : "Stonyhedgehog",
-	3 : null,
-	4 : "Livingmoss",
-	5:  null,
-	6 : "Berrybushbear",
-	7 : null
+var stagelayout = {
+	1: {
+		1 : null,
+		2 : null,
+		3 : stonyhedgehog,
+		4 : stonyhedgehog,
+		5:  null,
+		6 : null,
+		7 : null
+	},
+	2: {
+		1 : null,
+		2 : "Livingmoss",
+		3 : "Berrybushbear",
+		4 : "Lantler",
+		5:  null,
+		6 : "Stonyhedgehog",
+		7 : null
+	}
+
 }
 var stage2 = {
 	1 : null,
@@ -41,5 +54,3 @@ var stage4 = {
 	6 : "Lantler",
 	7 : "Lantler"
 }
-
-var stages = {1:stage1,2:stage2,3:stage3,4:stage4}

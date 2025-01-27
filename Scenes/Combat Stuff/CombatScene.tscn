@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Combat Stuff/combat_scene.gd" id="1_77n8x"]
 [ext_resource type="PackedScene" uid="uid://cw3a6j7d7ocns" path="res://Scenes/Combat Stuff/enemy_template.tscn" id="3_8yaja"]
-[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/Test/player_build.tscn" id="4_crla7"]
+[ext_resource type="PackedScene" uid="uid://cwrcpvq6ulkk2" path="res://Scenes/CombatReworked/player_build.tscn" id="4_crla7"]
 [ext_resource type="PackedScene" uid="uid://d0xce0p4f1fw6" path="res://Scenes/rune_slots.tscn" id="4_lvuk1"]
 [ext_resource type="Texture2D" uid="uid://csrdhsaytodwt" path="res://Sprites/runes/Mossy Tablet Bigger Circles.png" id="5_nio0y"]
 [ext_resource type="PackedScene" uid="uid://bysddxf3bb33d" path="res://Scenes/Combat Stuff/drop_spot.tscn" id="6_ad514"]
