@@ -41,21 +41,20 @@ func _ready():
 	
 
 func on_groundeffect(_damage: int, _pos: int):
-	print("damage dealt = "+ str(_damage) + " at location " + str(_pos))
+	var finalcheck = null
+	for i in range(enemies.size()):
+		if enemies[i].squarepos == _pos:
+			enemies[i].on_hurt(_damage, "default")
+			finalcheck = i
+	if finalcheck !=null:
+		await enemies[finalcheck].hurtfinished
+	tileresponseconfirmed.emit()
 
 func tileconnect():
 	for i in range(enemytiles.size()):
 		enemytiles[i].tilepos = i+1
 		enemytiles[i].groundeffect.connect(on_groundeffect)
 		enemytiles[i].combatsceneconnect(self)
-
-func on_tileresponse():
-	if enemytilesresponsecount != enemytiles.size():
-		enemytilesresponsecount = enemytilesresponsecount + 1
-	else:
-		enemytilesresponsecount = 0
-		tileresponseconfirmed.emit()
-		
 
 func stagebuilding():
 	var stagedict = StageBuilder.stagelayout[level]
@@ -106,6 +105,7 @@ func playercast(spell : String):
 	enemymovement()
 	
 func enemymovement():
+	var enemymoved = false
 	await get_tree().create_timer(0.2).timeout
 	if enemies[0].infrontplayer == true && enemies[0].stun == false:
 		##enemy attack
@@ -119,13 +119,24 @@ func enemymovement():
 		##if there is an enemy infront and they are stunned or they are at pos 1
 		if enemies[i-1].squarepos+1 == enemies[i].squarepos && (enemies[i-1].stun == true || enemies[i-1].infrontplayer == true) || enemies[i].squarepos == 1:
 			enemies[i].stun == true 
+		##move the enemy forward if they arent stunned
 		elif enemies[i].stun == false:
+			enemymoved = true
 			var tween = get_tree().create_tween()
 			enemies[i].squarepos = enemies[i].squarepos-1
 			tween.tween_property(enemies[i], "position", enemyspaces[enemies[i].squarepos-1].position, 0.375)
 			if enemies[i].squarepos == 1:
 				enemies[i].infrontplayer = true
+	##if an enemy moved wait till the tween is finished
+	if enemymoved == true:
+		await get_tree().create_timer(0.375).timeout
+	##to check if any tiles have damage effects
+	tilecheck.emit()
+	await self.tileresponseconfirmed
+	##enemy logic turn
 	playerturn = true
+	
+	
 func enemydeath():
 	print("Enemy died")
 	enemies = enemynode.get_children()
